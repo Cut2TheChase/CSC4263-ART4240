@@ -26,7 +26,6 @@ public class FeetCollision : MonoBehaviour {
 			usedRayDist = rayDistHorz;
 		
 		//If collider is touching any collider in the layer 'Ground Collision', will return false
-		//if (gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers (LayerMask.GetMask ("GroundCollision"))) {
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, rayDir, usedRayDist, LayerMask.GetMask ("GroundCollision"));
 		Debug.Log (hit.collider);
 		if(hit.collider != null)

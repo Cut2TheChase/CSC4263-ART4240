@@ -10,7 +10,6 @@ public class playerMovement : MonoBehaviour
 
     Vector3 vertMoveSpeed, horiMoveSpeed;
     Vector4 jumpSpeed;
-    float vertPos;
     bool jumpState;
 
     void Start()
