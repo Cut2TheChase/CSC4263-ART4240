@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class FeetCollision : MonoBehaviour {
 
-
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	} 
+	//Distances of the ray cast by the foot collider when going a certain direction
+	 float rayDistUp = 0.5f; 
+	 float rayDistDown = 0.2f;
+	 float rayDistHorz = 0.3f;
 
 	/*This function will be called by the playerMovement script when a player
 	wants to go vertical or horizontal, the collider will move first and if it
@@ -18,15 +15,27 @@ public class FeetCollision : MonoBehaviour {
 	playerMovement script they cant move, otherwise it will give the script an
 	ok to move */
 
-	public bool canMove(Vector3 speed){
-		gameObject.GetComponent<Transform> ().Translate (speed);
+	public bool canMove(Vector3 speed, Vector2 rayDir){
+		
+		float usedRayDist;
+		if (rayDir == Vector2.up)
+			usedRayDist = rayDistUp;
+		else if (rayDir == Vector2.down)
+			usedRayDist = rayDistDown;
+		else 
+			usedRayDist = rayDistHorz;
+		
 		//If collider is touching any collider in the layer 'Ground Collision', will return false
-		if (gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers (LayerMask.GetMask ("GroundCollision"))) {
-			
+		//if (gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers (LayerMask.GetMask ("GroundCollision"))) {
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, rayDir, usedRayDist, LayerMask.GetMask ("GroundCollision"));
+		Debug.Log (hit.collider);
+		if(hit.collider != null)
 			return false;
-		} else {
+		 else { 
+		    gameObject.GetComponent<Transform> ().Translate (speed);
 			return true;
 		}
+
 
 	}
 		

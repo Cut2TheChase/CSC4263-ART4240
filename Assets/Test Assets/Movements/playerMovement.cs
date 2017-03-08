@@ -7,7 +7,6 @@ public class playerMovement : MonoBehaviour
 
     public GameObject player;
 	public GameObject feetColl; //Collider that will be at the player's feet
-    //float vertLimitUp, vertLimitDown;
 
     Vector3 vertMoveSpeed, horiMoveSpeed;
     Vector4 jumpSpeed;
@@ -20,21 +19,15 @@ public class playerMovement : MonoBehaviour
         horiMoveSpeed = new Vector3(0.06f, 0, 0);
         jumpSpeed = new Vector4(0,0.0008f,0,Time.deltaTime * 10);
 
-        // Need to write getters and setters for these
-        //vertLimitUp = 0.5f;
-        //vertLimitDown = -3.5f;
-
         jumpState = false;
     }
 
     void Update()
     {
-        // Updates current position
-        vertPos = player.GetComponent<Transform>().position.y;
         // Move Left
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-			if(feetColl.GetComponent<FeetCollision>().canMove(-horiMoveSpeed) == true)
+			if(feetColl.GetComponent<FeetCollision>().canMove(-horiMoveSpeed, Vector2.left))
             	player.GetComponent<Transform>().Translate(-horiMoveSpeed);
             // TBD: Animation, i.e. sprite change
             //  Possibly use global counter variable to pace out animation?
@@ -43,23 +36,23 @@ public class playerMovement : MonoBehaviour
         // Move right
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-			if(feetColl.GetComponent<FeetCollision>().canMove(horiMoveSpeed) == true)
+			if(feetColl.GetComponent<FeetCollision>().canMove(horiMoveSpeed, Vector2.right))
             	player.GetComponent<Transform>().Translate(horiMoveSpeed);
             // TBD: Animation, i.e. sprite change
         }
 
         // Move "up" i.e. toward background
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) /*&& vertPos <= vertLimitUp*/ && jumpState == false)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && jumpState == false)
         {
-			if(feetColl.GetComponent<FeetCollision>().canMove(vertMoveSpeed))
+			if(feetColl.GetComponent<FeetCollision>().canMove(vertMoveSpeed,Vector2.up))
             	player.GetComponent<Transform>().Translate(vertMoveSpeed);
             // TBD: Animation, i.e. sprite change
         }
 
         // Move "down" i.e. toward foreground
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) /*&& vertPos >= vertLimitDown*/ && jumpState == false)
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && jumpState == false)
         {
-			if(feetColl.GetComponent<FeetCollision>().canMove(-vertMoveSpeed))
+			if(feetColl.GetComponent<FeetCollision>().canMove(-vertMoveSpeed,Vector2.down))
             	player.GetComponent<Transform>().Translate(-vertMoveSpeed);
             // TBD: Animation, i.e. sprite change
         }
@@ -91,27 +84,4 @@ public class playerMovement : MonoBehaviour
             jumpState = false;
         }*/
     }
-    // Setters and Getters for stage movement constraints.
-    // Considering adding horizontal limiters?
-	/*
-    public void setVertLimitUp(float newLim)
-    {
-        vertLimitUp = newLim;
-    }
-
-    public void setVertLimitDown(float newLim)
-    {
-        vertLimitDown = newLim;
-    }
-
-    public float getVertLimitUp()
-    {
-        return vertLimitUp;
-    }
-
-    public float getVertLimitDown()
-    {
-        return vertLimitDown;
-    }
-    */
 }
