@@ -336,6 +336,7 @@ MonoBehaviour:
   Margin: {x: 1, y: 0.5}
   Smoothing: {x: 2, y: 2}
   Bounds: {fileID: 1676573942}
+  Ground: {fileID: 1280604325}
 --- !u!1 &627094538
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,9 +797,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.31266806, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6253356, y: 1}
 --- !u!4 &1676573943
 Transform:
   m_ObjectHideFlags: 0

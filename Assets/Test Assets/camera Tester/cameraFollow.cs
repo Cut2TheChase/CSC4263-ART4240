@@ -5,6 +5,8 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour {
 
 	public GameObject player;
+	public Transform farLeft;
+	public Transform farRight;
 
 	Vector3 offset;  // create this object to edit the generic offset of the camera
 
@@ -17,6 +19,7 @@ public class cameraFollow : MonoBehaviour {
 	void LateUpdate ()   // Late update function is another update function that happens after every other update function has been called
 	{
 		transform.position = player.transform.position + offset;
+
 	}
 }
 
