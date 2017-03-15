@@ -8,9 +8,13 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
 	public GameObject feetColl; //Collider that will be at the player's feet
 
+
     Vector3 vertMoveSpeed, horiMoveSpeed;
     Vector4 jumpSpeed;
+	int dirFacing = 1; //Direction character is facing, 1 = right, -1 = left
     bool jumpState;
+
+	Animator anim; //Controls character animations
 
     void Start()
     {
@@ -19,6 +23,8 @@ public class playerMovement : MonoBehaviour
         jumpSpeed = new Vector4(0,0.0008f,0,Time.deltaTime * 10);
 
         jumpState = false;
+
+		anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -28,8 +34,10 @@ public class playerMovement : MonoBehaviour
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(-horiMoveSpeed, Vector2.left))
             	player.GetComponent<Transform>().Translate(-horiMoveSpeed);
-            // TBD: Animation, i.e. sprite change
-            //  Possibly use global counter variable to pace out animation?
+
+			dirFacing = -1; //Facing Left
+			anim.SetInteger("State", 1); //Changes animation state to Walking
+
         }
 
         // Move right
@@ -37,7 +45,9 @@ public class playerMovement : MonoBehaviour
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(horiMoveSpeed, Vector2.right))
             	player.GetComponent<Transform>().Translate(horiMoveSpeed);
-            // TBD: Animation, i.e. sprite change
+
+			dirFacing = 1; //Facing Right
+			anim.SetInteger("State", 1); //Changes animation state to Walking
         }
 
         // Move "up" i.e. toward background
@@ -45,7 +55,8 @@ public class playerMovement : MonoBehaviour
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(vertMoveSpeed,Vector2.up))
             	player.GetComponent<Transform>().Translate(vertMoveSpeed);
-            // TBD: Animation, i.e. sprite change
+
+			anim.SetInteger("State", 1); //Changes animation state to Walking
         }
 
         // Move "down" i.e. toward foreground
@@ -53,8 +64,18 @@ public class playerMovement : MonoBehaviour
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(-vertMoveSpeed,Vector2.down))
             	player.GetComponent<Transform>().Translate(-vertMoveSpeed);
-            // TBD: Animation, i.e. sprite change
+
+			anim.SetInteger("State", 1); //Changes animation state to Walking
         }
+
+		if (!Input.GetKey (KeyCode.W) && !Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.S) && !Input.GetKey (KeyCode.DownArrow)
+		   && !Input.GetKey (KeyCode.D) && !Input.GetKey (KeyCode.RightArrow) && !Input.GetKey (KeyCode.A) && !Input.GetKey (KeyCode.LeftArrow))
+				anim.SetInteger ("State", 0); //changes animation state to Idle
+
+		if (dirFacing == -1)
+			GetComponent<Transform> ().localScale = new Vector3(-Mathf.Abs (GetComponent<Transform> ().localScale.x), GetComponent<Transform> ().localScale.y, GetComponent<Transform> ().localScale.z); //Makes the scale value negative
+		else
+			GetComponent<Transform> ().localScale = new Vector3(Mathf.Abs (GetComponent<Transform> ().localScale.x), GetComponent<Transform> ().localScale.y, GetComponent<Transform> ().localScale.z); //Makes the scale value positive
 
         // Jump function
         // Does not currently work; considering using Unity's built-in gravity and physics
