@@ -5,7 +5,6 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
 
-    public GameObject player;
 	public GameObject feetColl; //Collider that will be at the player's feet
 
 
@@ -33,7 +32,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(-horiMoveSpeed, Vector2.left))
-            	player.GetComponent<Transform>().Translate(-horiMoveSpeed);
+            	GetComponent<Transform>().Translate(-horiMoveSpeed);
 
 			dirFacing = -1; //Facing Left
 			anim.SetInteger("State", 1); //Changes animation state to Walking
@@ -44,7 +43,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(horiMoveSpeed, Vector2.right))
-            	player.GetComponent<Transform>().Translate(horiMoveSpeed);
+            	GetComponent<Transform>().Translate(horiMoveSpeed);
 
 			dirFacing = 1; //Facing Right
 			anim.SetInteger("State", 1); //Changes animation state to Walking
@@ -54,7 +53,7 @@ public class playerMovement : MonoBehaviour
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && jumpState == false)
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(vertMoveSpeed,Vector2.up))
-            	player.GetComponent<Transform>().Translate(vertMoveSpeed);
+            	GetComponent<Transform>().Translate(vertMoveSpeed);
 
 			anim.SetInteger("State", 1); //Changes animation state to Walking
         }
@@ -63,15 +62,17 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && jumpState == false)
         {
 			if(feetColl.GetComponent<FeetCollision>().canMove(-vertMoveSpeed,Vector2.down))
-            	player.GetComponent<Transform>().Translate(-vertMoveSpeed);
+            	GetComponent<Transform>().Translate(-vertMoveSpeed);
 
 			anim.SetInteger("State", 1); //Changes animation state to Walking
         }
 
+		//Handles idle animation
 		if (!Input.GetKey (KeyCode.W) && !Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.S) && !Input.GetKey (KeyCode.DownArrow)
 		   && !Input.GetKey (KeyCode.D) && !Input.GetKey (KeyCode.RightArrow) && !Input.GetKey (KeyCode.A) && !Input.GetKey (KeyCode.LeftArrow))
 				anim.SetInteger ("State", 0); //changes animation state to Idle
-
+		
+		//Direction facing calculation
 		if (dirFacing == -1)
 			GetComponent<Transform> ().localScale = new Vector3(-Mathf.Abs (GetComponent<Transform> ().localScale.x), GetComponent<Transform> ().localScale.y, GetComponent<Transform> ().localScale.z); //Makes the scale value negative
 		else
