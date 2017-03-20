@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2039257056}
   Margin: {x: 1, y: 1}
-  Smoothing: {x: 0.5, y: 0.5}
+  Smoothing: {x: 0.7, y: 0.7}
   Bounds: {fileID: 510336771}
   Ground: {fileID: 1280604325}
 --- !u!1 &627094538
