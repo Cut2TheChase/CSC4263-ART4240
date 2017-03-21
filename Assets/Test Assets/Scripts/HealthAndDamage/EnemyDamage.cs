@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public int damage = 5;
+    public float damage = 5;
     GameObject player;
     PlayerHealth playerHealth;
 
@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
 	}
-	void OnTriggerEnter (Collider other)
+	void OnTriggerEnter2D (Collider2D other)
     {
         if(other.gameObject == player)
         {
