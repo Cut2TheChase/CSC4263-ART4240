@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour {
+public class EnemyDamage : MonoBehaviour
+{
+    public int damage = 5;
+    GameObject player;
+    PlayerHealth playerHealth;
 
-	// Use this for initialization
-	void Start () {
-		
+    void Awake ()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void OnTriggerEnter (Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            if(playerHealth.currentHealth > 0)
+            {
+                playerHealth.TakeDamage(damage);
+            }
+        }
+    }
 }

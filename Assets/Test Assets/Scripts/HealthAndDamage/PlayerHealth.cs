@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealth : MonoBehaviour
+{
+    public int startHealth = 100;
+    public int currentHealth;
+    public Slider healthSlider;
+    bool damaged;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Awake ()
+    {
+        currentHealth = startHealth;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void TakeDamage (int amount)
+    {
+        damaged = true;
+        currentHealth -= amount;
+    }
 }
