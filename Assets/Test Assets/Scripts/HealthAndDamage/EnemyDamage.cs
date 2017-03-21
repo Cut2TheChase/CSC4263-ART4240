@@ -13,11 +13,9 @@ public class EnemyDamage : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
 	}
-<<<<<<< HEAD
+
 	void OnTriggerEnter2D (Collider2D other)
-=======
-	void OnCollision ( Collider other)
->>>>>>> michael_marchese
+
     {
         if(other.gameObject == player)
         {
