@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class camF : MonoBehaviour 
-{
+{   
 	public Transform Player;
 
 	public Vector2 
@@ -22,6 +22,8 @@ public class camF : MonoBehaviour
 
 	public bool isFollowing { get; set; }
 
+	Vector3 offset;
+
 	public void Start()
 	{
 		_min = Bounds.bounds.min;
@@ -29,6 +31,7 @@ public class camF : MonoBehaviour
 		_minY = Ground.bounds.min;
 		_maxY = Ground.bounds.max;
 		isFollowing = true;
+
 	}
 
 	public void Update()
