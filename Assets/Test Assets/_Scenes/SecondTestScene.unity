@@ -138,6 +138,70 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60907fd3060d6a74a8dbdd215bfa5987, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &192712747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 192712749}
+  - component: {fileID: 192712748}
+  m_Layer: 0
+  m_Name: willowOpenHappy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &192712748
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192712747}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c4681482a8506b24da2717f079864eaa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &192712749
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192712747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.71, y: 2.65, z: 0}
+  m_LocalScale: {x: 1.6734113, y: 1.6734113, z: 1.6734113}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740587693
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +349,11 @@ Prefab:
       propertyPath: Ground
       value: 
       objectReference: {fileID: 740587694}
+    - target: {fileID: 20841103314365180, guid: d0255d931dfe41140a364a0b74fe9f10,
+        type: 2}
+      propertyPath: orthographic size
+      value: 7.7544155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
   m_IsPrefabParent: 0
@@ -346,8 +415,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1776463894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7, y: 0.02, z: 0}
-  m_LocalScale: {x: 1.6008844, y: 0.94053155, z: 1}
+  m_LocalPosition: {x: 6.7, y: 2.48, z: 0}
+  m_LocalScale: {x: 1.6008844, y: 1.3970101, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -379,9 +448,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0018855379, y: 2.277137}
+  m_Offset: {x: -0.0018855379, y: 4.0103045}
   serializedVersion: 2
-  m_Size: {x: 1.0087996, y: 13.254305}
+  m_Size: {x: 1.0087996, y: 16.72064}
 --- !u!4 &1811594045
 Transform:
   m_ObjectHideFlags: 0
