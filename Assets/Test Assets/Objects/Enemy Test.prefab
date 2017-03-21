@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4551090257016762}
   - component: {fileID: 212710952778565704}
   - component: {fileID: 114142903556845672}
+  - component: {fileID: 114418773599718768}
   m_Layer: 0
   m_Name: Enemy Test
   m_TagString: Untagged
@@ -52,6 +53,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114418773599718768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771238734256972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847b92b69d93e4d41ba37a64b0d67414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!212 &212710952778565704
 SpriteRenderer:
   m_ObjectHideFlags: 1

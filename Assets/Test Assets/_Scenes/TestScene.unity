@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597952096}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: HealthAndConfidenceUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1249,6 +1249,7 @@ GameObject:
   - component: {fileID: 2039257054}
   - component: {fileID: 2039257057}
   - component: {fileID: 2039257058}
+  - component: {fileID: 2039257059}
   m_Layer: 0
   m_Name: Anim Test Char
   m_TagString: Player
@@ -1344,6 +1345,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2039257059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039257053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c700a4e786e86584ca778d8bee57f186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 1642761553}
 --- !u!1 &2067544330
 GameObject:
   m_ObjectHideFlags: 0
