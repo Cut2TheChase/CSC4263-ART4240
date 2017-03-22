@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 510336772}
   - component: {fileID: 510336771}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: Camera Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 541254635}
   - component: {fileID: 541254634}
   - component: {fileID: 541254639}
+  - component: {fileID: 541254640}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -306,6 +307,19 @@ MonoBehaviour:
   Smoothing: {x: 0.7, y: 0.7}
   Bounds: {fileID: 510336771}
   Ground: {fileID: 1280604325}
+--- !u!114 &541254640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541254633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1444e72b63c88947a24915ef851b39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1937140647523686, guid: 1505d940c58e503429316d3edfb3e058,
+    type: 2}
 --- !u!1 &627094538
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +753,11 @@ Prefab:
     - target: {fileID: 4474963470432912, guid: 5dd9f42d967c1e345b99ce47f956ff17, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 212748390748916392, guid: 5dd9f42d967c1e345b99ce47f956ff17,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dd9f42d967c1e345b99ce47f956ff17, type: 2}
