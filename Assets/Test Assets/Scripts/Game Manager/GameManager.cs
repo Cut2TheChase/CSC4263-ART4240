@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	MonoBehaviour[] comps;
 
 	// Use this for initialization
-	string state = "transition";
+	string state = "transitionIn";
 	void Awake () {
 
 		//if there is no other instance, this is the instance
@@ -23,20 +23,26 @@ public class GameManager : MonoBehaviour {
 		comps = GetComponents<MonoBehaviour> ();
 	}
 
-	void changeState(string newState)
+	public void changeState(string newState)
 	{
 		state = newState;
 
 		foreach (MonoBehaviour c in comps) {
-			if (c != this && c != GetComponent<LoadScene>())
+			if (c != this)
 				c.enabled = false;
 		}
 
-		if (state == "transition") {
-			GetComponent<TransitionState>().enabled = true;
+		GetComponent<LoadScene> ().enabled = true;
 
-		} else if (state == "play") {
+		if (state == "transitionIn") {
+			GetComponent<TransitionInState>().enabled = true;
+
+		} else if (state == "transitionOut") {
+			GetComponent<TransitionOutState>().enabled = true;
 			
+		} else if (state == "play") {
+			GetComponent<PlayState>().enabled = true;
+
 		}
 
 	}

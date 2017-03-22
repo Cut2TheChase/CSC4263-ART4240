@@ -21,5 +21,6 @@ public class LoadScene : MonoBehaviour {
 
 	public void Load(string name){
 		SceneManager.LoadScene (name, LoadSceneMode.Single);
+		GameManager.instance.changeState ("TransitionInState");
 	}
 }
