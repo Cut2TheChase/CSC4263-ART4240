@@ -34,9 +34,6 @@ public class GameManager : MonoBehaviour {
 				c.enabled = false;
 		}
 
-		//Also turn on LoadScene so that scenes can be loaded
-		GetComponent<LoadScene> ().enabled = true;
-
 		if (state == "transitionIn") {
 			GetComponent<TransitionInState>().enabled = true;
 

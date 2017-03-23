@@ -7,7 +7,7 @@ public class PlayState : MonoBehaviour {
 	private GameObject player;
 	private GameObject feetColl;
 
-	void Start () {
+	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		feetColl = GameObject.FindGameObjectWithTag ("Feet Collider");
 
