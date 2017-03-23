@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - GUI
+  - Fader
+  - State Changer
+  - Feet Collider
   layers:
   - Default
   - TransparentFX
