@@ -10,17 +10,24 @@ public class FadeOut : MonoBehaviour {
 	float durationOut = 1f;
 	private float startTime;
 
+	bool canDeactivate;
 
 	void OnEnable () {
 		fader = GameObject.FindGameObjectWithTag ("Fader").GetComponent<SpriteRenderer>();
 		startTime = Time.time;
+		canDeactivate = true;
 	}
 		
 	void Update () {
 		//Used to smoothly transition out of the scene using time
+		fader = GameObject.FindGameObjectWithTag ("Fader").GetComponent<SpriteRenderer>(); //Gotta put this here because when I change levels...ugh
 		t = (Time.time - startTime) / durationOut;
 		fader.color = new Color(0f,0f,0f,Mathf.SmoothStep(minimum,maximum,t));
-		StartCoroutine ("Fading");
+
+		if (fader.color == new Color (0f, 0f, 0f, maximum) && canDeactivate == true) {
+			canDeactivate = false;
+			StartCoroutine ("Fading");
+		}
 
 	}
 
@@ -29,7 +36,7 @@ public class FadeOut : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(3);	
 		SceneLoader.instance.LoadScene (2);
-		this.enabled = false;
 		GameManager.instance.changeState ("transitionIn");
+		this.enabled = false;
 	}
 }

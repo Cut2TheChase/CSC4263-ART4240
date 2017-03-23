@@ -9,13 +9,11 @@ public class TransitionOutState : MonoBehaviour {
 
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 
 		//Turn off player-controlled movement
 		player.GetComponent<playerMovement> ().enabled = false;
-		Debug.Log (player);
 		//Begin Fading In
-		mainCamera.GetComponent<FadeOut> ().enabled = true;
+		GetComponent<FadeOut> ().enabled = true;
 	}
 		
 	void Update () {
