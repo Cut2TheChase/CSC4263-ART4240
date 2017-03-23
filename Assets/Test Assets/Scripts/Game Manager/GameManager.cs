@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	MonoBehaviour[] comps;
 
-	// Use this for initialization
 	string state = "transitionIn";
 	void Awake () {
 
@@ -20,18 +19,22 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 
+		//Grabs all the scripts associated with this object
 		comps = GetComponents<MonoBehaviour> ();
 	}
 
+	//Called in order to change the state
 	public void changeState(string newState)
 	{
 		state = newState;
 
+		//Turn off every other script except this one
 		foreach (MonoBehaviour c in comps) {
 			if (c != this)
 				c.enabled = false;
 		}
 
+		//Also turn on LoadScene so that scenes can be loaded
 		GetComponent<LoadScene> ().enabled = true;
 
 		if (state == "transitionIn") {
@@ -47,9 +50,4 @@ public class GameManager : MonoBehaviour {
 
 	}
 		
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

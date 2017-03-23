@@ -8,13 +8,11 @@ public class LoadScene : MonoBehaviour {
 	private AssetBundle myLoadedAssetBundle;
 	private string[] scenePaths;
 		
-	// Use this for initialization
 	void Awake () {
 		myLoadedAssetBundle = AssetBundle.LoadFromFile ("Assets/Test Assets/_Scenes");
 		scenePaths = myLoadedAssetBundle.GetAllScenePaths ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}

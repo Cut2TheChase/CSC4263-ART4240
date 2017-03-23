@@ -7,16 +7,18 @@ public class TransitionInState : MonoBehaviour {
 	private GameObject player;
 	private GameObject mainCamera;
 
-	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
+
+	    //Turn off player-controlled movement
 		player.GetComponent<playerMovement> ().enabled = false;
+		//Begin Fading In
 		mainCamera.GetComponent<FadeIn> ().enabled = true;
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
+		//Tells the player to move forward until the script is turned off
 		player.GetComponent<Transform> ().Translate (new Vector3(0.06f, 0, 0));
 		player.GetComponent<Animator> ().SetInteger ("State", 1);
 

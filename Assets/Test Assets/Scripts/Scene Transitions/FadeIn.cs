@@ -11,22 +11,21 @@ public class FadeIn : MonoBehaviour {
 	private float startTime;
 
 
-	private IEnumerator coroutine;
-
-	// Use this for initialization
 	void Start () {
 		fader = GameObject.FindGameObjectWithTag ("Fader").GetComponent<SpriteRenderer>();
 		startTime = Time.time;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
+
+		    //Used to smoothly transition into the scene using time
 			t = (Time.time - startTime) / durationIn;
 			fader.color = new Color(0f,0f,0f,Mathf.SmoothStep(maximum,minimum,t));
 			StartCoroutine ("Fading");
 
 	}
 
+	//Says how long to wait until turning off the script
 	IEnumerator Fading()
 	{
 		yield return new WaitForSeconds(5);	
