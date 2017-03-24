@@ -16,7 +16,6 @@ public class FadeIn : MonoBehaviour {
 		fader = GameObject.FindGameObjectWithTag ("Fader").GetComponent<SpriteRenderer>();
 		startTime = Time.time;
 		canDeactivate = true;
-		Debug.Log (canDeactivate + " Yes");
 	}
 
 	void Update () {
@@ -34,7 +33,6 @@ public class FadeIn : MonoBehaviour {
 	IEnumerator Fading()
 	{
 		yield return new WaitForSeconds(5);	
-		Debug.Log ("Whoa Nelly");
 		this.enabled = false;
 	}
 }

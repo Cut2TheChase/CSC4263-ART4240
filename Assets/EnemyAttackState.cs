@@ -12,6 +12,7 @@ public class EnemyAttackState : MonoBehaviour {
 
 	int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
 
+
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
@@ -42,7 +43,8 @@ public class EnemyAttackState : MonoBehaviour {
 
 		//If the enemy is not close enough to attack
 		if (disFromPlayer > attackDis) {
-			transform.position = Vector2.MoveTowards (transform.position, player.transform.position, speed);
+			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed);
 		} 
 	}
+		
 }
