@@ -1532,6 +1532,15 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 10.32961
       objectReference: {fileID: 0}
+    - target: {fileID: 1458614220043534, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212007803008216346, guid: d0255d931dfe41140a364a0b74fe9f10,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114064749607153724, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
     - {fileID: 114515172558927816, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
