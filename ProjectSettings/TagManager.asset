@@ -8,6 +8,7 @@ TagManager:
   - Fader
   - State Changer
   - Feet Collider
+  - Enemy
   layers:
   - Default
   - TransparentFX
