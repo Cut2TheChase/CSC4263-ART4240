@@ -11,6 +11,9 @@ public class playerMovement : MonoBehaviour
 	int dirFacing; //Direction character is facing, 1 = right, -1 = left
     public bool jumpState;
 
+	bool canMoveX = true;
+	bool canMoveY = true;
+
 	Animator anim; //Controls character animations
     CharacterController controller;
 
@@ -34,51 +37,59 @@ public class playerMovement : MonoBehaviour
         // Move Left
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-			//if(feetColl.GetComponent<FeetCollision>().canMove(-horiMoveSpeed, Vector2.left))
-            //	GetComponent<Transform>().Translate(new Vector3(-horiMoveSpeed,0,0));
-            moveDirection.x = -horiMoveSpeed;
-			dirFacing = -1; //Facing Left
-            anim.SetInteger("State", 1);
+			if (feetColl.GetComponent<FeetCollision> ().canMove (-horiMoveSpeed, Vector2.left)) {
+				moveDirection.x = -horiMoveSpeed;
+				dirFacing = -1; //Facing Left
+				anim.SetInteger ("State", 1);
+				canMoveX = true;
+			} else
+				canMoveX = false;
         }
 
         // Move right
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            //if(feetColl.GetComponent<FeetCollision>().canMove(horiMoveSpeed, Vector2.right))
-            //	GetComponent<Transform>().Translate(new Vector3(horiMoveSpeed,0,0));
-            moveDirection.x = horiMoveSpeed;
-            dirFacing = 1; //Facing Right
-            anim.SetInteger("State", 1);
+			if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
+				moveDirection.x = horiMoveSpeed;
+				dirFacing = 1; //Facing Right
+				anim.SetInteger ("State", 1);
+				canMoveX = true;
+			} else
+				canMoveX = false;
         }
 
         // No horizontal movement
-        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow))
+		if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow)) || canMoveX == false)
             moveDirection.x = 0;
 
         // Move "up" i.e. toward background
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && jumpState == false)
         {
-            //if(feetColl.GetComponent<FeetCollision>().canMove(vertMoveSpeed,Vector2.up))
-            //	GetComponent<Transform>().Translate(new Vector3(0,vertMoveSpeed,0));
-            moveDirection.y = vertMoveSpeed;
-            if (jumpState == true)
-                landingPos += vertMoveSpeed;
-            anim.SetInteger("State", 1);
+			if (feetColl.GetComponent<FeetCollision> ().canMove (vertMoveSpeed, Vector2.up)) {
+				moveDirection.y = vertMoveSpeed;
+				if (jumpState == true)
+					landingPos += vertMoveSpeed;
+				anim.SetInteger ("State", 1);
+				canMoveY = true;
+			} else
+				canMoveY = false;
         }
 
         // Move "down" i.e. toward foreground
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && jumpState == false)
         {
-            //if(feetColl.GetComponent<FeetCollision>().canMove(-vertMoveSpeed,Vector2.down))
-            //	GetComponent<Transform>().Translate(0,-vertMoveSpeed,0);
-            moveDirection.y = -vertMoveSpeed;
-            if (jumpState == true)
-                landingPos += -vertMoveSpeed;
-            anim.SetInteger("State", 1);
+			if (feetColl.GetComponent<FeetCollision> ().canMove (-vertMoveSpeed, Vector2.down)) {
+				moveDirection.y = -vertMoveSpeed;
+				if (jumpState == true)
+					landingPos += -vertMoveSpeed;
+				anim.SetInteger ("State", 1);
+				canMoveY = true;
+			} else
+				canMoveY = false;
         }
 
         // No vertical movement
-        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false)
+		if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false) || canMoveY == false)
             moveDirection.y = 0;
 
         // Idle animation
@@ -112,7 +123,7 @@ public class playerMovement : MonoBehaviour
     // Handles fall of jump
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.tag == "footCollider")
+        if (coll.gameObject.tag == "Feet Collider")
         {
             if (moveDirection.y > 0)
             {

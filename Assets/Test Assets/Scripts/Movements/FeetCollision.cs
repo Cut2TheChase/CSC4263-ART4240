@@ -14,11 +14,6 @@ public class FeetCollision : MonoBehaviour {
 	collides with something will return to its previous position and tell the
 	playerMovement script they cant move, otherwise it will give the script an
 	ok to move */
-    void Start()
-    {
-        gameObject.tag = "footCollider";
-    }
-
 	public bool canMove(Vector3 speed, Vector2 rayDir){
 		
 		float usedRayDist;
@@ -60,7 +55,10 @@ public class FeetCollision : MonoBehaviour {
             return false;
         else
         {
-            //gameObject.GetComponent<Transform>().Translate(speed);
+			if(usedRayDist == rayDistUp || usedRayDist == rayDistDown)
+				gameObject.GetComponent<Transform>().Translate(0,speed*Time.deltaTime,0);
+			else
+				gameObject.GetComponent<Transform>().Translate(speed*Time.deltaTime,0,0);
             return true;
         }
 

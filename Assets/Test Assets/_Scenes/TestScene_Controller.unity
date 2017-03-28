@@ -502,6 +502,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 212748390748916392, guid: 5dd9f42d967c1e345b99ce47f956ff17,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dd9f42d967c1e345b99ce47f956ff17, type: 2}
   m_IsPrefabParent: 0
@@ -846,6 +851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feetColl: {fileID: 1025094829}
+  moveDirection: {x: 0, y: 0, z: 0}
+  jumpState: 0
 --- !u!114 &2039257058
 MonoBehaviour:
   m_ObjectHideFlags: 0
