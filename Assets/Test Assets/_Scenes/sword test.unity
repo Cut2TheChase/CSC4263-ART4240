@@ -178,6 +178,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &558766760
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969960091811710, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_Name
+      value: blade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1850465291
 Prefab:
   m_ObjectHideFlags: 0
@@ -221,22 +267,6 @@ Prefab:
       propertyPath: m_Name
       value: sword (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1274543965612344, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
-      propertyPath: m_Name
-      value: Blade
-      objectReference: {fileID: 0}
-    - target: {fileID: 212081379301145964, guid: 252f602b58eba407e8baf3b415c49e57,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 31c683af5385d419189f7ff3df6a8b71,
-        type: 3}
-    - target: {fileID: 212130702156885538, guid: 252f602b58eba407e8baf3b415c49e57,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 31c683af5385d419189f7ff3df6a8b71,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
   m_IsPrefabParent: 0

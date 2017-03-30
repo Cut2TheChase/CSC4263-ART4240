@@ -4,33 +4,43 @@ using UnityEngine;
 
 public class sword : MonoBehaviour {
 
-	WheelJoint2D wheelJoints;
-	JointMotor2D jointMotor;
-	// Use this for initialization
+	public bool Left;
+	public bool Right;
+	public swing2 hilt;
+	public swing blade;
+
+
 	void Start () {
-		wheelJoints = gameObject.GetComponent<WheelJoint2D>();	
-		jointMotor = wheelJoints.motor;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)) 
 		{
-			jointMotor.motorSpeed = -500;
-
+			if (Right == true) {
+				blade.active = true;
+				hilt.active = true;
+			}
+			else if (Left == true) 
+			{
+				blade.active = false;
+				hilt.active = false;
+			}
 
 		} 
 		else if (Input.GetKey (KeyCode.LeftArrow)) 
 		{
-			jointMotor.motorSpeed = 1000;
-
+			if (Left == true) {
+				blade.active = true;
+				hilt.active = true;
+			} 
+			else if (Right == true) 
+			{
+				blade.active = false;
+				hilt.active = false;
+			}
 		}
-		else 
-		{
-			jointMotor.motorSpeed = 0;
 
-		}
-		wheelJoints.motor = jointMotor;
 	}
     
 }
