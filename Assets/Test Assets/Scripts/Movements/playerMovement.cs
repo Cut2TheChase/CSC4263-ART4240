@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
 {
 	public GameObject feetColl; //Collider that will be at the player's feet
 
+
     public Vector3 moveDirection;
     float horiMoveSpeed, vertMoveSpeed, jumpSpeed, gravity, vertPos, landingPos;
 	int dirFacing; //Direction character is facing, 1 = right, -1 = left
@@ -13,6 +14,8 @@ public class playerMovement : MonoBehaviour
 
 	bool canMoveX = true;
 	bool canMoveY = true;
+	public swing right;
+	public swing left;
 
 	Animator anim; //Controls character animations
     CharacterController controller;
@@ -47,7 +50,7 @@ public class playerMovement : MonoBehaviour
         }
 
         // Move right
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
 			if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
 				moveDirection.x = horiMoveSpeed;
@@ -76,7 +79,7 @@ public class playerMovement : MonoBehaviour
         }
 
         // Move "down" i.e. toward foreground
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && jumpState == false)
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && jumpState == false)
         {
 			if (feetColl.GetComponent<FeetCollision> ().canMove (-vertMoveSpeed, Vector2.down)) {
 				moveDirection.y = -vertMoveSpeed;

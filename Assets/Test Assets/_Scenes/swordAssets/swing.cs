@@ -9,7 +9,7 @@ public class swing : MonoBehaviour {
 	public float retSpeed;
 	HingeJoint2D hinge;
 	JointMotor2D jointMotor;
-	private bool swung = false;
+	public bool swung = false;
 	public float swingDelay;
 	public bool active;
 

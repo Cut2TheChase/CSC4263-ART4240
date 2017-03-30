@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 50434022496959174}
   - component: {fileID: 233823740410665934}
   - component: {fileID: 114269182744636938}
-  m_Layer: 0
-  m_Name: wheel (1)
+  m_Layer: 9
+  m_Name: wheel (R)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,8 +41,9 @@ GameObject:
   - component: {fileID: 212130702156885538}
   - component: {fileID: 50196106534623304}
   - component: {fileID: 61851347100819278}
-  m_Layer: 0
-  m_Name: Blade
+  - component: {fileID: 232827096271891896}
+  m_Layer: 9
+  m_Name: RBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +62,7 @@ GameObject:
   - component: {fileID: 234793734453964232}
   - component: {fileID: 114137659853136868}
   - component: {fileID: 114594605001374464}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: stick(right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,9 +75,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939463634589632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.01, y: -2.72, z: 0}
-  m_LocalScale: {x: 1, y: 0.75, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.32999992, y: 0.48000002, z: 0}
+  m_LocalScale: {x: 0.333, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4246517197601806}
   m_Father: {fileID: 0}
@@ -178,7 +179,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -214,6 +215,7 @@ MonoBehaviour:
   swingTime: 0.5
   swingSpeed: 1500
   retSpeed: -2000
+  swung: 0
   swingDelay: 0
   active: 0
 --- !u!114 &114594605001374464
@@ -336,6 +338,24 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!232 &232827096271891896
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274543965612344}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 50434022496959174}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0.1527684, y: -0.25082183}
+  m_ConnectedAnchor: {x: 0.033699766, y: 0.009074521}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.005
+  m_MaxDistanceOnly: 1
 --- !u!233 &233823740410665934
 HingeJoint2D:
   m_ObjectHideFlags: 1
@@ -350,7 +370,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.11871871, y: -0.26163742}
+  m_ConnectedAnchor: {x: 0.11988757, y: -0.26163745}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -383,4 +403,4 @@ SliderJoint2D:
   m_UseLimits: 1
   m_TranslationLimits:
     m_LowerTranslation: 0
-    m_UpperTranslation: 2
+    m_UpperTranslation: 1
