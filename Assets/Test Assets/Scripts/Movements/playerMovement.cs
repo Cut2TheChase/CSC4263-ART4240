@@ -128,7 +128,7 @@ public class playerMovement : MonoBehaviour
     {
         if (coll.gameObject.tag == "Feet Collider")
         {
-            if (moveDirection.y > 0)
+            if (moveDirection.y < 0)
             {
                 moveDirection.y = 0;
                 if (jumpState == true)
