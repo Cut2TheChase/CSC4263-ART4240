@@ -32,6 +32,7 @@ public class playerMovement : MonoBehaviour
         dirFacing = 1;
 		anim = GetComponent<Animator>();    // State = 1 is walking
         controller = GetComponent<CharacterController>();
+		feetColl = GameObject.FindGameObjectWithTag ("Feet Collider");
 
     }
 
@@ -117,12 +118,20 @@ public class playerMovement : MonoBehaviour
         {
             moveDirection.y -= gravity * Time.deltaTime;
             gravity += 0.5f;
+
+			if(transform.position.y < feetColl.transform.position.y + 0.6f){
+				moveDirection.y = 0;
+				jumpState = false;
+				gravity = 12.0f;
+				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y + 0.6f, transform.position.z);
+			}
         }
 
         // Apply all movements based on collective key input
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+	/*
     // Handles fall of jump
     void OnTriggerEnter(Collider coll)
     {
@@ -139,5 +148,6 @@ public class playerMovement : MonoBehaviour
             }
         }
     }
+	*/
 		
 }
