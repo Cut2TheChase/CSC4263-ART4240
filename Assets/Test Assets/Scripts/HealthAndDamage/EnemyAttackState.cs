@@ -10,6 +10,9 @@ public class EnemyAttackState : MonoBehaviour {
 	public float speed;
 	public float attackDis; //attack distance
 
+	private float nextAttack = 0; //time next attack can happen
+	public float attackRate; //Rate the enemy can attack, in seconds
+
 	int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
 
 
@@ -44,7 +47,10 @@ public class EnemyAttackState : MonoBehaviour {
 		//If the enemy is not close enough to attack
 		if (disFromPlayer > attackDis) {
 			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed);
-		} 
+		} else if(Time.time > nextAttack) { //If enough time has passed for the next attack to happen and the enemy is close enough to the player
+			nextAttack = Time.time + attackRate;
+			GetComponent<EnemyDamage> ().causeDamage ();
+		}
 	}
 		
 }

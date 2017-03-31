@@ -16,15 +16,10 @@ public class EnemyDamage : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
-
-    {
-        if(other.gameObject == pCollider)
-        {
-            if(playerHealth.currentHealth > 0)
-            {
-                playerHealth.TakeDamage(damage);
-            }
-        }
-    }
+	public void causeDamage(){
+		if(playerHealth.currentHealth > 0)
+		{
+			playerHealth.TakeDamage(damage);
+		}
+	}
 }
