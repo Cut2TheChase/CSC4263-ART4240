@@ -11,13 +11,9 @@ public class ChildCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		transform.position = GameObject.FindGameObjectWithTag ("Player").transform.position;
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
-	{
-		Debug.Log ("Hey now, you're a rockstar");
-		this.GetComponent<Collider2D> ().attachedRigidbody.SendMessage ("OnTriggerEnter2D", other);
-	}
+
 
 }

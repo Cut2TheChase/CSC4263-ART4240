@@ -9,6 +9,7 @@ TagManager:
   - State Changer
   - Feet Collider
   - Enemy
+  - Player Collider
   layers:
   - Default
   - TransparentFX
