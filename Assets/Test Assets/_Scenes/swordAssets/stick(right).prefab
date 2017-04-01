@@ -89,8 +89,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245070161174206}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44, y: 0.01380766, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.000019610472, w: 1}
+  m_LocalPosition: {x: -0.01506691, y: 0.013807297, z: 0}
   m_LocalScale: {x: 0.95, y: 1.4, z: 1}
   m_Children:
   - {fileID: 4445158303371898}
@@ -103,8 +103,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274543965612344}
-  m_LocalRotation: {x: -0, y: -0, z: -0.46864772, w: 0.88338524}
-  m_LocalPosition: {x: 0.65, y: 0.44, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9993773, w: 0.03528597}
+  m_LocalPosition: {x: 0.12743093, y: -0.7044376, z: 0}
   m_LocalScale: {x: 0.3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4246517197601806}
@@ -216,7 +216,7 @@ MonoBehaviour:
   swingSpeed: 1500
   retSpeed: -2000
   swung: 0
-  swingDelay: 0
+  swingDelay: 0.7
   active: 0
 --- !u!114 &114594605001374464
 MonoBehaviour:
@@ -371,9 +371,9 @@ HingeJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0.11988757, y: -0.26163745}
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 0
+    m_MotorSpeed: -2000
     m_MaximumMotorForce: 1000
   m_UseLimits: 1
   m_AngleLimits:
@@ -396,9 +396,9 @@ SliderJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureAngle: 0
   m_Angle: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 0
+    m_MotorSpeed: -2000
     m_MaximumMotorForce: 1000
   m_UseLimits: 1
   m_TranslationLimits:
