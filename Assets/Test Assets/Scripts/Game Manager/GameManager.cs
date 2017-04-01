@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that manages transitions in game state.
+///Author -- Chase Bernard
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
