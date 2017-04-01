@@ -12,7 +12,7 @@ public class TransitionOutState : MonoBehaviour {
 
 		//Turn off player-controlled movement
 		player.GetComponent<playerMovement> ().enabled = false;
-		//Begin Fading In
+		//Begin Fading Out
 		GetComponent<FadeOut> ().enabled = true;
 	}
 		

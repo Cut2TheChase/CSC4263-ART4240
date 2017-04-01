@@ -35,14 +35,16 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (state == "transitionIn") {
-			GetComponent<TransitionInState>().enabled = true;
+			GetComponent<TransitionInState> ().enabled = true;
 
 		} else if (state == "transitionOut") {
-			GetComponent<TransitionOutState>().enabled = true;
+			GetComponent<TransitionOutState> ().enabled = true;
 			
 		} else if (state == "play") {
-			GetComponent<PlayState>().enabled = true;
+			GetComponent<PlayState> ().enabled = true;
 
+		} else if (state == "death") {
+			GetComponent<DeathState> ().enabled = true;
 		}
 
 	}

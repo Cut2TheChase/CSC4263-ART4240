@@ -5,10 +5,15 @@ using UnityEngine;
 public class StateChangeBehaviour : MonoBehaviour {
 
 	public string state; //The state that the trigger is activating to change to
+	public int sceneChange = -1; //if there is a scene change, say what scene should be changed to
 	public bool destroyOnTrigger; //Should this be destroyed when triggered?
 
 	void OnTriggerEnter2D(){
 		GameManager.instance.changeState (state);
+
+		if (sceneChange != -1) {
+			GameManager.instance.GetComponent<FadeOut> ().setTransitionScene (sceneChange);
+		}
 
 		if (destroyOnTrigger == true)
 			DestroyObject (this);

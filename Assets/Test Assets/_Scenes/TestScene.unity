@@ -265,6 +265,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 114596916005212250, guid: c97662455e460064aadc042ba49e7514,
+        type: 2}
+      propertyPath: sceneChange
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c97662455e460064aadc042ba49e7514, type: 2}
   m_IsPrefabParent: 0
@@ -783,6 +788,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224752198370847480, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -885,6 +895,50 @@ Prefab:
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_MinValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085402465514714, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

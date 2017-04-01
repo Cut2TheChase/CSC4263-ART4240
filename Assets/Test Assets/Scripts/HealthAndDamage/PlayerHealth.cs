@@ -22,5 +22,9 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         healthSlider.value -= amount;
         currentHealth -= amount;
+
+		if (currentHealth == 0) {
+			GameManager.instance.changeState ("death");
+		}
     }
 }

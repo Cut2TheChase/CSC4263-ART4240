@@ -10,6 +10,8 @@ public class FadeOut : MonoBehaviour {
 	float durationOut = 1f;
 	private float startTime;
 
+	private int sceneIndex;
+
 	bool canDeactivate;
 
 	void OnEnable () {
@@ -31,12 +33,20 @@ public class FadeOut : MonoBehaviour {
 
 	}
 
+	//Sets the scene to transition to once the fade is over
+	public void setTransitionScene(int scene){
+		sceneIndex = scene;
+
+	}
+
 	//Says how long to wait until turning off the script
 	IEnumerator Fading()
 	{
 		yield return new WaitForSeconds(3);	
-		SceneLoader.instance.LoadScene (2);
-		GameManager.instance.changeState ("transitionIn");
+		SceneLoader.instance.LoadScene (sceneIndex);
+		if (sceneIndex != 3) {
+			GameManager.instance.changeState ("transitionIn");
+		}
 		this.enabled = false;
 	}
 }

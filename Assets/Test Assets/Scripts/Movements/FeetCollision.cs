@@ -50,7 +50,6 @@ public class FeetCollision : MonoBehaviour {
 
         //If collider is touching any collider in the layer 'Ground Collision', will return false
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, usedRayDist, LayerMask.GetMask("GroundCollision"));
-        Debug.Log(hit.collider);
         if (hit.collider != null)
             return false;
         else
