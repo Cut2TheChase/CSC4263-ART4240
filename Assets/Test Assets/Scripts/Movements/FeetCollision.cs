@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that manages the collider of the player in a 2.5d world.
+///Author -- Chase Bernard, Jonathan Nguyen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

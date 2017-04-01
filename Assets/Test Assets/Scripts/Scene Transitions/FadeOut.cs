@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that fades the screen as the game transitions to another scene.
+///Author -- Chase Bernard, Michael Marchese
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
