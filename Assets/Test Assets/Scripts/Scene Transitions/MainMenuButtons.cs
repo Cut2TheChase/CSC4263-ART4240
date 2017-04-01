@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that handles the functionality of GUI buttons that transition
+///from the Main Menu Scene to the play scene and exit the game.
+///Author -- Mitchell Aucoin, Chase Bernard
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +33,7 @@ public class MainMenuButtons : MonoBehaviour
     public void TaskOnClick()
     {
         SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
+		SceneManager.sceneLoaded += OnSceneLoaded; //Once scene is loaded, do this function
     }
     public void TaskOnClick1()
     {
@@ -35,4 +43,11 @@ public class MainMenuButtons : MonoBehaviour
     {
         Application.Quit();
     }
+
+	private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+	{
+		GameManager.instance.changeState ("transitionIn");
+		SceneManager.sceneLoaded -= OnSceneLoaded; //Keeps the changeState from automatically being transitionIn after you die more than once
+		//Still dont quite understand this thing^
+	}
 }

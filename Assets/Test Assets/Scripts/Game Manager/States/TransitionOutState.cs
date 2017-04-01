@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code for handling transitioning out of a scene.
+///Author -- Chase Bernard
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +18,7 @@ public class TransitionOutState : MonoBehaviour {
 
 		//Turn off player-controlled movement
 		player.GetComponent<playerMovement> ().enabled = false;
-		//Begin Fading In
+		//Begin Fading Out
 		GetComponent<FadeOut> ().enabled = true;
 	}
 		

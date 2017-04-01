@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that fades the screen as the game transitions to another scene.
+///Author -- Chase Bernard, Michael Marchese
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +15,8 @@ public class FadeOut : MonoBehaviour {
 	float maximum = 1f;
 	float durationOut = 1f;
 	private float startTime;
+
+	private int sceneIndex;
 
 	bool canDeactivate;
 
@@ -31,12 +39,20 @@ public class FadeOut : MonoBehaviour {
 
 	}
 
+	//Sets the scene to transition to once the fade is over
+	public void setTransitionScene(int scene){
+		sceneIndex = scene;
+
+	}
+
 	//Says how long to wait until turning off the script
 	IEnumerator Fading()
 	{
 		yield return new WaitForSeconds(3);	
-		SceneLoader.instance.LoadScene (2);
-		GameManager.instance.changeState ("transitionIn");
+		SceneLoader.instance.LoadScene (sceneIndex);
+		if (sceneIndex != 3) {
+			GameManager.instance.changeState ("transitionIn");
+		}
 		this.enabled = false;
 	}
 }

@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Uptown Pigeon Gaming
+///Project Fuge
+///CSC4263-ART4240
+///Dr. Robert Kooima
+///Code Description -- A code that manages the collider of the player in a 2.5d world.
+///Author -- Chase Bernard, Jonathan Nguyen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +56,6 @@ public class FeetCollision : MonoBehaviour {
 
         //If collider is touching any collider in the layer 'Ground Collision', will return false
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDir, usedRayDist, LayerMask.GetMask("GroundCollision"));
-        Debug.Log(hit.collider);
         if (hit.collider != null)
             return false;
         else
