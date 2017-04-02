@@ -80,9 +80,7 @@ public class playerMovement : MonoBehaviour
 				if (jumpState == true)
 					landingPos += vertMoveSpeed;
 				anim.SetInteger ("State", 1);
-				canMoveY = true;
-			} else
-				canMoveY = false;
+			}
         }
 
         // Move "down" i.e. toward foreground
@@ -93,13 +91,11 @@ public class playerMovement : MonoBehaviour
 				if (jumpState == true)
 					landingPos += -vertMoveSpeed;
 				anim.SetInteger ("State", 1);
-				canMoveY = true;
-			} else
-				canMoveY = false;
+			} 
         }
 
         // No vertical movement
-		if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false) || canMoveY == false)
+		if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false))
             moveDirection.y = 0;
 
         // Idle animation
