@@ -15,7 +15,7 @@ public class sword : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.RightArrow)) 
+		if (Input.GetKey (KeyCode.RightArrow || KeyCode.D)) 
 		{
 			if (Right == true) {
 				blade.active = true;
@@ -28,7 +28,7 @@ public class sword : MonoBehaviour {
 			}
 
 		} 
-		else if (Input.GetKey (KeyCode.LeftArrow)) 
+		else if (Input.GetKey (KeyCode.LeftArrow || KeyCode.A)) 
 		{
 			if (Left == true) {
 				blade.active = true;
