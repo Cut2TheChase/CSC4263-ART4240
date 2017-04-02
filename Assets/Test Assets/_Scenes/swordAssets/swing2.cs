@@ -10,7 +10,7 @@ public class swing2 : MonoBehaviour {
 	public int retSpeed;
 	SliderJoint2D slider;
 	JointMotor2D sliderMotor;
-	private bool swung = false;
+	public bool swung = false;
 	public float thrustDelay;
 	public swing sword;
 	public bool active;
@@ -49,6 +49,7 @@ public class swing2 : MonoBehaviour {
 				StartCoroutine (ExecuteTime (thrustTime));
 				swung = true;
 				StartCoroutine (DelayInput (thrustDelay));
+
 			}
 		} 
 

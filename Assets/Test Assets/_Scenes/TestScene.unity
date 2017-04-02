@@ -1413,7 +1413,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4044791783770676, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.48999977
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4044791783770676, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1446,12 +1446,12 @@ Prefab:
     - target: {fileID: 233823740410665934, guid: 252f602b58eba407e8baf3b415c49e57,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.24032693
+      value: 0.24032184
       objectReference: {fileID: 0}
     - target: {fileID: 233823740410665934, guid: 252f602b58eba407e8baf3b415c49e57,
         type: 2}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.23704852
+      value: -0.2370486
       objectReference: {fileID: 0}
     - target: {fileID: 233823740410665934, guid: 252f602b58eba407e8baf3b415c49e57,
         type: 2}
@@ -1461,6 +1461,14 @@ Prefab:
     - target: {fileID: 233823740410665934, guid: 252f602b58eba407e8baf3b415c49e57,
         type: 2}
       propertyPath: m_AngleLimits.m_LowerAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274543965612344, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274543965612344, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1951,6 +1959,11 @@ Prefab:
       propertyPath: m_Name
       value: Enemy Test (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114671106380527604, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1527263366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
   m_IsPrefabParent: 0
@@ -1978,7 +1991,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 4549528519610186, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2026,6 +2039,14 @@ Prefab:
     - target: {fileID: 233508311419885072, guid: ac7e1756e8fa6444c8f135b58b58f170,
         type: 2}
       propertyPath: m_AngleLimits.m_UpperAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032173655492108, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032173655492108, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3176,6 +3197,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114671106380527604, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1527263366}
     - target: {fileID: 1771238734256972, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
       propertyPath: m_Name
       value: enemy test
@@ -3386,6 +3412,12 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1527263366 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114594605001374464, guid: 252f602b58eba407e8baf3b415c49e57,
+    type: 2}
+  m_PrefabInternal: {fileID: 649295284}
+  m_Script: {fileID: 11500000, guid: f0a3d0d569bea48f9a93252eca651525, type: 3}
 --- !u!4 &1534968478 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4403338966433546, guid: 1b3468ba4e9262b4cbe6751201154d3b,
@@ -4521,6 +4553,11 @@ Prefab:
       propertyPath: m_Name
       value: Enemy Test (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114671106380527604, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1527263366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
   m_IsPrefabParent: 0
@@ -4563,6 +4600,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114671106380527604, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 1527263366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
   m_IsPrefabParent: 0
