@@ -69,7 +69,7 @@ public class playerMovement : MonoBehaviour
         }
 
         // No horizontal movement
-		else if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow)) || canMoveX == false)
+		if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow)) || canMoveX == false)
             moveDirection.x = 0;
 
         // Move "up" i.e. toward background
@@ -99,7 +99,7 @@ public class playerMovement : MonoBehaviour
         }
 
         // No vertical movement
-		else if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false) || canMoveY == false)
+		if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false) || canMoveY == false)
             moveDirection.y = 0;
 
         // Idle animation

@@ -10,6 +10,7 @@ TagManager:
   - Feet Collider
   - Enemy
   - Player Collider
+  - Sword
   layers:
   - Default
   - TransparentFX
