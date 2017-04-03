@@ -1471,6 +1471,11 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 233823740410665934, guid: 252f602b58eba407e8baf3b415c49e57,
+        type: 2}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 252f602b58eba407e8baf3b415c49e57, type: 2}
   m_IsPrefabParent: 0
@@ -2047,6 +2052,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1032173655492108, guid: ac7e1756e8fa6444c8f135b58b58f170, type: 2}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 233508311419885072, guid: ac7e1756e8fa6444c8f135b58b58f170,
+        type: 2}
+      propertyPath: m_AutoConfigureConnectedAnchor
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
