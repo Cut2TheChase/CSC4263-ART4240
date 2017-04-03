@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Player Collider
   - Sword
+  - Boss
   layers:
   - Default
   - TransparentFX

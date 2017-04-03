@@ -22,6 +22,7 @@ public class EnemyAttackState : MonoBehaviour {
 	int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
 
 
+
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
