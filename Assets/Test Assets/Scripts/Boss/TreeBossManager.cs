@@ -28,6 +28,14 @@ public class TreeBossManager : MonoBehaviour {
 	void Update () {
 		if (health <= 0) {
 			Debug.Log ("IM DED X_X");
+
+			//Turn off every other script except this one
+			foreach (MonoBehaviour c in bossAttackLoop) {
+				if (c != this)
+					c.enabled = false;
+			}
+			//Go into death state
+			GetComponent<BossDeathState> ().enabled = true;
 		}
 	}
 
@@ -41,16 +49,20 @@ public class TreeBossManager : MonoBehaviour {
 		}
 		//If the fight has begun, cycle to the next usable state
 		else {
-			currentState++;	
+			//Change States only if the tree is alive 
+			//(Makes sure this function doesnt change states when boss transitions to death state)
+			if (health > 0) {
+				currentState++;	
 
-			if (currentState == numbOfComp) //If currentState is over the array bounds, go back to 0
+				if (currentState == numbOfComp) //If currentState is over the array bounds, go back to 0
 				currentState = 0;
 
-			if (canUse [currentState] == true) {
+				if (canUse [currentState] == true) {
 
-				bossAttackLoop [currentState].enabled = true;
-			} else //Go to the next state if this one cant be used yet
+					bossAttackLoop [currentState].enabled = true;
+				} else //Go to the next state if this one cant be used yet
 				nextState ();
+			}
 		}
 	}
 }
