@@ -14,7 +14,9 @@ public class EnemySpawnState : MonoBehaviour {
 
 	public GameObject enemy;
 
-	private bool canUse = true;
+	private int aliveCount;
+
+	private bool canUse = true; //This State can be used at the boss' current health
 
 
 	void OnEnable () {
@@ -23,7 +25,6 @@ public class EnemySpawnState : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 
 		minions = new GameObject[numbOfEnemies];
-		Debug.Log (topBounds + " hi " + botBounds);
 		//Finds the position of the top and bottom ground colliders
 		float yTop = topBounds.transform.position.y;
 		float yBot = botBounds.transform.position.y;
@@ -33,12 +34,26 @@ public class EnemySpawnState : MonoBehaviour {
 			float xRange = Random.Range (player.transform.position.x - 5f, player.transform.position.x + 5f);
 			GameObject spawn = Instantiate (enemy, new Vector3 (xRange, Random.Range(yBot + 2f, yTop), 0), Quaternion.identity) as GameObject;
 			spawn.GetComponent<EnemyAttackState> ().enabled = true;
+			minions [i] = spawn;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		 
+
+		//Checks how many enemies are still alive
+		int aliveCount = numbOfEnemies;
+		for (var i = 0; i < numbOfEnemies; i++) {
+			if (minions [i] == null)
+				aliveCount--;
+		}
+
+		//If they are all dead, run the next state
+		if (aliveCount == 0) {
+			GetComponent<TreeBossManager> ().nextState ();
+			this.enabled = false;
+		}
+
 		
 	}
 
