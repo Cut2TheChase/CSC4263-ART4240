@@ -16,9 +16,6 @@ public class EnemySpawnState : MonoBehaviour {
 
 	private int aliveCount;
 
-	private bool canUse = true; //This State can be used at the boss' current health
-
-
 	void OnEnable () {
 		topBounds = GameObject.Find("Top Ground Collider");
 		botBounds = GameObject.Find ("Bottom Ground Collider");
@@ -55,9 +52,5 @@ public class EnemySpawnState : MonoBehaviour {
 		}
 
 		
-	}
-
-	public bool getCanUse(){
-		return canUse;
 	}
 }

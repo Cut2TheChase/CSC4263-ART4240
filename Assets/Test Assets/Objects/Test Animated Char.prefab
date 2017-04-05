@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212233894770866468}
   - component: {fileID: 95182801789491702}
   - component: {fileID: 114503508647197360}
-  - component: {fileID: 114203722660812330}
   - component: {fileID: 114431514296041192}
   - component: {fileID: 143901012942872324}
+  - component: {fileID: 114448464388377278}
   m_Layer: 0
   m_Name: Test Animated Char
   m_TagString: Player
@@ -62,17 +62,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114203722660812330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1851860634216890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114431514296041192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +76,17 @@ MonoBehaviour:
   startHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 0}
+--- !u!114 &114448464388377278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851860634216890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e3beac2a1c14b48af7267872d2c1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114503508647197360
 MonoBehaviour:
   m_ObjectHideFlags: 1

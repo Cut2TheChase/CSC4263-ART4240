@@ -9,6 +9,8 @@ public class TreeBossManager : MonoBehaviour {
 
 	private int currentState; //The state to be enabled next
 
+	public int health;
+
 	private bool[] canUse;
 	void Start () {
 		currentState = -1;
@@ -24,7 +26,9 @@ public class TreeBossManager : MonoBehaviour {
 	
 	//Determines which States are able to be played in the active loop based on boss' HP
 	void Update () {
-		
+		if (health <= 0) {
+			Debug.Log ("IM DED X_X");
+		}
 	}
 
 	//Begins the next State

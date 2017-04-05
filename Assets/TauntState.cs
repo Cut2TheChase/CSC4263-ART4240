@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class TauntState : MonoBehaviour {
 
-	private bool canUse = true; //This State can be used at the boss' current health
-
 	private float startTime;
 	public float tauntDuration;
 
-	// Use this for initialization
+	//Enables the collider, as this is when the boss is vulnerable
 	void OnEnable () {
 		GetComponent<CircleCollider2D> ().enabled = true;
 		startTime = Time.time;
@@ -26,8 +24,14 @@ public class TauntState : MonoBehaviour {
 			GetComponent<TreeBossManager>().nextState ();
 		}
 	}
+		
+		void OnTriggerEnter2D (Collider2D other)
+		{
+		//Checks for an attack by the player
+		if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0) {
+			GetComponent<TreeBossManager>().health -= other.GetComponentInParent<sword>().damage;
+			}
 
-	public bool getCanUse(){
-		return canUse;
-	}
+
+		}
 }
