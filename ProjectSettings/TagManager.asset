@@ -12,6 +12,7 @@ TagManager:
   - Player Collider
   - Sword
   - Boss
+  - Left Hand
   layers:
   - Default
   - TransparentFX

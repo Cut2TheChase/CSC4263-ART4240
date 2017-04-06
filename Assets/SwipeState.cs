@@ -15,14 +15,12 @@ public class SwipeState : MonoBehaviour {
 	private bool setup = false; //Says if hand has set up to swipe player
 	private bool reset = false; //says if hand needs to reset
 
-	// Use this for initialization
 	void OnEnable () {
-		counter = 5;
+		counter = 3;
 		leftHand = GameObject.FindGameObjectWithTag ("Left Hand");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (counter == 0) {
 			GameObject.FindGameObjectWithTag ("Boss").GetComponent<TreeBossManager> ().nextState ();
@@ -30,21 +28,21 @@ public class SwipeState : MonoBehaviour {
 		} 
 
 		else {
-			if (setup == false) {
+			if (setup == false) { //If the hand hasnt set up yet, move it to position
 				Vector3 startSwipe = new Vector3 (-6f, player.transform.position.y, leftHand.transform.position.z);
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSwipe, speed * Time.deltaTime);
 
 				if (leftHand.transform.position == startSwipe)
 					setup = true;
 
-			} else if (reset == false) {
+			} else if (reset == false) { //if the hand hasnt finished swiping yet, continue to swipe
 				Vector3 endSwipe = new Vector3 (20f, leftHand.transform.position.y, leftHand.transform.position.z);
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSwipe, speed * Time.deltaTime);
 
 				if (leftHand.transform.position == endSwipe) {
 					reset = true;
 				}
-			} else if (reset == true) {
+			} else if (reset == true) { //if the hand hasn't reset after swiping yet, continue to reset
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, initalPos, speed * Time.deltaTime);
 
 				if (leftHand.transform.position == initalPos) {
