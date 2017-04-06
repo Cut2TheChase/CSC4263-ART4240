@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 192712753}
   - component: {fileID: 192712755}
   - component: {fileID: 192712756}
+  - component: {fileID: 192712757}
   m_Layer: 0
   m_Name: willowOpenHappy
   m_TagString: Boss
@@ -359,6 +360,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+--- !u!114 &192712757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192712747}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e94034d1977eb438cd8a3ad8a26738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  force: 200
+  waitTime: 0.5
 --- !u!1 &548417067
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +747,7 @@ Prefab:
     - target: {fileID: 212007803008216346, guid: d0255d931dfe41140a364a0b74fe9f10,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
