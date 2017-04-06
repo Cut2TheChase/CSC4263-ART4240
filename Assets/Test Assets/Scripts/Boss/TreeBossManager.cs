@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeBossManager : MonoBehaviour {
 
 	private MonoBehaviour[] bossAttackLoop; //The active loop the boss follows
-	private int numbOfComp = 2; //number of States
+	private int numbOfComp = 3; //number of States
 
 	private int currentState; //The state to be enabled next
 
@@ -18,10 +18,11 @@ public class TreeBossManager : MonoBehaviour {
 		//We start by putting the Boss attack States (components) within the loop in the order we want
 		bossAttackLoop = new MonoBehaviour[numbOfComp];
 		bossAttackLoop [0] = GetComponent<EnemySpawnState> ();
-		bossAttackLoop [1] = GetComponent<TauntState> ();
+		bossAttackLoop [1] = GetComponent<SwipeState> ();
+		bossAttackLoop [2] = GetComponent<TauntState> ();
 
 		//Now we specify which ones can be used in the very beginning of the fight
-		canUse = new bool[] {true,true};
+		canUse = new bool[] {true,true,true};
 	}
 	
 	//Determines which States are able to be played in the active loop based on boss' HP

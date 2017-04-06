@@ -22,6 +22,6 @@ public class StateChangeBehaviour : MonoBehaviour {
 		}
 
 		if (destroyOnTrigger == true)
-			DestroyObject (this);
+			DestroyObject (gameObject);
 	}
 }
