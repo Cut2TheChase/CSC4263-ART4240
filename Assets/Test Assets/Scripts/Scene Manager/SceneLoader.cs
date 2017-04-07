@@ -1,5 +1,5 @@
 ﻿///Uptown Pigeon Gaming
-///Project Fuge
+///Project Fugue
 ///CSC4263-ART4240
 ///Dr. Robert Kooima
 ///Code Description -- A code that loads a scene when a transition needs to be made.
