@@ -129,7 +129,7 @@ public class playerMovement : MonoBehaviour
 				moveDirection.y = 0;
 				jumpState = false;
 				gravity = 12.0f;
-				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y + 0.6f, transform.position.z);
+				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y + 0.7f, transform.position.z);
 				feetColl.transform.position = new Vector3 (transform.position.x, feetColl.transform.position.y, feetColl.transform.position.z);
 			}
         }
