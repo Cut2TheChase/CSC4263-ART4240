@@ -11,24 +11,33 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startHealth = 100;
+    public float startHealth;
+    public float maxHealth = 100;
     public float currentHealth;
     public Slider healthSlider;
-    
+    public float damage;
+    public GameObject HUDCanvas;
     bool damaged;
 
 	void Awake ()
     {
-
-        currentHealth = startHealth;
-	}
-	
-    public void TakeDamage (float amount)
+        DontDestroyOnLoad(HUDCanvas);
+        currentHealth = maxHealth;
+        if (damaged == false)
+        {
+            startHealth = maxHealth;
+        }
+        else if(damaged == true)
+        {
+            startHealth = currentHealth -= damage;
+        }
+    }
+	public void TakeDamage (float amount)
     {
         damaged = true;
         healthSlider.value -= amount;
         currentHealth -= amount;
-
+        damage += amount;
 		if (currentHealth == 0) {
 			GameManager.instance.changeState ("death");
 		}
