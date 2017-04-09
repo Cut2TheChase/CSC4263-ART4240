@@ -16,7 +16,7 @@ public class SwipeState : MonoBehaviour {
 	private bool reset = false; //says if hand needs to reset
 
 	void OnEnable () {
-		counter = 1;
+		counter = 3;
 		leftHand = GameObject.FindGameObjectWithTag ("Left Hand");
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}

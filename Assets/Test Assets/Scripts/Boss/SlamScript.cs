@@ -60,6 +60,7 @@ public class SlamScript : MonoBehaviour {
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSlam, speed * Time.deltaTime);
 
 				if (leftHand.transform.position == endSlam) {
+					Camera.main.GetComponent<Shake> ().Shaker ();
 					startTime = Time.time;
 					reset = true;
 				}
