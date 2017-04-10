@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 192712757}
   - component: {fileID: 192712758}
   - component: {fileID: 192712759}
+  - component: {fileID: 192712760}
   m_Layer: 0
   m_Name: willowOpenHappy
   m_TagString: Boss
@@ -361,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e83749adbb7845468cb1b4215ba8a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
 --- !u!114 &192712757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a709bb719461748ac268ed6f0b3f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   waitTime: 0.5
 --- !u!114 &192712759
 MonoBehaviour:
@@ -402,6 +403,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rightDelay: 0.7
+--- !u!114 &192712760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192712747}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92d9297cff488341a129d89ec54dcce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  waitTime: 0.5
+  rightDelay: 0.2
 --- !u!1 &548417067
 GameObject:
   m_ObjectHideFlags: 0
