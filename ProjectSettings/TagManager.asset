@@ -13,6 +13,7 @@ TagManager:
   - Sword
   - Boss
   - Left Hand
+  - Right Hand
   layers:
   - Default
   - TransparentFX

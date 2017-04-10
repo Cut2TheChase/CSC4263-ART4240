@@ -40,6 +40,7 @@ public class SlamScript : MonoBehaviour {
 			if (leftHand.transform.position == initalPos) {
 				GameObject.FindGameObjectWithTag ("Boss").GetComponent<TreeBossManager> ().nextState ();
 				this.enabled = false;
+				counter = 3;
 			}
 		} 
 
@@ -57,7 +58,7 @@ public class SlamScript : MonoBehaviour {
 
 			} else if (reset == false) { //if the hand hasnt finished slamming yet, continue to slam
 				Vector3 endSlam = new Vector3 (leftHand.transform.position.x, playerY, leftHand.transform.position.z);
-				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSlam, speed * Time.deltaTime);
+				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSlam, speed * Time.deltaTime * 2);
 
 				if (leftHand.transform.position == endSlam) {
 					Camera.main.GetComponent<Shake> ().Shaker ();

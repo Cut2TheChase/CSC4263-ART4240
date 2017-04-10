@@ -20,7 +20,7 @@ public class TreeBossManager : MonoBehaviour {
 
 	private bool[] canUse;
 	void Start () {
-		currentState = -1;
+		currentState = -1; //currentState starts at -1, because boss isnt fighting yet
 
 		//We start by putting the Boss attack States (components) within the loop in the order we want
 		bossAttackLoop = new MonoBehaviour[numbOfComp];
@@ -31,7 +31,7 @@ public class TreeBossManager : MonoBehaviour {
 		bossAttackLoop [4] = GetComponent<TauntState> ();
 
 		//Now we specify which ones can be used in the very beginning of the fight
-		canUse = new bool[] {true,true,true,true,true};
+		canUse = new bool[] {false,true,false,true,false};
 	}
 	
 	//Determines which States are able to be played in the active loop based on boss' HP
@@ -51,28 +51,23 @@ public class TreeBossManager : MonoBehaviour {
 
 	//Begins the next State
 	public void nextState(){
-		//If the fight has not begun yet, let it begin
-		if (currentState == -1) {
+		//If Fight hasnt started yet, take out of sleep state and begin fight
+		if (currentState == -1)
 			GetComponent<SleepState> ().enabled = false;
-			currentState = 0;
-			bossAttackLoop [currentState].enabled = true;
-		}
-		//If the fight has begun, cycle to the next usable state
-		else {
+		
 			//Change States only if the tree is alive 
 			//(Makes sure this function doesnt change states when boss transitions to death state)
 			if (health > 0) {
 				currentState++;	
-
+			Debug.Log (currentState);
 				if (currentState == numbOfComp) //If currentState is over the array bounds, go back to 0
 				currentState = 0;
 
 				if (canUse [currentState] == true) {
-
+				    
 					bossAttackLoop [currentState].enabled = true;
 				} else //Go to the next state if this one cant be used yet
 				nextState ();
 			}
-		}
 	}
 }
