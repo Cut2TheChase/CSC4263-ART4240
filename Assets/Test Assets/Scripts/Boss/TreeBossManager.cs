@@ -31,7 +31,7 @@ public class TreeBossManager : MonoBehaviour {
 		bossAttackLoop [4] = GetComponent<TauntState> ();
 
 		//Now we specify which ones can be used in the very beginning of the fight
-		canUse = new bool[] {false,true,false,true,false};
+		canUse = new bool[] {true,true,false,true,false};
 	}
 	
 	//Determines which States are able to be played in the active loop based on boss' HP

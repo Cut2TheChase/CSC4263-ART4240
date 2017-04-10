@@ -16,12 +16,10 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public Slider healthSlider;
     public float damage;
-    public GameObject HUDCanvas;
     bool damaged;
 
 	void Awake ()
     {
-        DontDestroyOnLoad(HUDCanvas);
         currentHealth = maxHealth;
         if (damaged == false)
         {
@@ -42,4 +40,8 @@ public class PlayerHealth : MonoBehaviour
 			GameManager.instance.changeState ("death");
 		}
     }
+
+	public void resetSlider(){
+		healthSlider.value = currentHealth;
+	}
 }
