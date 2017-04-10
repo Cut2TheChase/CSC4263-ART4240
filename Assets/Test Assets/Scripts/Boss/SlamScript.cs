@@ -51,7 +51,6 @@ public class SlamScript : MonoBehaviour {
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSlam, speed * Time.deltaTime);
 
 				if (leftHand.transform.position == startSlam) {
-					Debug.Log ("AH");
 					setup = true;
 					playerY = player.transform.position.y;
 				}

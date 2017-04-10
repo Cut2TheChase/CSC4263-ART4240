@@ -12,15 +12,15 @@ public class SwipeState2 : MonoBehaviour {
 
 	public int speed;
 
-	private int counter; //how many times must the hand swipe?
+	private int counter = 3; //how many times must the hand swipe?
 	private int leftC; //counter for left hand
 	private int rightC; // counter for right hand
 
 	private bool setupL = false; //Says if left hand has set up to swipe player
 	private bool resetL = false; //says if left hand needs to reset
 
-	private bool setupR = false; //Says if left hand has set up to swipe player
-	private bool resetR = false; //says if left hand needs to reset
+	private bool setupR = false; //Says if right hand has set up to swipe player
+	private bool resetR = false; //says if right hand needs to reset
 
 	private float leftBound = -6f; //Furthest hand will go to swipe on left
 	private float rightBound = 20f; //Furthest hand will go to swipe on right
@@ -29,7 +29,6 @@ public class SwipeState2 : MonoBehaviour {
 	private float startTime;
 
 	void OnEnable () {
-		counter = 3;
 		leftHand = GameObject.FindGameObjectWithTag ("Left Hand");
 		rightHand = GameObject.FindGameObjectWithTag ("Right Hand");
 		player = GameObject.FindGameObjectWithTag ("Player");
