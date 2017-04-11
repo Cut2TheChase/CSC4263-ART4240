@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 5
 --- !u!114 &192712757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   force: 200
+  damage: 15
   waitTime: 0.5
 --- !u!114 &192712758
 MonoBehaviour:
@@ -391,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  damage: 5
   waitTime: 0.5
 --- !u!114 &192712759
 MonoBehaviour:
@@ -404,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 5
   rightDelay: 0.7
 --- !u!114 &192712760
 MonoBehaviour:
@@ -417,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 5
   waitTime: 0
   rightDelay: 0.5
 --- !u!114 &192712761
