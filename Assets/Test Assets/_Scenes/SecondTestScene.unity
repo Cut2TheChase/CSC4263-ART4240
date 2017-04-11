@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 192712758}
   - component: {fileID: 192712759}
   - component: {fileID: 192712760}
+  - component: {fileID: 192712761}
   m_Layer: 0
   m_Name: willowOpenHappy
   m_TagString: Boss
@@ -313,7 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa5a57451007f545bc0493386804193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 0
+  maxHealth: 200
 --- !u!58 &192712753
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -415,8 +417,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  waitTime: 0.5
-  rightDelay: 0.2
+  waitTime: 0
+  rightDelay: 0.5
+--- !u!114 &192712761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192712747}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7cf65281f2e0d46898dc2aaedf3fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiredDuration: 5
 --- !u!1 &548417067
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +506,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -569,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  magnitude: 1
+  magnitude: 0.5
 --- !u!1 &1053670929
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +611,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
