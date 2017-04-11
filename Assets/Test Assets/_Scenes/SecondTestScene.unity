@@ -584,6 +584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 1
   magnitude: 0.5
+  Bounds: {fileID: 1811594044}
+  Ground: {fileID: 740587694}
 --- !u!1 &1053670929
 GameObject:
   m_ObjectHideFlags: 0
