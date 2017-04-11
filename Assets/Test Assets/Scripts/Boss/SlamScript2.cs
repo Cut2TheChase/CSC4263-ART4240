@@ -12,6 +12,8 @@ public class SlamScript2 : MonoBehaviour {
 
 	public int speed;
 
+	public int damage;
+
 	public float waitTime; //How long the hands must wait once they slam
 	private float startTimeL; //Start time of wait while on the ground, respective to Left
 	private float startTimeR; //Start time of wait while on the ground, respective to Right
@@ -57,18 +59,18 @@ public class SlamScript2 : MonoBehaviour {
 		if (leftC == 0) {
 			//left hand goes back to initial position
 			leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, leftInitalPos, speed * Time.deltaTime); 
-			if (rightC == 0) {
-				//right hand goes back to initial position
-				rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, rightInitalPos, speed * Time.deltaTime); 
+		}
+		if (rightC == 0) {
+			//right hand goes back to initial position
+			rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, rightInitalPos, speed * Time.deltaTime); 
+		}
 				//Go to next state if both hands are in position
-				if (leftHand.transform.position == leftInitalPos && rightHand.transform.position == rightInitalPos) {
-					GameObject.FindGameObjectWithTag ("Boss").GetComponent<TreeBossManager> ().nextState ();
-					this.enabled = false;
-				}
-			}
+		if (leftHand.transform.position == leftInitalPos && rightHand.transform.position == rightInitalPos && leftC == 0 && rightC == 0) {
+			GameObject.FindGameObjectWithTag ("Boss").GetComponent<TreeBossManager> ().nextState ();
+			this.enabled = false;
 		} 
 
-		if(rightC != 0){
+		if(rightC != 0 || leftC != 0){
 			//LEFT HAND*********************************************************************************************************
 			if (setupL == false && leftC != 0) { //If the hand hasnt set up yet, move it to position
 
@@ -84,6 +86,9 @@ public class SlamScript2 : MonoBehaviour {
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSlam, speed * Time.deltaTime * 2);
 
 				if (leftHand.transform.position == endSlam) {
+					//Checks if player has been hit, and if so gives damage
+					if (player.transform.position.x > leftHand.transform.position.x - 1 && player.transform.position.x < leftHand.transform.position.x + 1 && player.transform.position.y < leftHand.transform.position.y + 0.5f && player.transform.position.y > leftHand.transform.position.y - 0.5f)
+						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 					Camera.main.GetComponent<Shake> ().Shaker ();
 					startTimeL = Time.time;
 					resetL = true;
@@ -113,6 +118,9 @@ public class SlamScript2 : MonoBehaviour {
 				rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, endSlam, speed * Time.deltaTime * 2);
 
 				if (rightHand.transform.position == endSlam) {
+					//Checks if player has been hit, and if so gives damage
+					if (player.transform.position.x > rightHand.transform.position.x - 1 && player.transform.position.x < rightHand.transform.position.x + 1 && player.transform.position.y < rightHand.transform.position.y + 0.5f && player.transform.position.y > rightHand.transform.position.y - 0.5f)
+						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 					Camera.main.GetComponent<Shake> ().Shaker ();
 					startTimeR = Time.time;
 					resetR = true;
