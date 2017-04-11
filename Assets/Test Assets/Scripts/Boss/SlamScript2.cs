@@ -57,7 +57,6 @@ public class SlamScript2 : MonoBehaviour {
 		if (leftC == 0) {
 			//left hand goes back to initial position
 			leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, leftInitalPos, speed * Time.deltaTime); 
-			Debug.Log (rightC);
 			if (rightC == 0) {
 				//right hand goes back to initial position
 				rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, rightInitalPos, speed * Time.deltaTime); 
@@ -75,7 +74,6 @@ public class SlamScript2 : MonoBehaviour {
 
 				Vector3 startSlam = new Vector3 (player.transform.position.x, leftInitalPos.y, player.transform.position.z);
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSlam, speed * Time.deltaTime);
-				Debug.Log (startSlam);
 				if (leftHand.transform.position == startSlam) {
 					setupL = true;
 					playerYL = player.transform.position.y;
