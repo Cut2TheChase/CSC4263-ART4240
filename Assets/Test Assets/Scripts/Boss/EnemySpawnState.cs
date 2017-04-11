@@ -19,6 +19,17 @@ public class EnemySpawnState : MonoBehaviour {
 	private GameObject botBounds;
 	private GameObject player;
 
+	//Places enemies will spawn
+	Vector3 spawn1;
+	Vector3 spawn2;
+	Vector3 spawn3;
+	Vector3 spawn4;
+	Vector3 spawn5;
+	Vector3 spawn6;
+	bool[] spawnsUsed;
+	int whichSpawn = 0;
+	Vector3 spawnAt;
+
 	public GameObject enemy;
 
 	private int aliveCount;
@@ -33,12 +44,39 @@ public class EnemySpawnState : MonoBehaviour {
 		float yTop = topBounds.transform.position.y;
 		float yBot = botBounds.transform.position.y;
 
+		//Sets up spawn areas
+		spawnsUsed = new bool[] { false, false, false, false, false, false };
+		spawn1 = new Vector3 (transform.position.x - 10.5f, transform.position.y - 3f, transform.position.z);
+		spawn2 = new Vector3 (transform.position.x - 12, transform.position.y - 6f, transform.position.z);
+		spawn3 = new Vector3 (transform.position.x - 10.5f, transform.position.y - 8f, transform.position.z);
+		spawn4 = new Vector3 (transform.position.x + 10.5f, transform.position.y - 3f, transform.position.z);
+		spawn5 = new Vector3 (transform.position.x + 12, transform.position.y - 6f, transform.position.z);
+		spawn6 = new Vector3 (transform.position.x + 10.5f, transform.position.y - 8f, transform.position.z);
+
 		//Instantiates the spawned enemies and enables them to attack
 		for (int i = 0; i < numbOfEnemies; i++) {
-			float xRange = Random.Range (player.transform.position.x - 5f, player.transform.position.x + 5f);
-			GameObject spawn = Instantiate (enemy, new Vector3 (xRange, Random.Range(yBot + 2f, yTop), 0), Quaternion.identity) as GameObject;
+			do {
+				whichSpawn = Random.Range (0, 5);
+			} while(spawnsUsed [whichSpawn] == true);
+			spawnsUsed [whichSpawn] = true;
+
+			if (whichSpawn == 0)
+				spawnAt = spawn1;
+			else if (whichSpawn == 1)
+				spawnAt = spawn2;
+			else if (whichSpawn == 2)
+				spawnAt = spawn3;
+			else if (whichSpawn == 3)
+				spawnAt = spawn4;
+			else if (whichSpawn == 4)
+				spawnAt = spawn5;
+			else if (whichSpawn == 5)
+				spawnAt = spawn6;
+			
+			GameObject spawn = Instantiate (enemy, spawnAt , Quaternion.identity) as GameObject;
 			spawn.GetComponent<EnemyAttackState> ().enabled = true;
 			minions [i] = spawn;
+			minions [i].GetComponent<EnemyAttackState> ().range = 20; //increase these boss minions' range
 		}
 	}
 	

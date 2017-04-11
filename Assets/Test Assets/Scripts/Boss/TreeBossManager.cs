@@ -12,15 +12,19 @@ using UnityEngine;
 public class TreeBossManager : MonoBehaviour {
 
 	private MonoBehaviour[] bossAttackLoop; //The active loop the boss follows
-	private int numbOfComp = 7; //number of States
+	private int numbOfComp = 8; //number of States
 
 	private int currentState; //The state to be enabled next
 
-	public int health;
+	public float health;
+	public float maxHealth;
+	private float healthPercent; //Says what health percentage the Boss is at
 
 	private bool[] canUse;
 	void Start () {
 		currentState = -1; //currentState starts at -1, because boss isnt fighting yet
+
+		health = maxHealth;
 
 		//We start by putting the Boss attack States (components) within the loop in the order we want
 		bossAttackLoop = new MonoBehaviour[numbOfComp];
@@ -31,13 +35,16 @@ public class TreeBossManager : MonoBehaviour {
 		bossAttackLoop [4] = GetComponent<SlamScript> ();
 		bossAttackLoop [5] = GetComponent<SlamScript2> ();
 		bossAttackLoop [6] = GetComponent<TauntState> ();
+		bossAttackLoop [7] = GetComponent<TiredState> ();
 
 		//Now we specify which ones can be used in the very beginning of the fight
-		canUse = new bool[] {true,true,true,true,false,true,true};
+		canUse = new bool[] {true,false,false,false,false,false,true,false};
 	}
 	
 	//Determines which States are able to be played in the active loop based on boss' HP
 	void Update () {
+		
+		healthPercent = health / maxHealth * 100;
 		if (health <= 0) {
 			Debug.Log ("IM DED X_X");
 
@@ -48,6 +55,20 @@ public class TreeBossManager : MonoBehaviour {
 			}
 			//Go into death state
 			GetComponent<BossDeathState> ().enabled = true;
+		}
+
+		else if (healthPercent <= 35) {
+			//EnemySpawn, Swipe2, Flick, Slam2, Tired
+			canUse = new bool[] {true,false,true,true,false,true,false,true};
+
+		} else if (healthPercent <= 50) {
+			//EnemySpawn, Swipe, Flick, Slam, Taunt
+			canUse = new bool[] {true,true,false,true,true,false,true,false};
+
+		} else if (healthPercent <= 75) {
+			//EnemySpawn, Swipe, Flick, Taunt
+			canUse = new bool[] {true,true,false,true,false,false,true,false};
+
 		}
 	}
 
