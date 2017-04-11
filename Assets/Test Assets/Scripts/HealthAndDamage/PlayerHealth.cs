@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public float damage;
     bool damaged;
+    bool healed;
 
 	void Awake ()
     {
@@ -44,4 +45,17 @@ public class PlayerHealth : MonoBehaviour
 	public void resetSlider(){
 		healthSlider.value = currentHealth;
 	}
+    public void GetHealed (float amount)
+    {
+        healed = true;
+        healthSlider.value += amount;
+        currentHealth += amount;
+        damage -= amount;
+        if(currentHealth > maxHealth)
+        {
+            healthSlider.value = maxHealth;
+            currentHealth = maxHealth;
+            damage = 0;
+        }
+    }
 }
