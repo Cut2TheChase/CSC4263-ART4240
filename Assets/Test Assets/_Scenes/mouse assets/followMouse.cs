@@ -12,6 +12,7 @@ public class followMouse : MonoBehaviour {
 		showFishCursor = false;
 		gameObject.GetComponent<Renderer> ().enabled = false;
 
+
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,7 @@ public class followMouse : MonoBehaviour {
 		{
 			gameObject .GetComponent<Renderer>().enabled = !gameObject .GetComponent<Renderer>().enabled;
 			showFishCursor = !showFishCursor;
+			Cursor.visible = !Cursor.visible;
 		}
 		Vector3 temp = Input.mousePosition;
 		temp.z = depth;
