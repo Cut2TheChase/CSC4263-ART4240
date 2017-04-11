@@ -23,6 +23,7 @@ public class EnemyAttackState : MonoBehaviour {
 
 
 
+
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
@@ -54,6 +55,7 @@ public class EnemyAttackState : MonoBehaviour {
 		//If the enemy is not close enough to attack
 		if (disFromPlayer > attackDis) {
 			transform.position = Vector3.MoveTowards (transform.position, player.transform.position, speed);
+			nextAttack = Time.time + attackRate;
 		} else if(Time.time > nextAttack) { //If enough time has passed for the next attack to happen and the enemy is close enough to the player
 			nextAttack = Time.time + attackRate;
 			GetComponent<EnemyDamage> ().causeDamage ();
