@@ -9,6 +9,7 @@ public class SlamScript : MonoBehaviour {
 	private GameObject player;
 
 	public int speed;
+	public int damage;
 
 	public float waitTime;
 	private float startTime;
@@ -60,6 +61,8 @@ public class SlamScript : MonoBehaviour {
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSlam, speed * Time.deltaTime * 2);
 
 				if (leftHand.transform.position == endSlam) {
+					if (player.transform.position.x > leftHand.transform.position.x - 1 && player.transform.position.x < leftHand.transform.position.x + 1 && player.transform.position.y < leftHand.transform.position.y + 0.5f && player.transform.position.y > leftHand.transform.position.y - 0.5f)
+						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 					Camera.main.GetComponent<Shake> ().Shaker ();
 					startTime = Time.time;
 					reset = true;

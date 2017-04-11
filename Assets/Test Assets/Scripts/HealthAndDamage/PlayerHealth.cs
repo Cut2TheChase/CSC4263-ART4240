@@ -17,7 +17,11 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public float damage;
     bool damaged;
-    bool healed;
+
+	bool hurt = false;
+	public float hurtTime;
+	private float startTime;
+	private int hurtCounter;
 
 	void Awake ()
     {
@@ -33,12 +37,16 @@ public class PlayerHealth : MonoBehaviour
     }
 	public void TakeDamage (float amount)
     {
-        damaged = true;
-        healthSlider.value -= amount;
-        currentHealth -= amount;
-        damage += amount;
-		if (currentHealth == 0) {
-			GameManager.instance.changeState ("death");
+		if (hurt == false) {
+			damaged = true;
+			hurt = true;
+			startTime = Time.time;
+			healthSlider.value -= amount;
+			currentHealth -= amount;
+			damage += amount;
+			if (currentHealth == 0) {
+				GameManager.instance.changeState ("death");
+			} 
 		}
     }
 
@@ -47,7 +55,6 @@ public class PlayerHealth : MonoBehaviour
 	}
     public void GetHealed (float amount)
     {
-        healed = true;
         healthSlider.value += amount;
         currentHealth += amount;
         damage -= amount;
@@ -58,4 +65,23 @@ public class PlayerHealth : MonoBehaviour
             damage = 0;
         }
     }
+
+	void Update(){
+		if(hurt == true){
+			if (Time.time < startTime + hurtTime) {
+				if (hurtCounter < 10)
+					GetComponent<SpriteRenderer> ().enabled = false;
+				else
+					GetComponent<SpriteRenderer> ().enabled = true;
+			} else {
+				GetComponent<SpriteRenderer> ().enabled = true;
+				hurt = false;
+			}
+			hurtCounter++;
+			if (hurtCounter > 20)
+				hurtCounter = 0;
+		}
+			
+	}
+		
 }
