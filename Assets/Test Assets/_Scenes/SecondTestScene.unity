@@ -130,21 +130,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114503508647197360, guid: 60907fd3060d6a74a8dbdd215bfa5987,
-        type: 2}
-      propertyPath: feetColl
-      value: 
-      objectReference: {fileID: 1916275112}
     - target: {fileID: 114431514296041192, guid: 60907fd3060d6a74a8dbdd215bfa5987,
         type: 2}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1480762564}
-    - target: {fileID: 114431514296041192, guid: 60907fd3060d6a74a8dbdd215bfa5987,
+    - target: {fileID: 114503508647197360, guid: 60907fd3060d6a74a8dbdd215bfa5987,
         type: 2}
-      propertyPath: startHealth
-      value: 100
-      objectReference: {fileID: 0}
+      propertyPath: feetColl
+      value: 
+      objectReference: {fileID: 1916275112}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60907fd3060d6a74a8dbdd215bfa5987, type: 2}
   m_IsPrefabParent: 0
