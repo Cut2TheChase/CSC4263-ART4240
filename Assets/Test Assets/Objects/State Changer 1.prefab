@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575797548600672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.99, y: -0.7578095, z: 7.3242188}
+  m_LocalPosition: {x: -5.43, y: -2.49, z: 7.3242188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,11 +50,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -2.5069218}
+  m_Offset: {x: 0, y: -1.3598392}
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.0138435}
+  m_Size: {x: 1, y: 8.308008}
 --- !u!114 &114560736176927714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,4 +67,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: play
+  sceneChange: -1
   destroyOnTrigger: 1

@@ -1,5 +1,5 @@
 ﻿///Uptown Pigeon Gaming
-///Project Fuge
+///Project Fugue
 ///CSC4263-ART4240
 ///Dr. Robert Kooima
 ///Code Description -- A code for managing the behaviour of game state changes.
@@ -22,6 +22,6 @@ public class StateChangeBehaviour : MonoBehaviour {
 		}
 
 		if (destroyOnTrigger == true)
-			DestroyObject (this);
+			DestroyObject (gameObject);
 	}
 }

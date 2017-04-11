@@ -1,5 +1,5 @@
 ﻿///Uptown Pigeon Gaming
-///Project Fuge
+///Project Fugue
 ///CSC4263-ART4240
 ///Dr. Robert Kooima
 ///Code Description -- A code that manages when an ememy is in range of a player to attack.
@@ -20,6 +20,7 @@ public class EnemyAttackState : MonoBehaviour {
 	public float attackRate; //Rate the enemy can attack, in seconds
 
 	int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
+
 
 
 	void OnEnable () {
