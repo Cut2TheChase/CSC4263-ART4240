@@ -121,7 +121,7 @@ public class SlamScript2 : MonoBehaviour {
 				if (Time.time - startTimeR >= waitTime) { //If the wait time after slamming has passed, try to slam again
 					resetR = false;
 					setupR = false;
-					startTime = Time.time;
+					//startTime = Time.time;
 					rightC--;
 				}
 			}
