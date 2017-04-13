@@ -4753,6 +4753,7 @@ GameObject:
   - component: {fileID: 1994853423}
   - component: {fileID: 1994853425}
   - component: {fileID: 1994853424}
+  - component: {fileID: 1994853426}
   m_Layer: 5
   m_Name: RodImageGUI
   m_TagString: Untagged
@@ -4797,7 +4798,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 24e053cb4fc10d14d9cbdaff3e43c527, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4811,6 +4812,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1994853422}
+--- !u!114 &1994853426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994853422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed840d283bcbe8489a0a5e61cc9a8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 1534979618}
 --- !u!4 &2039257056 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4376441666504642, guid: 60907fd3060d6a74a8dbdd215bfa5987,
