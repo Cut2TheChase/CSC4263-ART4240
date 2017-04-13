@@ -57,7 +57,7 @@ public class PlayState : MonoBehaviour {
 		player_char = GameObject.FindGameObjectWithTag ("Player");
 		tree_boss = GameObject.FindGameObjectWithTag ("Boss");
 
-		if (tree_boss.GetComponent<FlickState>().playerFlicked == true) 
+		if (tree_boss != null && tree_boss.GetComponent<FlickState>().playerFlicked == true) 
 		{
 			player_char.GetComponent<playerMovement>().canMoveY = true;
 		}
