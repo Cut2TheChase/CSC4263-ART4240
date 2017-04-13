@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TiredState : MonoBehaviour {
 	private float startTime;
 	public float tiredDuration;
+    public Slider healthSlider;
 
-	//Enables the collider, as this is when the boss is vulnerable
-	void OnEnable () {
+    //Enables the collider, as this is when the boss is vulnerable
+    void OnEnable () {
 		GetComponent<CircleCollider2D> ().enabled = true;
 		startTime = Time.time;
 	}
@@ -29,8 +31,7 @@ public class TiredState : MonoBehaviour {
 		//Checks for an attack by the player
 		if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0) {
 			GetComponent<TreeBossManager>().health -= other.GetComponentInParent<sword>().damage;
+            healthSlider.value -= other.GetComponentInParent<sword>().damage;
 		}
-
-
-	}
+    }
 }

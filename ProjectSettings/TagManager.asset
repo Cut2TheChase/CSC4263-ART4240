@@ -15,6 +15,7 @@ TagManager:
   - Left Hand
   - Right Hand
   - Health
+  - BossHealth
   layers:
   - Default
   - TransparentFX
