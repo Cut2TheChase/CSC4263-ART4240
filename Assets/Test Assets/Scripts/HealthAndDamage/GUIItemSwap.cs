@@ -19,5 +19,9 @@ public class GUIItemSwap : MonoBehaviour {
         Vector3 temp = transform.position;
         transform.position = other.transform.position;
         other.transform.position = temp;
+        int index = transform.GetSiblingIndex();
+        int index2 = other.transform.GetSiblingIndex();
+        transform.SetSiblingIndex(index2);
+        other.transform.SetSiblingIndex(index);
     }
 }
