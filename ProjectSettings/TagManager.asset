@@ -15,6 +15,7 @@ TagManager:
   - Left Hand
   - Right Hand
   - Health
+  - PauseUI
   layers:
   - Default
   - TransparentFX
