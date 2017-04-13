@@ -377,6 +377,7 @@ MonoBehaviour:
   force: 200
   damage: 15
   waitTime: 0.5
+  playerFlicked: 0
 --- !u!114 &192712758
 MonoBehaviour:
   m_ObjectHideFlags: 0

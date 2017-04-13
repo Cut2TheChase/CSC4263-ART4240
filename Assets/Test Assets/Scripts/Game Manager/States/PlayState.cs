@@ -14,6 +14,9 @@ public class PlayState : MonoBehaviour {
 	private GameObject feetColl;
 	private GameObject[] enemies;
 
+	public GameObject tree_boss;
+	public GameObject player_char;
+
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		feetColl = GameObject.FindGameObjectWithTag ("Feet Collider");
@@ -28,6 +31,10 @@ public class PlayState : MonoBehaviour {
 		//Turn enemy AI on
 		foreach (GameObject go in enemies) {
 			go.GetComponent<EnemyAttackState> ().enabled = true;
+
+
+
+		
 		}
 
 	}
@@ -38,6 +45,23 @@ public class PlayState : MonoBehaviour {
 		foreach (GameObject go in enemies) {
 			go.GetComponent<EnemyAttackState> ().enabled = false;
 		}
+	}
+	IEnumerator ExecuteAfterTime(float time)
+	{
+		yield return new WaitForSeconds (time);
+	}
+
+	public void Update()
+	{
+
+		player_char = GameObject.FindGameObjectWithTag ("Player");
+		tree_boss = GameObject.FindGameObjectWithTag ("Boss");
+
+		if (tree_boss.GetComponent<FlickState>().playerFlicked == true) 
+		{
+			player_char.GetComponent<playerMovement>().canMoveY = true;
+		}
+
 	}
 
 }

@@ -18,7 +18,8 @@ public class FlickState : MonoBehaviour {
 
 	private bool setup = false; //Says if hand has set up to swipe player
 	private bool reset = false; //says if hand needs to reset
-	private bool playerFlicked = false; //says if player was flicked
+	[HideInInspector]
+	public bool playerFlicked = false; //says if player was flicked
 
 	private Vector3 impact = Vector3.zero;
 
