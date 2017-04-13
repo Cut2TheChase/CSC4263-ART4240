@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PauseState : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Pause ();
+	   }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void Pause()
+	{
+		if (gameObject.transform.GetChild (0).gameObject.activeInHierarchy == false) {
+			gameObject.transform.GetChild (0).gameObject.SetActive (true);
+			Time.timeScale = 0;
+		} else {
+			gameObject.transform.GetChild (0).gameObject.SetActive (false);
+			Time.timeScale = 1;
+		}
 	}
 }
+
+
