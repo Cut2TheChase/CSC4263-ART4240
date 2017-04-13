@@ -130,14 +130,16 @@ public class playerMovement : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
             gravity += 0.5f;
 
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 5f);
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 10f);
 			Debug.DrawRay(transform.position, Vector2.down, Color.red, 5f);
 			if (hit.collider != null) {
 				Debug.Log (hit.collider);
 				if (hit.collider.tag == "Platform")
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.2f, feetColl.transform.position.z);
-				else if (hit.collider.name == "Top Ground Collider")
+				else if (hit.collider.name == "Top Ground Collider") {
+					Debug.Log ("Did it");
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y - 0.5f, feetColl.transform.position.z);
+				}
 			}
 			if(transform.position.y < feetColl.transform.position.y + 0.6f){
 				moveDirection.y = 0;

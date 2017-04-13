@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 627094540}
   - component: {fileID: 627094539}
   m_Layer: 8
-  m_Name: Map Collider Top
+  m_Name: Top Ground Collider
   m_TagString: Ground Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2809,7 +2809,7 @@ GameObject:
   - component: {fileID: 1280604326}
   - component: {fileID: 1280604325}
   m_Layer: 8
-  m_Name: Map Collider Bottom
+  m_Name: Bottom Ground Collider
   m_TagString: Ground Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4168,12 +4168,12 @@ Prefab:
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
