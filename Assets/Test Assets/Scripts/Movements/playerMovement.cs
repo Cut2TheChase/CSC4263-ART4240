@@ -136,7 +136,7 @@ public class playerMovement : MonoBehaviour
 				Debug.Log (hit.collider);
 				if (hit.collider.tag == "Platform")
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.2f, feetColl.transform.position.z);
-				else if (hit.collider.tag == "Ground Collider")
+				else if (hit.collider.name == "Top Ground Collider")
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y - 0.5f, feetColl.transform.position.z);
 			}
 			if(transform.position.y < feetColl.transform.position.y + 0.6f){
