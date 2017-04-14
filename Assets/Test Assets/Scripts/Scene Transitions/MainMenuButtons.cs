@@ -16,7 +16,8 @@ public class MainMenuButtons : MonoBehaviour
     public Button playB;
     public Button menuB;
     public Button exitB;
-
+    
+    //sees when buttons are activated, calls functions to handle what the button does
     void Start()
     {
         Button ply = playB.GetComponent<Button>();
@@ -30,9 +31,10 @@ public class MainMenuButtons : MonoBehaviour
 
 
     }
+    //the following three functions determine what happens when the buttons are pressed
     public void TaskOnClick()
     {
-        SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("TestScene", LoadSceneMode.Single); //loads the first scene
 		SceneManager.sceneLoaded += OnSceneLoaded; //Once scene is loaded, do this function
     }
     public void TaskOnClick1()
@@ -41,9 +43,9 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void TaskOnClick2()
     {
-        Application.Quit();
+        Application.Quit(); // exits the game
     }
-
+    //cleans up death scene issues
 	private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
 	{
 		GameManager.instance.changeState ("transitionIn");
