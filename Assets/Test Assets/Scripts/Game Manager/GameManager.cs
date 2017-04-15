@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 				c.enabled = false;
 		}
 			
-
+		Camera.main.GetComponent<PauseMenu> ().enabled = false;
 		if (state == "transitionIn") {
 			GetComponent<TransitionInState> ().enabled = true;
 
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
 			
 		} else if (state == "play") {
 			GetComponent<PlayState> ().enabled = true;
-			GetComponent<PauseState> ().enabled = true;
+			Camera.main.GetComponent<PauseMenu> ().enabled = true;
 
 		} else if (state == "death") {
 			GetComponent<DeathState> ().enabled = true;
