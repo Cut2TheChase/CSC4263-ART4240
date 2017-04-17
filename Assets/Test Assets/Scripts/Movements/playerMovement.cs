@@ -46,10 +46,15 @@ public class playerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
 		feetColl = GameObject.FindGameObjectWithTag ("Feet Collider");
 
+
+
     }
 
     void Update()
     {
+
+
+
 
 		if (notHooked == true) {
 			// Move Left
