@@ -25,8 +25,10 @@ public class boxPull : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		isHooked = true;
-		player.GetComponent<playerMovement> ().notHooked = false;
+		if (player.GetComponent<itemEquip> ().rod == true) {	
+			isHooked = true;
+			player.GetComponent<playerMovement> ().notHooked = false;
+		}
 
 	}
 
