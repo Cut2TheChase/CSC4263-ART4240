@@ -10,7 +10,8 @@ public class itemEquip : MonoBehaviour {
 	[HideInInspector]
 	public Texture2D currentCursorTexture;
 	public CursorMode cursorMode = CursorMode.Auto;
-	private bool rod;
+	[HideInInspector]
+	public bool rod;
 	public Vector2 hotSpot;
 
 	void Start () 
