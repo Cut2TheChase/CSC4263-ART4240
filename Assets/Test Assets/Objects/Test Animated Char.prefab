@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851860634216890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.12, y: -3.218, z: -2}
+  m_LocalPosition: {x: -13.69, y: -5.1346393, z: -2}
   m_LocalScale: {x: 0.3251378, y: 0.3251378, z: 0.32513782}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 100
+  maxHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 0}
+  damage: 0
+  hurtTime: 1.5
 --- !u!114 &114448464388377278
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -19,9 +19,12 @@ public class playerMovement : MonoBehaviour
     public bool jumpState;
 
 	bool canMoveX = true;
-	bool canMoveY = true;
+	[HideInInspector]
+	public bool canMoveY = true;
 	public swing right;
 	public swing left;
+
+	private bool jump_active;
 
 	Animator anim; //Controls character animations
     CharacterController controller;
@@ -116,21 +119,34 @@ public class playerMovement : MonoBehaviour
         vertPos = GetComponent<Transform>().position.y;
         if (Input.GetKey(KeyCode.Space) && jumpState == false)
         {
+			canMoveY = true;
                 landingPos = vertPos; // Holds value of ground position if jumping
                 moveDirection.y = jumpSpeed;
                 jumpState = true;
+
         }
         if (jumpState == true)
         {
             moveDirection.y -= gravity * Time.deltaTime;
             gravity += 0.5f;
 
+			//This detects if there is a platform under the character or not when jumping
+			// and depending on that, puts the foot collider in the right place for landing
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 10f);
+			if (hit.collider != null) {
+				if (hit.collider.tag == "Platform")
+					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.2f, feetColl.transform.position.z);
+				else if (hit.collider.name == "Top Ground Collider") {
+					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint(hit.point).y - 0.5f, feetColl.transform.position.z);
+				}
+			}
 			if(transform.position.y < feetColl.transform.position.y + 0.6f){
 				moveDirection.y = 0;
 				jumpState = false;
 				gravity = 12.0f;
 				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y + 0.7f, transform.position.z);
 				feetColl.transform.position = new Vector3 (transform.position.x, feetColl.transform.position.y, feetColl.transform.position.z);
+
 			}
         }
 

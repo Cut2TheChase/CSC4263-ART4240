@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	MonoBehaviour[] comps;
 
 	string state = "transitionIn";
+
 	void Awake () {
 
 		//if there is no other instance, this is the instance
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour {
 			if (c != this)
 				c.enabled = false;
 		}
-
+			
+		Camera.main.GetComponent<PauseMenu> ().enabled = false;
 		if (state == "transitionIn") {
 			GetComponent<TransitionInState> ().enabled = true;
 
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour {
 			
 		} else if (state == "play") {
 			GetComponent<PlayState> ().enabled = true;
+			Camera.main.GetComponent<PauseMenu> ().enabled = true;
 
 		} else if (state == "death") {
 			GetComponent<DeathState> ().enabled = true;

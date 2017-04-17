@@ -11,6 +11,7 @@ public class SwipeState2 : MonoBehaviour {
 	private GameObject player;
 
 	public int speed;
+	public int damage;
 
 	private int counter = 3; //how many times must the hand swipe?
 	private int leftC; //counter for left hand
@@ -57,6 +58,10 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 endSwipe = new Vector3 (rightBound, leftHand.transform.position.y, leftHand.transform.position.z);
 					leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSwipe, speed * Time.deltaTime);
 
+					if (player.transform.position.x > leftHand.transform.position.x - 1 && player.transform.position.x < leftHand.transform.position.x + 1 && player.transform.position.y < leftHand.transform.position.y + 0.5f && player.transform.position.y > leftHand.transform.position.y - 0.5f)
+						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
+
+
 					if (leftHand.transform.position == endSwipe) {
 						resetL = true;
 					}
@@ -84,6 +89,9 @@ public class SwipeState2 : MonoBehaviour {
 				} else if (resetR == false) { //if the hand hasnt finished swiping yet, continue to swipe
 					Vector3 endSwipe = new Vector3 (leftBound, rightHand.transform.position.y, rightHand.transform.position.z);
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, endSwipe, speed * Time.deltaTime);
+
+					if (player.transform.position.x > rightHand.transform.position.x - 1 && player.transform.position.x < rightHand.transform.position.x + 1 && player.transform.position.y < rightHand.transform.position.y + 0.5f && player.transform.position.y > rightHand.transform.position.y - 0.5f)
+						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 
 					if (rightHand.transform.position == endSwipe) {
 						resetR = true;

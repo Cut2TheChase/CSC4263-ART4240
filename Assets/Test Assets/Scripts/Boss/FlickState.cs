@@ -10,6 +10,7 @@ public class FlickState : MonoBehaviour {
 
 	public int speed;
 	public int force;
+	public int damage;
 
 	public float waitTime;
 	private float startTime;
@@ -17,7 +18,8 @@ public class FlickState : MonoBehaviour {
 
 	private bool setup = false; //Says if hand has set up to swipe player
 	private bool reset = false; //says if hand needs to reset
-	private bool playerFlicked = false; //says if player was flicked
+	[HideInInspector]
+	public bool playerFlicked = false; //says if player was flicked
 
 	private Vector3 impact = Vector3.zero;
 
@@ -46,6 +48,7 @@ public class FlickState : MonoBehaviour {
 				
 					//If player is in the correct spot in front of hand, flick the player
 					if(player.transform.position.x <= leftHand.transform.position.x + 1.5f && player.transform.position.x >= leftHand.transform.position.x && player.transform.position.y <= leftHand.transform.position.y + 1.5f && player.transform.position.y >= leftHand.transform.position.y - 1.5f){
+					    player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 						AddImpact (new Vector3 (30, 30, 0), force);
 						player.GetComponent<playerMovement> ().jumpState = true; //Make the jumpstate true because the player is now falling
 						playerFlicked = true;

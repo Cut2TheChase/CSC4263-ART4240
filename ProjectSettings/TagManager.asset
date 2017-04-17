@@ -15,6 +15,10 @@ TagManager:
   - Left Hand
   - Right Hand
   - Health
+  - BossHealth
+  - PauseUI
+  - Platform
+  - Ground Collider
   layers:
   - Default
   - TransparentFX
