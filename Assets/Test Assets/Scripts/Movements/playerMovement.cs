@@ -18,7 +18,10 @@ public class playerMovement : MonoBehaviour
 	int dirFacing; //Direction character is facing, 1 = right, -1 = left
     public bool jumpState;
 
-	bool canMoveX = true;
+	[HideInInspector]
+	public bool notHooked = true;
+	[HideInInspector]
+	public bool canMoveX = true;
 	[HideInInspector]
 	public bool canMoveY = true;
 	public swing right;
@@ -47,30 +50,30 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        // Move Left
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-			if (feetColl.GetComponent<FeetCollision> ().canMove (-horiMoveSpeed, Vector2.left)) {
-				moveDirection.x = -horiMoveSpeed;
-				dirFacing = -1; //Facing Left
-				anim.SetInteger ("State", 1);
-				canMoveX = true;
-			} else
-				canMoveX = false;
-        }
+
+		if (notHooked == true) {
+			// Move Left
+			if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) {
+				if (feetColl.GetComponent<FeetCollision> ().canMove (-horiMoveSpeed, Vector2.left)) {
+					moveDirection.x = -horiMoveSpeed;
+					dirFacing = -1; //Facing Left
+					anim.SetInteger ("State", 1);
+					canMoveX = true;
+				} else
+					canMoveX = false;
+			}
 
         // Move right
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-			if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
-				moveDirection.x = horiMoveSpeed;
-				dirFacing = 1; //Facing Right
-				anim.SetInteger ("State", 1);
-				canMoveX = true;
-			} else
-				canMoveX = false;
-        }
-
+        else if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) {
+				if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
+					moveDirection.x = horiMoveSpeed;
+					dirFacing = 1; //Facing Right
+					anim.SetInteger ("State", 1);
+					canMoveX = true;
+				} else
+					canMoveX = false;
+			}
+		}
         // No horizontal movement
 		if ((!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.LeftArrow)) || canMoveX == false)
             moveDirection.x = 0;
