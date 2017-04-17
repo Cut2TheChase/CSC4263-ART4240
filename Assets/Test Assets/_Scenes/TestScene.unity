@@ -1304,6 +1304,16 @@ Prefab:
       propertyPath: m_ConnectedAnchor.x
       value: 21.321877
       objectReference: {fileID: 0}
+    - target: {fileID: 114068480540842842, guid: 90650cc33ae1f4f34bc6273459739b72,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 917887713}
+    - target: {fileID: 114068480540842842, guid: 90650cc33ae1f4f34bc6273459739b72,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2039257056}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90650cc33ae1f4f34bc6273459739b72, type: 2}
   m_IsPrefabParent: 0
@@ -2279,6 +2289,7 @@ MonoBehaviour:
   nextCursorTexture: {fileID: 0}
   currentCursorTexture: {fileID: 0}
   cursorMode: 1
+  rod: 0
   hotSpot: {x: 16, y: 16}
 --- !u!4 &923037963 stripped
 Transform:
