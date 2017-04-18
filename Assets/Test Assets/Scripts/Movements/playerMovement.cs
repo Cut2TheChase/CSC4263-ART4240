@@ -52,7 +52,8 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-
+		if (notHooked == false)
+			canMoveX = false;
 
 
 
@@ -69,7 +70,7 @@ public class playerMovement : MonoBehaviour
 			}
 
         // Move right
-        else if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) {
+			if (Input.GetKey (KeyCode.D) && notHooked == true || Input.GetKey (KeyCode.RightArrow) && notHooked == true) {
 				if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
 					moveDirection.x = horiMoveSpeed;
 					dirFacing = 1; //Facing Right

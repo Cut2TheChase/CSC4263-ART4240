@@ -18,6 +18,8 @@ public class pullChar : MonoBehaviour {
 	[HideInInspector]
 	public bool isHooked;
 	public bool reached_destination;
+	//[HideInInspector]
+	public bool grapple_click;
 
 	void Start () 
 	{
@@ -26,6 +28,7 @@ public class pullChar : MonoBehaviour {
 		//isHooked = true;
 		target= player.transform;
 		reached_destination = false;
+		grapple_click = false;
 
 
 	}
@@ -36,6 +39,7 @@ public class pullChar : MonoBehaviour {
 		reached_destination = true;
 		yield return new WaitForSeconds (time);
 		player.GetComponent<playerMovement> ().notHooked = true;
+		isHooked = false;
 
 	   
 //		Vector3 forceDirection = player.transform.position - this.transform.position;
@@ -71,8 +75,11 @@ public class pullChar : MonoBehaviour {
 	
 		if (isHooked == true) {
 			if (Input.GetKey (KeyCode.U)) {
+				
+				grapple_click = true;
+			}
+			if (grapple_click == true) {
 				player.GetComponent<CharacterController> ().Move (forceDirection.normalized * pullForce * Time.fixedDeltaTime);
-
 			}
 
 		}
@@ -84,7 +91,12 @@ public class pullChar : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		StartCoroutine (ExecuteForTime (2));
+		//if (other.gameObject.tag == "Player Collider") {
+		//Debug.Log("THIS WILL DISPLAY");
+		//Debug.Log(other.name);
+			grapple_click = false;
+		StartCoroutine (ExecuteForTime (0.25f));
+		//}
 	}
 
 
