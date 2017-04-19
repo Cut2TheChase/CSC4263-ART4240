@@ -838,6 +838,11 @@ Prefab:
       propertyPath: m_Name
       value: Child Collider
       objectReference: {fileID: 0}
+    - target: {fileID: 58457925426827810, guid: b2e5dc66c6d72794a959d19e05b410f4,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2e5dc66c6d72794a959d19e05b410f4, type: 2}
   m_IsPrefabParent: 0
@@ -1314,6 +1319,16 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 2039257056}
+    - target: {fileID: 50170675203405604, guid: 90650cc33ae1f4f34bc6273459739b72,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068480540842842, guid: 90650cc33ae1f4f34bc6273459739b72,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90650cc33ae1f4f34bc6273459739b72, type: 2}
   m_IsPrefabParent: 0
@@ -2263,6 +2278,38 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1565549191}
   m_Script: {fileID: 11500000, guid: bf8d0de7de213408aa1ca35b1bb3d029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rod_cursor: {fileID: 2800000, guid: 2dba496be4746435fbf31e48daae5ac8, type: 3}
+  nextCursorTexture: {fileID: 0}
+  currentCursorTexture: {fileID: 0}
+  cursorMode: 1
+  rod: 0
+  hotSpot: {x: 16, y: 16}
+--- !u!1 &922423903 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1637191748545056, guid: 90650cc33ae1f4f34bc6273459739b72,
+    type: 2}
+  m_PrefabInternal: {fileID: 591908474}
+--- !u!114 &922423911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922423903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32b4826bd0b44011a45125822e6fcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 917887713}
+  pullForce: -100
+  target: {fileID: 0}
+  dirNum: 0
+  thrustSpeed: 0
+  isHooked: 0
+  reached_destination: 0
+  grapple_click: 0
 --- !u!4 &923037963 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4403338966433546, guid: 1b3468ba4e9262b4cbe6751201154d3b,

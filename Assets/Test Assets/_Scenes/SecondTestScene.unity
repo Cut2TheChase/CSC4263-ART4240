@@ -755,6 +755,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &786045297 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1851860634216890, guid: 60907fd3060d6a74a8dbdd215bfa5987,
+    type: 2}
+  m_PrefabInternal: {fileID: 91180185}
 --- !u!1 &809026263 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1458614220043534, guid: d0255d931dfe41140a364a0b74fe9f10,
@@ -775,6 +780,7 @@ MonoBehaviour:
   magnitude: 0.5
   Bounds: {fileID: 1811594044}
   Ground: {fileID: 740587694}
+  player: {fileID: 786045297}
 --- !u!224 &882519125 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224752198370847480, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
