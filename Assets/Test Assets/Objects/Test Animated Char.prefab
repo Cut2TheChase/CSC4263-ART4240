@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 95182801789491702}
   - component: {fileID: 114503508647197360}
   - component: {fileID: 114431514296041192}
-  - component: {fileID: 143901012942872324}
   - component: {fileID: 114448464388377278}
+  - component: {fileID: 143445056463503136}
+  - component: {fileID: 114108325606933570}
   m_Layer: 0
   m_Name: Test Animated Char
   m_TagString: Player
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851860634216890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.69, y: -5.1346393, z: -2}
-  m_LocalScale: {x: 0.3251378, y: 0.3251378, z: 0.32513782}
+  m_LocalPosition: {x: -13.97, y: -3.21, z: -2}
+  m_LocalScale: {x: 0.08675428, y: 0.08675428, z: 0.086754285}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,6 +63,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114108325606933570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851860634216890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8d0de7de213408aa1ca35b1bb3d029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rod_cursor: {fileID: 2800000, guid: 2dba496be4746435fbf31e48daae5ac8, type: 3}
+  nextCursorTexture: {fileID: 0}
+  currentCursorTexture: {fileID: 0}
+  cursorMode: 1
+  rod: 0
+  hotSpot: {x: 16, y: 16}
 --- !u!114 &114431514296041192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,6 +97,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   damage: 0
   hurtTime: 1.5
+  totalMemory: 5
 --- !u!114 &114448464388377278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,9 +123,12 @@ MonoBehaviour:
   feetColl: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   jumpState: 0
+  notHooked: 1
+  canMoveX: 1
+  canMoveY: 1
   right: {fileID: 0}
   left: {fileID: 0}
---- !u!143 &143901012942872324
+--- !u!143 &143445056463503136
 CharacterController:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -154,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ad5196b9b44d5d4585bc15b952995b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d274e8950f2f4e4dbe047a32f0060ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
