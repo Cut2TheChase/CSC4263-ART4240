@@ -70,7 +70,7 @@ public class playerMovement : MonoBehaviour
 			}
 
         // Move right
-			if (Input.GetKey (KeyCode.D) && notHooked == true || Input.GetKey (KeyCode.RightArrow) && notHooked == true) {
+			else if (Input.GetKey (KeyCode.D) && notHooked == true || Input.GetKey (KeyCode.RightArrow) && notHooked == true) {
 				if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
 					moveDirection.x = horiMoveSpeed;
 					dirFacing = 1; //Facing Right
