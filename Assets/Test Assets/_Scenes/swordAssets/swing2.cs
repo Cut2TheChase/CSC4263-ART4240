@@ -15,6 +15,8 @@ public class swing2 : MonoBehaviour {
 	public swing sword;
 	public bool active;
 
+	private GameObject player;
+
 	void Start () {
 		
 
@@ -23,6 +25,7 @@ public class swing2 : MonoBehaviour {
 		sliderMotor.motorSpeed = retSpeed;
 		thrustDelay = sword.swingDelay;
 
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	IEnumerator ExecuteTime(float time)
@@ -36,7 +39,6 @@ public class swing2 : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(time);
 		swung = false; 
-
 
 	}
 	void Update () {

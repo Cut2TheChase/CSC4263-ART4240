@@ -23,7 +23,7 @@ public class PlayState : MonoBehaviour {
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 
 		//Put the feet collider underneath the player
-		feetColl.transform.position = player.transform.position + new Vector3 (0, -1.1f, 0);
+		feetColl.transform.position = player.transform.position;
 
 		//Turn player-controlled movement on
 		player.GetComponent<playerMovement> ().enabled = true;
