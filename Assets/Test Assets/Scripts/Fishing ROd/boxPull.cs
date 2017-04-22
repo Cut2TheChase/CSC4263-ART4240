@@ -5,7 +5,7 @@ using UnityEngine;
 public class boxPull : MonoBehaviour {
 
 	public GameObject player;
-	//[HideInInspector]
+	[HideInInspector]
 	public Transform target;
 	public float dirNum;
 
@@ -20,7 +20,7 @@ public class boxPull : MonoBehaviour {
 		slider = gameObject.GetComponent<SliderJoint2D>();	
 		sliderMotor = slider.motor;
 		//isHooked = true;
-		//target= player.transform;
+		target= player.transform;
 
 	}
 
@@ -37,7 +37,7 @@ public class boxPull : MonoBehaviour {
 
 	void Update () 
 	{
-		//target= player.transform;
+		target= player.transform;
 		Vector3 heading = target.position - transform.position;
 		dirNum = AngleDir(transform.forward, heading, transform.up);
 

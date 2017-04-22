@@ -13,12 +13,15 @@ public class swing : MonoBehaviour {
 	public float swingDelay;
 	public bool active;
 
+	private GameObject player;
+
 	void Start () {
 		hinge = gameObject.GetComponent<HingeJoint2D>();	
 		jointMotor = hinge.motor;
 		jointMotor.motorSpeed = retSpeed;
 		swingDelay = swingTime + 0.2F;
 
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 	IEnumerator ExecuteTime(float time)
@@ -32,7 +35,6 @@ public class swing : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(time);
 		swung = false; 
-
 
 	}
 	void Update () {

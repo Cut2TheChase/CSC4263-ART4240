@@ -17,7 +17,7 @@ public class ChildCollider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = GameObject.FindGameObjectWithTag ("Player").transform.position;
+		transform.position = GameObject.FindGameObjectWithTag ("Player").transform.position + new Vector3(0f, 1f, 0f);
 	}
 
 

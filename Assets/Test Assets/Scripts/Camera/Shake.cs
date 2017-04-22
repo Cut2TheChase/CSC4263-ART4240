@@ -10,6 +10,8 @@ public class Shake : MonoBehaviour {
 	public BoxCollider2D Bounds;
 	public EdgeCollider2D Ground;
 
+	public GameObject player;
+
 	private Vector3 
 	_min, 
 	_max,
@@ -51,8 +53,8 @@ public class Shake : MonoBehaviour {
 			float damper = 1.0f - Mathf.Clamp (4.0f * percentComplete - 3.0f, 0.0f, 1.0f);
 
 			//map value to [-1,1]
-			float x = Random.value * 2.0f - 1.0f;
-			float y = Random.value * 2.0f - 1.0f;
+			float x = player.transform.position.x + (Random.value * 2.0f - 1.0f);
+			float y = player.transform.position.y + (Random.value * 2.0f - 1.0f);
 
 
 
@@ -60,14 +62,14 @@ public class Shake : MonoBehaviour {
 			y *= magnitude * damper;
 
 			x_pos = Mathf.Clamp (x, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
-			y_pos = Mathf.Clamp (y, _minY.y + GetComponent<Camera> ().orthographicSize, _max.y - GetComponent<Camera> ().orthographicSize);
+			y_pos = Mathf.Clamp (y , _minY.y + GetComponent<Camera> ().orthographicSize, _max.y - GetComponent<Camera> ().orthographicSize);
 
 			Camera.main.transform.position = new Vector3 (x_pos, y_pos, transform.position.z);//new Vector3 (x, y, originalCamPos.z);
 
 			yield return null;
 		}
 
-		Camera.main.transform.position = originalCamPos;
+		//Camera.main.transform.position = originalCamPos;
 	}
 
 	public void Update()

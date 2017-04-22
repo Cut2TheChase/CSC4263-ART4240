@@ -29,6 +29,9 @@ public class playerMovement : MonoBehaviour
 
 	private bool jump_active;
 
+	[HideInInspector]
+	public bool attacking = false;
+
 	Animator anim; //Controls character animations
     CharacterController controller;
 
@@ -52,11 +55,13 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-
+		if (notHooked == false)
+			canMoveX = false;
 
 
 
 		if (notHooked == true) {
+			
 			// Move Left
 			if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) {
 				if (feetColl.GetComponent<FeetCollision> ().canMove (-horiMoveSpeed, Vector2.left)) {
@@ -69,7 +74,7 @@ public class playerMovement : MonoBehaviour
 			}
 
         // Move right
-        else if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) {
+			else if (Input.GetKey (KeyCode.D) && notHooked == true || Input.GetKey (KeyCode.RightArrow) && notHooked == true) {
 				if (feetColl.GetComponent<FeetCollision> ().canMove (horiMoveSpeed, Vector2.right)) {
 					moveDirection.x = horiMoveSpeed;
 					dirFacing = 1; //Facing Right
@@ -113,8 +118,15 @@ public class playerMovement : MonoBehaviour
 		if ((!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow) && jumpState == false) || canMoveY == false)
             moveDirection.y = 0;
 
+		//attack animation
+		if (Input.GetKey (KeyCode.Y)) {
+			attacking = true;
+			anim.SetInteger ("State", 2);
+
+		}
+
         // Idle animation
-        if (moveDirection.x == 0.0f && moveDirection.y == 0.0f)
+		if (moveDirection.x == 0.0f && moveDirection.y == 0.0f && attacking == false)
             anim.SetInteger("State", 0);
 
 		// Direction-facing calculation
@@ -148,11 +160,11 @@ public class playerMovement : MonoBehaviour
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint(hit.point).y - 0.5f, feetColl.transform.position.z);
 				}
 			}
-			if(transform.position.y < feetColl.transform.position.y + 0.6f){
+			if(transform.position.y < feetColl.transform.position.y){
 				moveDirection.y = 0;
 				jumpState = false;
 				gravity = 12.0f;
-				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y + 0.7f, transform.position.z);
+				transform.position = new Vector3 (transform.position.x,feetColl.transform.position.y, transform.position.z);
 				feetColl.transform.position = new Vector3 (transform.position.x, feetColl.transform.position.y, feetColl.transform.position.z);
 
 			}
@@ -160,7 +172,9 @@ public class playerMovement : MonoBehaviour
 
         // Apply all movements based on collective key input
         controller.Move(moveDirection * Time.deltaTime);
+		attacking = false;
     }
+
 
 	/*
     // Handles fall of jump
