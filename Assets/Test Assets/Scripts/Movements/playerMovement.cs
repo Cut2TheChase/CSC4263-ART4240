@@ -145,7 +145,7 @@ public class playerMovement : MonoBehaviour
                 jumpState = true;
 
         }
-        if (jumpState == true)
+		if (jumpState == true)
         {
             moveDirection.y -= gravity * Time.deltaTime;
             gravity += 0.5f;
@@ -155,7 +155,7 @@ public class playerMovement : MonoBehaviour
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 10f);
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Platform")
-					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.2f, feetColl.transform.position.z);
+					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.3f, feetColl.transform.position.z);
 				else if (hit.collider.name == "Top Ground Collider") {
 					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint(hit.point).y - 0.5f, feetColl.transform.position.z);
 				}
