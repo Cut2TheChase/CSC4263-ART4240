@@ -98,7 +98,7 @@ public class SlamScript2 : MonoBehaviour {
 
 				if (leftHand.transform.position == endSlam) {
 					//Checks if player has been hit, and if so gives damage
-					if (playerCol.transform.position.x > leftHand.transform.position.x - 1 && playerCol.transform.position.x < leftHand.transform.position.x + 1 && playerCol.transform.position.y < leftHand.transform.position.y + 0.5f && playerCol.transform.position.y > leftHand.transform.position.y - 0.5f)
+					if (playerCol.transform.position.x > leftHand.transform.position.x - 1.5f && playerCol.transform.position.x < leftHand.transform.position.x + 1.5f && playerCol.transform.position.y < leftHand.transform.position.y + 1f && playerCol.transform.position.y > leftHand.transform.position.y - 1f)
 						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 					Camera.main.GetComponent<Shake> ().Shaker ();
 					startTimeL = Time.time;

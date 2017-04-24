@@ -33,7 +33,7 @@ public class TauntState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - startTime >= tauntDuration) {
+		if (Time.time - startTime >= tauntDuration || GetComponent<Animator>().GetBool("hurt") == true) {
 			this.enabled = false;
 			GetComponent<TreeBossManager>().nextState ();
 		}

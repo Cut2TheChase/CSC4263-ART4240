@@ -92,7 +92,7 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 endSwipe = new Vector3 (leftBound, rightHand.transform.position.y, rightHand.transform.position.z);
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, endSwipe, speed * Time.deltaTime);
 
-					if (playerCol.transform.position.x > rightHand.transform.position.x - 1 && playerCol.transform.position.x < rightHand.transform.position.x + 1 && playerCol.transform.position.y < rightHand.transform.position.y + 0.5f && playerCol.transform.position.y > rightHand.transform.position.y - 0.5f)
+					if (playerCol.transform.position.x > rightHand.transform.position.x - 1.5f && playerCol.transform.position.x < rightHand.transform.position.x + 1.5f && playerCol.transform.position.y < rightHand.transform.position.y + 1f && playerCol.transform.position.y > rightHand.transform.position.y - 1f)
 						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 
 					if (rightHand.transform.position == endSwipe) {

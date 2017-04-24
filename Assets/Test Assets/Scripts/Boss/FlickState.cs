@@ -49,7 +49,7 @@ public class FlickState : MonoBehaviour {
 			if (Time.time - startTime >= waitTime) { //If the wait time before the flick has passed, try to flick player
 				
 					//If player is in the correct spot in front of hand, flick the player
-					if(playerCol.transform.position.x <= leftHand.transform.position.x + 1.5f && playerCol.transform.position.x >= leftHand.transform.position.x && playerCol.transform.position.y <= leftHand.transform.position.y + 1.5f && playerCol.transform.position.y >= leftHand.transform.position.y - 1.5f){
+					if(playerCol.transform.position.x <= leftHand.transform.position.x + 1.5f && playerCol.transform.position.x >= leftHand.transform.position.x - 0.5f && playerCol.transform.position.y <= leftHand.transform.position.y + 2f && playerCol.transform.position.y >= leftHand.transform.position.y - 2f){
 					    player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 						AddImpact (new Vector3 (30, 30, 0), force);
 						player.GetComponent<playerMovement> ().jumpState = true; //Make the jumpstate true because the player is now falling

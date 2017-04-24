@@ -33,7 +33,7 @@ public class TiredState : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - startTime >= tiredDuration) {
+		if (Time.time - startTime >= tiredDuration || GetComponent<Animator>().GetBool("hurt") == true) {
 			this.enabled = false;
 			GetComponent<TreeBossManager>().nextState ();
 		}
