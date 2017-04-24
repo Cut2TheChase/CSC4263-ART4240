@@ -8,12 +8,13 @@ public class boxPull : MonoBehaviour {
 	[HideInInspector]
 	public Transform target;
 	public float dirNum;
-	private bool pulled;
+	[HideInInspector]
+	public bool pulled;
 
 	public int thrustSpeed;
 	SliderJoint2D slider;
 	JointMotor2D sliderMotor;
-	[HideInInspector]
+	//[HideInInspector]
 	public bool isHooked;
 
 	private Vector3 prevPos; //holds previous position
@@ -31,13 +32,15 @@ public class boxPull : MonoBehaviour {
 	IEnumerator ExecuteAfterTime(float time)
 	{
 		yield return new WaitForSeconds(time);
-		isHooked = true;
+		//wisHooked = true;
+		pulled = true;
+
 	}
 	void OnMouseDown()
 	{
 		if (player.GetComponent<itemEquip> ().rod == true) {	
-			//isHooked = true;
-			StartCoroutine(ExecuteAfterTime(.1f));
+			isHooked = true;
+			//StartCoroutine(ExecuteAfterTime(.3f));
 			player.GetComponent<Animator> ().SetInteger ("State", 5);
 			player.GetComponent<Animator> ().SetBool ("hookDone", false);
 			player.GetComponent<playerMovement> ().notHooked = false;
@@ -69,16 +72,18 @@ public class boxPull : MonoBehaviour {
 				}
 			}
 
-			pulled = true;
 
-			if (Input.GetMouseButtonDown (0)) {
-				isHooked = false;
-				player.GetComponent<playerMovement> ().notHooked = true;
 
-				player.GetComponent<Animator> ().SetBool ("hookDone", true);
-
-				pulled = false;
-			}
+			//pulled = true;
+			//if (Input.GetMouseButtonDown (0) && pulled == true) {
+			//	isHooked = false;
+			//	player.GetComponent<playerMovement> ().notHooked = true;
+			//
+			//	player.GetComponent<Animator> ().SetBool ("hookDone", true);
+			//
+			//	pulled = false;
+			//}
+			StartCoroutine (ExecuteAfterTime (.4f));
 
 
 		}
@@ -92,6 +97,7 @@ public class boxPull : MonoBehaviour {
 
 			pulled = false;
 			}
+
 
 		slider.motor = sliderMotor;
 	}

@@ -9407,7 +9407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4900309388213764, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4900309388213764, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10216,6 +10216,7 @@ MonoBehaviour:
   isCast: 0
   origin: {fileID: 747215482}
   destination: {fileID: 0}
+  destination2: {fileID: 0}
   lineDrawSpeed: 6
   player: {fileID: 1371673071}
 --- !u!120 &1920869429

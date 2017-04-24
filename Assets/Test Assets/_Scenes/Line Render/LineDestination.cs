@@ -17,7 +17,9 @@ public class LineDestination : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (fishingRod.GetComponent<drawLine> ().isCast == false) {
-			fishingRod.GetComponent<drawLine> ().destination = castpoint; 
+			fishingRod.GetComponent<drawLine> ().destination = castpoint;
+			fishingRod.GetComponent<drawLine> ().destination2 = this.gameObject;
+
 		}
 	}
 

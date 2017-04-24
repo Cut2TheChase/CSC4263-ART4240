@@ -11,6 +11,7 @@ public class drawLine : MonoBehaviour {
 
 	public Transform origin;
 	public Transform destination;
+	public GameObject destination2;
 
 	public float lineDrawSpeed = 6f;
 	public GameObject player;
@@ -53,6 +54,13 @@ public class drawLine : MonoBehaviour {
 				} else {
 					isCast = false;
 					destination = null;
+					destination2.GetComponent<boxPull>().isHooked = false;
+					player.GetComponent<playerMovement> ().notHooked = true;
+
+					player.GetComponent<Animator> ().SetBool ("hookDone", true);
+
+					destination2.GetComponent<boxPull>().pulled = false;
+
 				}
 				
 			}
