@@ -22,6 +22,11 @@ GameObject:
   - component: {fileID: 114604351104734214}
   - component: {fileID: 212320992509025012}
   - component: {fileID: 114109217533076664}
+  - component: {fileID: 58120488492370036}
+  - component: {fileID: 50297554484244808}
+  - component: {fileID: 95748202966694494}
+  - component: {fileID: 114655638974286680}
+  - component: {fileID: 114001791618135270}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Untagged
@@ -42,13 +47,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50297554484244808
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986917045185948}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58120488492370036
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986917045185948}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0.75}
+  serializedVersion: 2
+  m_Radius: 0.5873827
+--- !u!95 &95748202966694494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986917045185948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50f1588fd6d4af249b055cec03dc4c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114001791618135270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986917045185948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0d8b58dad3d9a43b71177f39baf7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  hurt: 0
 --- !u!114 &114109217533076664
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986917045185948}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a78d64b97c43cd49b983c1ebe8322d5, type: 3}
   m_Name: 
@@ -56,8 +125,9 @@ MonoBehaviour:
   range: 10
   speed: 0
   attackDis: 10
-  attackRate: 1
+  attackRate: 1.5
   projectile: {fileID: 1995298516716952, guid: 51c5621193e5a8d49a8e27109ae35d48, type: 2}
+  dirFacing: -1
 --- !u!114 &114604351104734214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +137,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114655638974286680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986917045185948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61afd35b324804d77af25a82d39440ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212320992509025012

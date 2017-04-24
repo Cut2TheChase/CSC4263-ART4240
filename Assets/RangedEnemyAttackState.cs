@@ -39,7 +39,7 @@ public class RangedEnemyAttackState : MonoBehaviour {
 
 		}
 
-		if (disFromPlayer < range / 2) {
+		if (disFromPlayer < range / 2 && foundChar == false) {
 			anim.SetInteger ("State", 1);
 			foundChar = true;
 		}
@@ -60,7 +60,7 @@ public class RangedEnemyAttackState : MonoBehaviour {
 
 		//If the enemy is not close enough to attack
 		if (disFromPlayer > attackDis) {
-			nextAttack = Time.time + attackRate;
+			nextAttack = Time.time + (attackRate/2);
 		} else if(Time.time > nextAttack) { //If enough time has passed for the next attack to happen and the enemy is close enough to the player
 			nextAttack = Time.time + attackRate;
 			anim.SetInteger ("State", 3);
