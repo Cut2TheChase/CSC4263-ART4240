@@ -275,11 +275,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.468184
+      value: -3.98
       objectReference: {fileID: 0}
     - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.396165
+      value: 4.69
       objectReference: {fileID: 0}
     - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -305,9 +305,49 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 212625460437757188, guid: 15f1708b366bf91438b8b66ea03d631e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed60da992eb56a74a83c394f66a6e64b,
+        type: 3}
+    - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.0848832
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.0848832
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310297535748138, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.077491656
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15f1708b366bf91438b8b66ea03d631e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &684570711 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1655364385227446, guid: 15f1708b366bf91438b8b66ea03d631e,
+    type: 2}
+  m_PrefabInternal: {fileID: 684570710}
+--- !u!95 &684570712
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 684570711}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 449e46af3197cf848acd0173f2c995a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &868166713 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1458614220043534, guid: d0255d931dfe41140a364a0b74fe9f10,

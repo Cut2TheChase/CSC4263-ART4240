@@ -30,6 +30,7 @@ public class FlickState : MonoBehaviour {
 		playerCol = GameObject.FindGameObjectWithTag ("Player Collider");
 		impact = Vector3.zero;
 		playerFlicked = false;
+		leftHand.GetComponent<Animator> ().SetInteger ("State", 3);
 	}
 
 	void Update () {
@@ -47,7 +48,7 @@ public class FlickState : MonoBehaviour {
 		else if (reset == false) { //this is when the flick is ready to strike
 			
 			if (Time.time - startTime >= waitTime) { //If the wait time before the flick has passed, try to flick player
-				
+				leftHand.GetComponent<Animator> ().SetBool("flickIt", true);
 					//If player is in the correct spot in front of hand, flick the player
 					if(playerCol.transform.position.x <= leftHand.transform.position.x + 1.5f && playerCol.transform.position.x >= leftHand.transform.position.x - 0.5f && playerCol.transform.position.y <= leftHand.transform.position.y + 2f && playerCol.transform.position.y >= leftHand.transform.position.y - 2f){
 					    player.GetComponent<PlayerHealth> ().TakeDamage (damage);
@@ -60,8 +61,8 @@ public class FlickState : MonoBehaviour {
 				
 			} else if (reset == true) { //Hand is reseting, also if the flick happened then letting the force die down
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, initalPos, speed * Time.deltaTime);
-
-			
+			    leftHand.GetComponent<Animator> ().SetBool("flickIt", false);
+			leftHand.GetComponent<Animator> ().SetInteger ("State", 0);
 			impact = Vector3.Lerp (impact, Vector3.zero, 5 * Time.deltaTime); //impact vector is going towards 0
 			if (leftHand.transform.position == initalPos) {
 				//if the hand is in the initial position and the player either wasnt flick or the flick is done, go to next scene
