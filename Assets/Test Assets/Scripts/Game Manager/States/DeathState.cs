@@ -21,6 +21,8 @@ public class DeathState : MonoBehaviour {
 		prevScene = SceneManager.GetActiveScene().buildIndex;
 		Debug.Log (prevScene);
 
+		player.GetComponent<zAxisPlayerManager> ().enabled = false;
+		player.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y,-9.5f);
 		GetComponent<FadeOut> ().enabled = true;
 		GetComponent<FadeOut> ().setTransitionScene (3);
 
