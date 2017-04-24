@@ -1647,6 +1647,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b3468ba4e9262b4cbe6751201154d3b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &634432814 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1986917045185948, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1720005880}
+--- !u!95 &634432819
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634432814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50f1588fd6d4af249b055cec03dc4c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &643183576
 Prefab:
   m_ObjectHideFlags: 0
@@ -4164,11 +4186,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4766386569056384, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 52.76
+      value: 51.95
       objectReference: {fileID: 0}
     - target: {fileID: 4766386569056384, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.6
+      value: -6.06
       objectReference: {fileID: 0}
     - target: {fileID: 4766386569056384, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4196,14 +4218,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114109217533076664, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee,
         type: 2}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 1995298516716952, guid: 51c5621193e5a8d49a8e27109ae35d48,
-        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114109217533076664, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: attackRate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}

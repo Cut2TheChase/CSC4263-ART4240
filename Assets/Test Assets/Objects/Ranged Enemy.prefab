@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986917045185948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.76, y: -5.6, z: -1}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 51.95, y: -6.06, z: -1}
+  m_LocalScale: {x: 1.7106506, y: 1.7106506, z: 1.7106506}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986917045185948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a78d64b97c43cd49b983c1ebe8322d5, type: 3}
   m_Name: 
@@ -57,7 +57,7 @@ MonoBehaviour:
   speed: 0
   attackDis: 10
   attackRate: 1
-  projectile: {fileID: 0}
+  projectile: {fileID: 1995298516716952, guid: 51c5621193e5a8d49a8e27109ae35d48, type: 2}
 --- !u!114 &114604351104734214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 7c5946b86da54fc43aacf64cda131956, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
