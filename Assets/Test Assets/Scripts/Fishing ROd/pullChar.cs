@@ -91,6 +91,7 @@ public class pullChar : MonoBehaviour {
 		if (reached_destination == true) {
 			player.GetComponent<playerMovement> ().jumpState = true;
 			reached_destination = false;
+			player.GetComponent<Animator> ().SetBool ("hookDone", true);
 		}
 	}
 
