@@ -216,6 +216,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114525905708772422, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+        type: 2}
+      propertyPath: tauntDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 58666997797836390, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58666997797836390, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 58666997797836390, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19cb213a64e13de4b9a7c0f1360242bc, type: 2}
   m_IsPrefabParent: 0

@@ -19,10 +19,16 @@ public class TauntState : MonoBehaviour {
     void OnEnable () {
 		GetComponent<CircleCollider2D> ().enabled = true;
 		startTime = Time.time;
+		GetComponent<Animator> ().SetInteger ("State", 2);
+		GetComponent<Animator> ().SetBool ("isOpen", true);
+		GetComponent<Animator> ().SetBool ("taunt", true);
 	}
 
 	void OnDisable(){
 		GetComponent<CircleCollider2D> ().enabled = false;
+		GetComponent<Animator> ().SetBool ("isOpen", false);
+		GetComponent<Animator> ().SetBool ("taunt", false);
+		GetComponent<Animator> ().SetInteger ("State", 1);
 	}
 	
 	// Update is called once per frame

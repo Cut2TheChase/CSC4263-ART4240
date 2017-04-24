@@ -20,6 +20,30 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: taunt
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: tired
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: hurt
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: angry
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -72,8 +96,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: State
+  - m_ConditionMode: 1
+    m_ConditionEvent: hurt
     m_EventTreshold: 5
   - m_ConditionMode: 1
     m_ConditionEvent: isOpen
@@ -189,8 +213,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: State
+  - m_ConditionMode: 1
+    m_ConditionEvent: angry
     m_EventTreshold: 6
   - m_ConditionMode: 1
     m_ConditionEvent: isOpen
@@ -216,8 +240,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: State
+  - m_ConditionMode: 1
+    m_ConditionEvent: tired
     m_EventTreshold: 4
   - m_ConditionMode: 1
     m_ConditionEvent: isOpen
@@ -243,8 +267,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isOpen
+  - m_ConditionMode: 1
+    m_ConditionEvent: hurt
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102089091942742832}
@@ -333,8 +357,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: isOpen
+  - m_ConditionMode: 1
+    m_ConditionEvent: hurt
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102089091942742832}
@@ -405,8 +429,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: State
+  - m_ConditionMode: 1
+    m_ConditionEvent: taunt
     m_EventTreshold: 3
   - m_ConditionMode: 1
     m_ConditionEvent: isOpen
@@ -741,7 +765,7 @@ AnimatorStateMachine:
     m_Position: {x: 564, y: 468, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102345945863052500}
-    m_Position: {x: 276, y: 348, z: 0}
+    m_Position: {x: 228, y: 348, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102020771401905634}
     m_Position: {x: -60, y: 432, z: 0}
@@ -750,7 +774,7 @@ AnimatorStateMachine:
     m_Position: {x: 552, y: 396, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102405537764912602}
-    m_Position: {x: 192, y: 408, z: 0}
+    m_Position: {x: 228, y: 408, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102089091942742832}
     m_Position: {x: 228, y: 468, z: 0}
