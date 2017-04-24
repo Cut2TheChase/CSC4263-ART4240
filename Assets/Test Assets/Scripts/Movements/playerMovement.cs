@@ -12,7 +12,7 @@ public class playerMovement : MonoBehaviour
 {
 	public GameObject feetColl; //Collider that will be at the player's feet
 
-
+	public bool moveOnIn = true; //Should player move
     public Vector3 moveDirection;
     float horiMoveSpeed, vertMoveSpeed, jumpSpeed, gravity, vertPos, landingPos;
 	int dirFacing; //Direction character is facing, 1 = right, -1 = left
