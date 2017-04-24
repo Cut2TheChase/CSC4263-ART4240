@@ -129,7 +129,8 @@ public class playerMovement : MonoBehaviour
 
         // Idle animation
 		if (moveDirection.x == 0.0f && moveDirection.y == 0.0f && attacking == false)
-            anim.SetInteger("State", 0);
+			if(anim.GetBool("hookDone") != false) //if you arent trying to throw your fishing rod
+                  anim.SetInteger("State", 0);
 
 		// Direction-facing calculation
 		if (dirFacing == -1)

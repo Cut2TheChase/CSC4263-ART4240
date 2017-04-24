@@ -15,6 +15,8 @@ public class boxPull : MonoBehaviour {
 	[HideInInspector]
 	public bool isHooked;
 
+	private Vector3 prevPos; //holds previous position
+
 	void Start () 
 	{
 		slider = gameObject.GetComponent<SliderJoint2D>();	
@@ -30,6 +32,8 @@ public class boxPull : MonoBehaviour {
 	{
 		if (player.GetComponent<itemEquip> ().rod == true) {	
 			isHooked = true;
+			player.GetComponent<Animator> ().SetInteger ("State", 5);
+			player.GetComponent<Animator> ().SetBool ("hookDone", false);
 			player.GetComponent<playerMovement> ().notHooked = false;
 		}
 
@@ -50,6 +54,7 @@ public class boxPull : MonoBehaviour {
 				if (dirNum == -1) {	
 					sliderMotor.motorSpeed = thrustSpeed;
 				}
+				
 			}
 			if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) 
 			{
@@ -63,6 +68,8 @@ public class boxPull : MonoBehaviour {
 			{
 				isHooked = false;
 			player.GetComponent<playerMovement> ().notHooked = true;
+
+			player.GetComponent<Animator> ().SetBool ("hookDone", true);
 			}
 
 		slider.motor = sliderMotor;

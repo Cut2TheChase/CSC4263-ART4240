@@ -58,6 +58,11 @@ public class pullChar : MonoBehaviour {
 	{
 		if (player.GetComponent<itemEquip> ().rod == true) {	
 			isHooked = true;
+
+			player.GetComponent<Animator> ().SetInteger ("State", 5);
+			player.GetComponent<Animator> ().SetBool ("hookDone", false);
+			player.GetComponent<playerMovement> ().notHooked = false;
+
 			player.GetComponent<playerMovement> ().notHooked = false;
 			reached_destination = false;
 		}
