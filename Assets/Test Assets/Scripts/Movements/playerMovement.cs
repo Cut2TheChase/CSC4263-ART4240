@@ -31,6 +31,8 @@ public class playerMovement : MonoBehaviour
 
 	[HideInInspector]
 	public bool attacking = false;
+	[HideInInspector]
+	public int attackState = 2;
 
 	Animator anim; //Controls character animations
     CharacterController controller;
@@ -121,7 +123,7 @@ public class playerMovement : MonoBehaviour
 		//attack animation
 		if (Input.GetKey (KeyCode.Y)) {
 			attacking = true;
-			anim.SetInteger ("State", 2);
+			anim.SetInteger ("State", attackState);
 
 		}
 

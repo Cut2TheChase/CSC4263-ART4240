@@ -38,6 +38,11 @@ public class itemEquip : MonoBehaviour {
 			{
 			Cursor.SetCursor(nextCursorTexture, hotSpot, cursorMode);
 			rod = !rod;
+
+			if (rod == true)
+				GetComponent<playerMovement> ().attackState = 4;
+			else
+				GetComponent<playerMovement> ().attackState = 2;
 			currentCursorTexture = nextCursorTexture;
 			}	
 	}
