@@ -13,67 +13,84 @@ public class drawLine : MonoBehaviour {
 	public Transform destination;
 
 	public float lineDrawSpeed = 6f;
-
+	public GameObject player;
 
 	void Start () 
 	{
 		lineRenderer = GetComponent<LineRenderer> ();
 		//lineRenderer.SetPosition (0, origin.position);
-		lineRenderer.SetWidth (.45f, .45f);
+		lineRenderer.SetWidth (.1f, .1f);
 
 		dist = Vector3.Distance (origin.position, destination.position);
 		isCast = false;
 		
 	}
-	
+
+
+	IEnumerator ExecuteAfterTime(float time)
+	{
+		yield return new WaitForSeconds (time);
+		isCast = false;
+		destination = null;
+		lineRenderer.SetPosition (0, origin.position);
+		lineRenderer.SetPosition (1, origin.position);
+		counter = 0;
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
 		//lineRenderer.SetPosition (0, origin.position);
 		//destination = 
 		dist = Vector3.Distance (origin.position, destination.position);
-
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-			lineRenderer.SetPosition (0, origin.position);
-			if (isCast == false) {
-				isCast = true;
-			} else {
-				isCast = false;
-				destination = null;
-			}
+		if (player.GetComponent<itemEquip> ().rod == true) {	
 				
-		}
-		if (isCast == true) 
-		{
-			if (counter < dist) {
+			
+			if (Input.GetMouseButtonDown (0)) {
+				lineRenderer.SetPosition (0, origin.position);
+				if (isCast == false) {
+					isCast = true;
+				} else {
+					isCast = false;
+					destination = null;
+				}
+				
+			}
+			if (Input.GetKey(KeyCode.E))
+			{
+				StartCoroutine (ExecuteAfterTime (1));
+			}
 
-				counter += .1f / lineDrawSpeed;
 
-				float x = Mathf.Lerp (0, dist, counter);
+			if (isCast == true) {
+				if (counter < dist) {
 
-				Vector3 pointA = origin.position;
-				Vector3 pointB = destination.position;
+					counter += .1f / lineDrawSpeed;
+
+					float x = Mathf.Lerp (0, dist, counter);
+
+					Vector3 pointA = origin.position;
+					Vector3 pointB = destination.position;
 
 
-				Vector3 pointAlongLine = x * Vector3.Normalize (pointB - pointA) + pointA;
+					Vector3 pointAlongLine = x * Vector3.Normalize (pointB - pointA) + pointA;
 
 
-				lineRenderer.SetPosition (1, pointAlongLine);
+					lineRenderer.SetPosition (1, pointAlongLine);
 
 			
+				}
+
+
 			}
+			if (isCast == false) {
 
+				lineRenderer.SetPosition (0, origin.position);
+				lineRenderer.SetPosition (1, origin.position);
+				counter = 0;
+				//destination = null;
 
-		}
-		if (isCast== false) 
-		{
-
-			lineRenderer.SetPosition (0, origin.position);
-			lineRenderer.SetPosition (1, origin.position);
-			counter = 0;
-			//destination = null;
-
+			}
 		}
 	}
 }

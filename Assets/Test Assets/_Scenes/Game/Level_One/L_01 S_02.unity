@@ -10217,6 +10217,7 @@ MonoBehaviour:
   origin: {fileID: 747215482}
   destination: {fileID: 0}
   lineDrawSpeed: 6
+  player: {fileID: 1371673071}
 --- !u!120 &1920869429
 LineRenderer:
   m_ObjectHideFlags: 0
