@@ -9,6 +9,7 @@ public class SwipeState2 : MonoBehaviour {
 	private GameObject leftHand;
 	private GameObject rightHand;
 	private GameObject player;
+	private GameObject playerCol;
 
 	public int speed;
 	public int damage;
@@ -33,6 +34,7 @@ public class SwipeState2 : MonoBehaviour {
 		leftHand = GameObject.FindGameObjectWithTag ("Left Hand");
 		rightHand = GameObject.FindGameObjectWithTag ("Right Hand");
 		player = GameObject.FindGameObjectWithTag ("Player");
+		playerCol = GameObject.FindGameObjectWithTag ("Player Collider");
 		leftC = counter;
 		rightC = counter;
 		startTime = Time.time;
@@ -48,7 +50,7 @@ public class SwipeState2 : MonoBehaviour {
 			//LEFT HAND************************************************************
 			if (leftC != 0) {
 				if (setupL == false) { //If the hand hasnt set up yet, move it to position
-					Vector3 startSwipe = new Vector3 (leftBound, player.transform.position.y, leftHand.transform.position.z);
+					Vector3 startSwipe = new Vector3 (leftBound, playerCol.transform.position.y, leftHand.transform.position.z);
 					leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSwipe, speed * Time.deltaTime);
 
 					if (leftHand.transform.position == startSwipe)
@@ -58,7 +60,7 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 endSwipe = new Vector3 (rightBound, leftHand.transform.position.y, leftHand.transform.position.z);
 					leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, endSwipe, speed * Time.deltaTime);
 
-					if (player.transform.position.x > leftHand.transform.position.x - 1 && player.transform.position.x < leftHand.transform.position.x + 1 && player.transform.position.y < leftHand.transform.position.y + 0.5f && player.transform.position.y > leftHand.transform.position.y - 0.5f)
+					if (playerCol.transform.position.x > leftHand.transform.position.x - 1 && playerCol.transform.position.x < leftHand.transform.position.x + 1 && playerCol.transform.position.y < leftHand.transform.position.y + 0.5f && playerCol.transform.position.y > leftHand.transform.position.y - 0.5f)
 						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 
 
@@ -80,7 +82,7 @@ public class SwipeState2 : MonoBehaviour {
 			//RIGHT HAND*********************************************************************
 			if (rightC != 0 && Time.time > startTime + rightDelay) {
 				if (setupR == false) { //If the hand hasnt set up yet, move it to position
-					Vector3 startSwipe = new Vector3 (rightBound, player.transform.position.y, rightHand.transform.position.z);
+					Vector3 startSwipe = new Vector3 (rightBound, playerCol.transform.position.y, rightHand.transform.position.z);
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, startSwipe, speed * Time.deltaTime);
 
 					if (rightHand.transform.position == startSwipe)
@@ -90,7 +92,7 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 endSwipe = new Vector3 (leftBound, rightHand.transform.position.y, rightHand.transform.position.z);
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, endSwipe, speed * Time.deltaTime);
 
-					if (player.transform.position.x > rightHand.transform.position.x - 1 && player.transform.position.x < rightHand.transform.position.x + 1 && player.transform.position.y < rightHand.transform.position.y + 0.5f && player.transform.position.y > rightHand.transform.position.y - 0.5f)
+					if (playerCol.transform.position.x > rightHand.transform.position.x - 1 && playerCol.transform.position.x < rightHand.transform.position.x + 1 && playerCol.transform.position.y < rightHand.transform.position.y + 0.5f && playerCol.transform.position.y > rightHand.transform.position.y - 0.5f)
 						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
 
 					if (rightHand.transform.position == endSwipe) {

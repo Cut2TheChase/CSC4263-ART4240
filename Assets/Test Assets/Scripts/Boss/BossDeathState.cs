@@ -12,8 +12,8 @@ using UnityEngine;
 public class BossDeathState : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void OnEnable () {
+		GetComponent<Animator> ().SetInteger ("State", 8);
 	}
 	
 	// Update is called once per frame
