@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114681388086671962}
   - component: {fileID: 114304998613358166}
   m_Layer: 5
-  m_Name: RodImageGUI
+  m_Name: StickImageGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 222037258396478862}
   - component: {fileID: 114763364600084924}
   m_Layer: 5
-  m_Name: StickImageGUI
+  m_Name: RodImageGUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fffc67e62e5844e469b1d09e5c9c96d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 596ada3f680eb27478f21515681ae2a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -386,7 +386,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 596ada3f680eb27478f21515681ae2a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fffc67e62e5844e469b1d09e5c9c96d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -476,8 +476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.525003, y: 0}
-  m_SizeDelta: {x: 5.05, y: 4.6}
+  m_AnchoredPosition: {x: 0, y: -0.000005722046}
+  m_SizeDelta: {x: 0, y: 4.6000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224420559527102626
 RectTransform:
