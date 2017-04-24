@@ -18,10 +18,17 @@ public class TiredState : MonoBehaviour {
     void OnEnable () {
 		GetComponent<CircleCollider2D> ().enabled = true;
 		startTime = Time.time;
+
+		GetComponent<Animator> ().SetInteger ("State", 2);
+		GetComponent<Animator> ().SetBool ("isOpen", true);
+		GetComponent<Animator> ().SetBool ("tired", true);
 	}
 
 	void OnDisable(){
 		GetComponent<CircleCollider2D> ().enabled = false;
+		GetComponent<Animator> ().SetBool ("isOpen", false);
+		GetComponent<Animator> ().SetBool ("tired", false);
+		GetComponent<Animator> ().SetInteger ("State", 1);
 	}
 
 	// Update is called once per frame
@@ -36,7 +43,8 @@ public class TiredState : MonoBehaviour {
 	{
         //Checks for an attack by the player
         //Sends data for damage to GUI slider
-        if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0) {
+		if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0 && other.gameObject.GetComponentInParent<swing>().swung == true) {
+			GetComponent<Animator> ().SetBool ("hurt", true);
 			GetComponent<TreeBossManager>().health -= other.GetComponentInParent<sword>().damage;
             healthSlider.value -= other.GetComponentInParent<sword>().damage;
 		}

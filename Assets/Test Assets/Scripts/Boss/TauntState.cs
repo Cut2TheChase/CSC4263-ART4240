@@ -43,7 +43,8 @@ public class TauntState : MonoBehaviour {
 	{
 	//Checks for an attack by the player
     //Sends data for damage to GUI slider
-        if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0) {
+		if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0 && other.gameObject.GetComponentInParent<swing>().swung == true) {
+			GetComponent<Animator> ().SetBool ("hurt", true);
 	        GetComponent<TreeBossManager>().health -= other.GetComponentInParent<sword>().damage;
             healthSlider.value -= other.GetComponentInParent<sword>().damage;
         }
