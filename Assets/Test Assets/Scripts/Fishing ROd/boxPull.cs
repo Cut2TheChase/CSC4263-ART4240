@@ -8,12 +8,16 @@ public class boxPull : MonoBehaviour {
 	[HideInInspector]
 	public Transform target;
 	public float dirNum;
+	[HideInInspector]
+	public bool pulled;
 
 	public int thrustSpeed;
 	SliderJoint2D slider;
 	JointMotor2D sliderMotor;
-	[HideInInspector]
+	//[HideInInspector]
 	public bool isHooked;
+
+	private Vector3 prevPos; //holds previous position
 
 	void Start () 
 	{
@@ -25,11 +29,20 @@ public class boxPull : MonoBehaviour {
 	}
 
 
+	IEnumerator ExecuteAfterTime(float time)
+	{
+		yield return new WaitForSeconds(time);
+		//wisHooked = true;
+		pulled = true;
 
+	}
 	void OnMouseDown()
 	{
 		if (player.GetComponent<itemEquip> ().rod == true) {	
 			isHooked = true;
+			//StartCoroutine(ExecuteAfterTime(.3f));
+			player.GetComponent<Animator> ().SetInteger ("State", 5);
+			player.GetComponent<Animator> ().SetBool ("hookDone", false);
 			player.GetComponent<playerMovement> ().notHooked = false;
 		}
 
@@ -45,25 +58,46 @@ public class boxPull : MonoBehaviour {
 
 		if (isHooked == true) 
 		{
-			if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) 
+			if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.LeftArrow)) 
 			{
 				if (dirNum == -1) {	
 					sliderMotor.motorSpeed = thrustSpeed;
 				}
+
 			}
-			if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) 
+			if (Input.GetKey (KeyCode.E) || Input.GetKey (KeyCode.RightArrow)) 
 			{
 				if (dirNum == 1) {	
 					sliderMotor.motorSpeed = -thrustSpeed;
 				}
 			}
+
+
+
+			//pulled = true;
+			//if (Input.GetMouseButtonDown (0) && pulled == true) {
+			//	isHooked = false;
+			//	player.GetComponent<playerMovement> ().notHooked = true;
+			//
+			//	player.GetComponent<Animator> ().SetBool ("hookDone", true);
+			//
+			//	pulled = false;
+			//}
+			StartCoroutine (ExecuteAfterTime (.4f));
+
+
 		}
 
-		if (Input.GetKey (KeyCode.Q) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Y))
+		if (Input.GetKey (KeyCode.Q) || Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.E) && pulled ==true) )
 			{
 				isHooked = false;
 			player.GetComponent<playerMovement> ().notHooked = true;
+
+			player.GetComponent<Animator> ().SetBool ("hookDone", true);
+
+			pulled = false;
 			}
+
 
 		slider.motor = sliderMotor;
 	}

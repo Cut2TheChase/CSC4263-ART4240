@@ -31,6 +31,8 @@ public class playerMovement : MonoBehaviour
 
 	[HideInInspector]
 	public bool attacking = false;
+	[HideInInspector]
+	public int attackState = 2;
 
 	Animator anim; //Controls character animations
     CharacterController controller;
@@ -121,13 +123,14 @@ public class playerMovement : MonoBehaviour
 		//attack animation
 		if (Input.GetKey (KeyCode.Y)) {
 			attacking = true;
-			anim.SetInteger ("State", 2);
+			anim.SetInteger ("State", attackState);
 
 		}
 
         // Idle animation
 		if (moveDirection.x == 0.0f && moveDirection.y == 0.0f && attacking == false)
-            anim.SetInteger("State", 0);
+			if(anim.GetBool("hookDone") != false) //if you arent trying to throw your fishing rod
+                  anim.SetInteger("State", 0);
 
 		// Direction-facing calculation
 		if (dirFacing == -1)

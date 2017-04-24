@@ -12,6 +12,10 @@ using UnityEngine;
 public class enemyHealth : MonoBehaviour 
 {
 	public int health;
+	private int hurtCounter = 0; 
+
+	[HideInInspector]
+	public bool hurt = false;
 
 	void Start () 
 	{
@@ -23,16 +27,20 @@ public class enemyHealth : MonoBehaviour
 		{
 			this.GetComponent<EnemyAttackState> ().enabled = false;
 			this.GetComponent<EnemyDeathState> ().enabled = true;
-
 		}	
+
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "Sword") {
+		if (other.tag == "Sword" && other.gameObject.GetComponentInParent<swing>().swung == true) {
 			this.health -= other.GetComponentInParent<sword>().damage;
+			if (this.health != 0) {
+				GetComponent<Animator> ().SetInteger ("State", 5);
+				hurt = true;
+				GetComponent<EnemyAttackState> ().waitTime = Time.time + 0.3f;
+			}
 		}
-
-		
 	}
-
 }
+
+

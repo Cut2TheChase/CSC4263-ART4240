@@ -13,13 +13,18 @@ public class RangedEnemyAttackState : MonoBehaviour {
 	private float nextAttack = 0; //time next attack can happen
 	public float attackRate; //Rate the enemy can attack, in seconds
 
+	private bool foundChar = false; //Keeps track of when the enemy first spots the character
+	private Animator anim;
+
 	public GameObject projectile; //projectile enemy will throw
 
-	int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
+	[HideInInspector]
+	public int dirFacing = -1; //Direction enemy is facing, 1 = right, -1 = left
 
 
 	void OnEnable () {
 		player = GameObject.FindGameObjectWithTag ("Player");
+		anim = GetComponent<Animator> ();
 	}
 
 	void Update () {
@@ -28,8 +33,15 @@ public class RangedEnemyAttackState : MonoBehaviour {
 			new Vector2 (transform.position.x, transform.position.y));
 
 		//if player is within seeable range
-		if (disFromPlayer < range) {
+		if (disFromPlayer < range && foundChar == true) {
+			anim.SetInteger ("State", 2);
 			Attack ();
+
+		}
+
+		if (disFromPlayer < range / 2 && foundChar == false) {
+			anim.SetInteger ("State", 1);
+			foundChar = true;
 		}
 
 		//Direction facing calculation
@@ -48,10 +60,10 @@ public class RangedEnemyAttackState : MonoBehaviour {
 
 		//If the enemy is not close enough to attack
 		if (disFromPlayer > attackDis) {
-			nextAttack = Time.time + attackRate;
+			nextAttack = Time.time + (attackRate/2);
 		} else if(Time.time > nextAttack) { //If enough time has passed for the next attack to happen and the enemy is close enough to the player
 			nextAttack = Time.time + attackRate;
-			Instantiate (projectile, new Vector3 (transform.position.x + dirFacing, transform.position.y, transform.position.z), Quaternion.identity);
+			anim.SetInteger ("State", 3);
 		}
 	}
 

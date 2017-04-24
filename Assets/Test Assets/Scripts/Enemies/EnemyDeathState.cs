@@ -10,15 +10,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDeathState : MonoBehaviour {
+
+	private float destroyTime;
+	private float animTime = 0.8f;
     void Start () {
 		
 	}
     void OnEnable () {
-		Destroy(gameObject);
+		GetComponent<Animator>().SetInteger("State", 4); //Enemy Death Animation
+		destroyTime = Time.time + animTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Time.time > destroyTime)
+			Destroy (gameObject);
+		}
+
 		
 	}
-}
+

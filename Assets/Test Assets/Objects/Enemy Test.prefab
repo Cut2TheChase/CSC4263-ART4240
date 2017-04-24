@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114896400728151582}
   - component: {fileID: 114671106380527604}
   - component: {fileID: 114738264788489870}
+  - component: {fileID: 95178637957335170}
   m_Layer: 0
   m_Name: Enemy Test
   m_TagString: Enemy
@@ -41,8 +42,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1771238734256972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.23, y: -3.31, z: -2}
-  m_LocalScale: {x: 0.22953613, y: 0.30144596, z: 1}
+  m_LocalPosition: {x: -1.043, y: -2.317, z: -2}
+  m_LocalScale: {x: 0.8988599, y: 1.1804576, z: 3.9159844}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,9 +79,26 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5875771
+  m_Radius: 0.59869426
+--- !u!95 &95178637957335170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771238734256972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ede3df0fe82088043ba05a4de5593714, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114142903556845672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,7 +191,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9c615f5d677ab414b9e5c4cbf8429080, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0494511d9248c6145990af972186ed76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

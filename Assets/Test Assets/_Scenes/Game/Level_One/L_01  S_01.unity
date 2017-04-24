@@ -402,7 +402,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4217670010738994, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.52
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 4217670010738994, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2397,6 +2397,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456381976322728, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
+      propertyPath: m_Name
+      value: StickImageGUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578545597214834, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
+      propertyPath: m_Name
+      value: RodImageGUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681388086671962, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 596ada3f680eb27478f21515681ae2a7,
+        type: 3}
+    - target: {fileID: 114763364600084924, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fffc67e62e5844e469b1d09e5c9c96d0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
   m_IsPrefabParent: 0

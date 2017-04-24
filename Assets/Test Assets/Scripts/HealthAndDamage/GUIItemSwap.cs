@@ -14,7 +14,7 @@ public class GUIItemSwap : MonoBehaviour {
     //calls the swap function when E key is pressed
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Swap();
         }
