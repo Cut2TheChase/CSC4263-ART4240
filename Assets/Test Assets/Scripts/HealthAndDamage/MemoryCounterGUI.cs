@@ -12,45 +12,57 @@ public class MemoryCounterGUI : MonoBehaviour {
 
     private GameObject player; //finds the player game object
     PlayerHealth playerHealth; //used to call playerHealth.cs
-    public playerMovement playerMove; //used to pause player controls during memory cutscene
     float disFromPlayer; //distance the player is from the enemy
     public float range; //range at which the enemy will spot the character
-    public Canvas memoryUI; //the text overlay that is displayed for a specific memory instance
-        // memoryUI prefab needs to be created, concerns about sequential (press-to-proceed) texts in one memoryUI?
+    public UnityEngine.UI.Text memoryUI; //the text overlay that is displayed for a specific memory instance
+    bool detected = false;  //marks whether memory has been picked up yet, to avoid repeated countMem calls
     
     //finds player object and its health and movement components
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        playerMove = player.GetComponent<playerMovement>();
     }
     //calculates distance from memory item to player object and calls countMem if the two are close enough
     void Update()
     {
         disFromPlayer = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y),
                                             new Vector2(transform.position.x, transform.position.y));
-        if (disFromPlayer < range)
+        if (disFromPlayer < range && detected == false)
         {
-            countMem();
+            detected = true;
+            StartCoroutine(countMem());
         }
     }
     //used to access the PlayerHealth.cs function memCount(), plays corresponding cutscene, and destroys memory item on contact
-    public void countMem()
+    public IEnumerator countMem()
     {
-        playerHealth.memCount();
-        playerMove.enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        memoryUI.gameObject.SetActive(true);
         bool done = false;
+        Time.timeScale = 0;
         while (done == false)
         {
-            memoryUI.GetComponent<Canvas>().enabled = true;
-            if (Input.GetKey(KeyCode.E))
+            yield return null;
+            while (!Input.GetKey(KeyCode.E))
             {
-                memoryUI.GetComponent<Canvas>().enabled = false;
-                done = true;
+                memoryUI.gameObject.SetActive(true);
+                yield return null;
+                /*if (Input.GetKey(KeyCode.E) && memoryUI.GetComponent<nextText>().next != null)
+                {
+                    memoryUI.gameObject.SetActive(false);
+                    memoryUI = memoryUI.GetComponent<nextText>().next;
+                }*/
+                if (Input.GetKey(KeyCode.E))
+                    done = true;
+            }
+            if (done == true)
+            {
+                Time.timeScale = 1;
+                memoryUI.gameObject.SetActive(false);
+                playerHealth.memCount();
+                Destroy(gameObject);
             }
         }
-        playerMove.enabled = true;
-        Destroy(gameObject);
     }
 }
