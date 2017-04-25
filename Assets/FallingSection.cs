@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallingSection : MonoBehaviour {
 	GameObject player;
 	public GameObject platform;
+	public GameObject switchCam;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -20,6 +21,7 @@ public class FallingSection : MonoBehaviour {
 		player.GetComponent<playerMovement> ().enabled = false;
 		player.GetComponent<Animator> ().SetInteger ("State", 0);
 		platform.GetComponent<vanishPlatform> ().enabled = true;
+		switchCam.GetComponent<changeCameraBounds> ().enabled = true;
 		Destroy (gameObject);
 	}
 }
