@@ -1212,7 +1212,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4766386569056384, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 202.22
+      value: 178.4
       objectReference: {fileID: 0}
     - target: {fileID: 4766386569056384, guid: 9c3d0f676050c5446ae9fe0ca82ab6ee, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3011,12 +3011,12 @@ Prefab:
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
@@ -3581,7 +3581,7 @@ GameObject:
   - component: {fileID: 706055060}
   m_Layer: 0
   m_Name: SongSound
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3597,6 +3597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05531ded5ba89c446bf8d0d9c8b6ec00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossMusic: {fileID: 8300000, guid: a2a939062a3b0564985fea780148521e, type: 3}
 --- !u!82 &706055061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7607,6 +7608,16 @@ Prefab:
       propertyPath: memoryUI
       value: 
       objectReference: {fileID: 285467034}
+    - target: {fileID: 212688536981896912, guid: 95e4ba50cd2ee9249ba10f4faff4e407,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114978689160782486, guid: 95e4ba50cd2ee9249ba10f4faff4e407,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
   m_IsPrefabParent: 0
@@ -9903,7 +9914,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4093605201886112, guid: ef1fc869e32e2604fbdfc9e2e15023c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 152.18134
+      value: 128.36
       objectReference: {fileID: 0}
     - target: {fileID: 4093605201886112, guid: ef1fc869e32e2604fbdfc9e2e15023c2, type: 2}
       propertyPath: m_LocalPosition.y
