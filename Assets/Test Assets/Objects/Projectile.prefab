@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4339067856588082}
   - component: {fileID: 212571155003491640}
-  - component: {fileID: 114695379076922536}
   - component: {fileID: 58169059208600812}
   - component: {fileID: 114869452911856718}
   - component: {fileID: 114336076336488472}
@@ -91,17 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
---- !u!114 &114695379076922536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995298516716952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114869452911856718
 MonoBehaviour:
   m_ObjectHideFlags: 1
