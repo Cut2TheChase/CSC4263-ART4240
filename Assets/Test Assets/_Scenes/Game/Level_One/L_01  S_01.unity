@@ -488,7 +488,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4217670010738994, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 4217670010738994, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2241,6 +2241,50 @@ Transform:
   m_PrefabParentObject: {fileID: 4467409723388614, guid: e76d19c1ed2572742a9d7b273907e19c,
     type: 2}
   m_PrefabInternal: {fileID: 430312009}
+--- !u!1 &431464391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 431464393}
+  - component: {fileID: 431464392}
+  m_Layer: 0
+  m_Name: NewGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!68 &431464392
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431464391}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -10.016075, y: 1.2216568}
+  - {x: 8.923004, y: 1.1573601}
+--- !u!4 &431464393
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431464391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 120.58908, y: -27.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &431732530
 Prefab:
   m_ObjectHideFlags: 0
@@ -6328,8 +6372,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485705667}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05999756, y: 9.8301115, z: 1}
-  m_LocalScale: {x: 33.93133, y: 25.863873, z: 1}
+  m_LocalPosition: {x: 0.05999756, y: 6.1, z: 1}
+  m_LocalScale: {x: 33.93133, y: 33.382027, z: 1}
   m_Children: []
   m_Father: {fileID: 230597740}
   m_RootOrder: 12
@@ -6673,6 +6717,66 @@ Transform:
   m_PrefabParentObject: {fileID: 4403338966433546, guid: 1b3468ba4e9262b4cbe6751201154d3b,
     type: 2}
   m_PrefabInternal: {fileID: 1590213375}
+--- !u!1 &1592685970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1592685973}
+  - component: {fileID: 1592685972}
+  - component: {fileID: 1592685971}
+  m_Layer: 0
+  m_Name: NewBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1592685971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592685970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247ea4b983d3f40f894513cf11490b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  change: 0
+  oldBounds: {fileID: 241861936}
+  oldGround: {fileID: 550457736}
+  newBounds: {fileID: 1592685972}
+  newGround: {fileID: 431464392}
+--- !u!61 &1592685972
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592685970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.90218353, y: -12.856041}
+  serializedVersion: 2
+  m_Size: {x: 19.043655, y: 26.712082}
+--- !u!4 &1592685973
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592685970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 120.8, y: 0.47952566, z: 0}
+  m_LocalScale: {x: 1.1125001, y: 1.1671866, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603560094
 GameObject:
   m_ObjectHideFlags: 0
