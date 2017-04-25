@@ -26,5 +26,6 @@ public class SoundKeeper : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+
     }
 }
