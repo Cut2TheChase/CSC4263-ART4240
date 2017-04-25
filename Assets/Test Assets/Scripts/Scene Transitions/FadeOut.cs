@@ -50,7 +50,7 @@ public class FadeOut : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(3);	
 		SceneLoader.instance.LoadScene (sceneIndex);
-		if (sceneIndex != 3) {
+		if (sceneIndex != 1) {
 			GameManager.instance.changeState ("transitionIn");
 		}
 		this.enabled = false;

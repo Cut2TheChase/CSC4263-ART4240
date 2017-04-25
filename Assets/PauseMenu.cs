@@ -259,7 +259,7 @@ public class PauseMenu : MonoBehaviour
 		}
 		if (showtris || showvtx) {
 			GetObjectStats();
-			GUI.color = statColor;
+			GUI.color = lowFPSColor;
 		}
 		if (showtris) {
 			GUILayout.Label (tris+"tri");
