@@ -12,7 +12,8 @@ public class ZoomOut : MonoBehaviour {
 
 	public float duration = 1.0f;
 	private float elapsed = 0.0f;
-	private bool zoomOut = false;
+	public bool zoomOut = false;
+	public bool zoomIn = false;
 
 	void Start () {
 		Camera.main.orthographic = true;
@@ -34,12 +35,30 @@ public class ZoomOut : MonoBehaviour {
 			}
 
 		}
+		if (zoomIn == true) 
+		{
+			elapsed += Time.deltaTime / duration;
+			Camera.main.orthographicSize = Mathf.Lerp (Zoom2, Zoom1, elapsed);
+
+			//Camera.main.GetComponent<CameraMovement>().ypos = Mathf.Lerp(ypos1, ypos2, elapsed);
+
+			if (elapsed > 1.0f) {
+				zoomIn = false;
+			}
+
+		}
 
 	
 	}
-	void OnTriggerStay2D(Collider2D other) {
-		if(other.name == "Player"){
+	void OnTriggerEnter2D(Collider2D other) {
+		if(other.tag == "Feet Collider"){
 			zoomOut = true;
+			elapsed = 0.0f;
+		}
+	}
+	void OnTriggerExit2D(Collider2D other) {
+		if(other.tag == "Feet Collider"){
+			zoomIn = true;
 			elapsed = 0.0f;
 		}
 	}
