@@ -7,9 +7,17 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Test Assets/_Scenes/MainMenu.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Test Assets/_Scenes/TestScene.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Test Assets/_Scenes/SecondTestScene.unity
   - enabled: 1
     path: Assets/Test Assets/_Scenes/Game Over.unity
+  - enabled: 1
+    path: Assets/Test Assets/_Scenes/Game/Level_One/L_01  S_01.unity
+  - enabled: 1
+    path: Assets/Test Assets/_Scenes/Game/Level_One/L_01 S_02.unity
+  - enabled: 1
+    path: Assets/Test Assets/_Scenes/Game/Level_One/L_01 S_03.unity
+  - enabled: 1
+    path: Assets/Test Assets/_Scenes/Game/Level_One/L_01 S_04.unity

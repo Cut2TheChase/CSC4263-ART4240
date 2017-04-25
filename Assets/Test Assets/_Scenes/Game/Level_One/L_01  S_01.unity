@@ -247,6 +247,16 @@ Prefab:
       propertyPath: moveOnIn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114431514296041192, guid: 60907fd3060d6a74a8dbdd215bfa5987,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1184700645}
+    - target: {fileID: 114503508647197360, guid: 60907fd3060d6a74a8dbdd215bfa5987,
+        type: 2}
+      propertyPath: feetColl
+      value: 
+      objectReference: {fileID: 2126161803}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60907fd3060d6a74a8dbdd215bfa5987, type: 2}
   m_IsPrefabParent: 0
@@ -4707,6 +4717,12 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.5, y: 0}
   - {x: 29.214882, y: -0.020692348}
+--- !u!114 &1184700645 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114255553075015912, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+    type: 2}
+  m_PrefabInternal: {fileID: 535971225}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1188333614
 Prefab:
   m_ObjectHideFlags: 0
@@ -9018,6 +9034,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4257011535379272, guid: c97662455e460064aadc042ba49e7514, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114596916005212250, guid: c97662455e460064aadc042ba49e7514,
+        type: 2}
+      propertyPath: sceneChange
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
