@@ -22,6 +22,19 @@ public class SlamScript : MonoBehaviour {
 	private bool setup = false; //Says if hand has set up to swipe player
 	private bool reset = false; //says if hand needs to reset
 
+
+	//public IEnumerator zoomCam(float time)
+	//{
+	//	Camera.main.GetComponent<Slamzoom>().zoomOut = true;
+	//	Camera.main.GetComponent<Slamzoom>().elapsed = 0.0f;
+	//	yield return new WaitForSeconds (time);
+	//	Camera.main.GetComponent<Slamzoom>().zoomIn = true;
+	//}
+
+
+
+
+
 	void OnEnable () {
 		counter = 3;
 		leftHand = GameObject.FindGameObjectWithTag ("Left Hand");
@@ -29,7 +42,10 @@ public class SlamScript : MonoBehaviour {
 		playerCol = GameObject.FindGameObjectWithTag ("Player Collider");
 		leftHand.GetComponent<zAxisManager> ().enabled = false; //Disables z axis manager so that slam can happen on player's Z axis
 
+		//StartCoroutine (zoomCam (5));
+
 		leftHand.GetComponent<Animator> ().SetInteger ("State", 2);
+
 	}
 
 	void OnDisable(){
@@ -68,7 +84,9 @@ public class SlamScript : MonoBehaviour {
 				if (leftHand.transform.position == endSlam) {
 					if (playerCol.transform.position.x > leftHand.transform.position.x - 1.5f && playerCol.transform.position.x < leftHand.transform.position.x + 1.5f && playerCol.transform.position.y < leftHand.transform.position.y + 1f && playerCol.transform.position.y > leftHand.transform.position.y - 1f)
 						player.GetComponent<PlayerHealth> ().TakeDamage (damage);
-					Camera.main.GetComponent<Shake> ().Shaker ();
+					//Camera.main.GetComponent<Shake> ().Shaker ();
+					//player.GetComponent<ClampScript>().callShake();
+					//GameObject.FindGameObjectWithTag("Feet Collider").GetComponent<Shake> ().isShaking =true;
 					startTime = Time.time;
 					reset = true;
 				}
