@@ -28,10 +28,13 @@ public class SlamScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerCol = GameObject.FindGameObjectWithTag ("Player Collider");
 		leftHand.GetComponent<zAxisManager> ().enabled = false; //Disables z axis manager so that slam can happen on player's Z axis
+
+		leftHand.GetComponent<Animator> ().SetInteger ("State", 2);
 	}
 
 	void OnDisable(){
 		leftHand.GetComponent<zAxisManager> ().enabled = true;
+		leftHand.GetComponent<Animator> ().SetInteger ("State", 0);
 	}
 
 	

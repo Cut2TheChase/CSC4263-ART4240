@@ -35,8 +35,10 @@ public class SwipeState : MonoBehaviour {
 				Vector3 startSwipe = new Vector3 (-6f, playerCol.transform.position.y, leftHand.transform.position.z);
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSwipe, speed * Time.deltaTime);
 
-				if (leftHand.transform.position == startSwipe)
+				if (leftHand.transform.position == startSwipe) {
 					setup = true;
+					leftHand.GetComponent<Animator> ().SetInteger ("State", 1);
+				}
 
 			} else if (reset == false) { //if the hand hasnt finished swiping yet, continue to swipe
 				Vector3 endSwipe = new Vector3 (20f, leftHand.transform.position.y, leftHand.transform.position.z);
@@ -50,7 +52,7 @@ public class SwipeState : MonoBehaviour {
 				}
 			} else if (reset == true) { //if the hand hasn't reset after swiping yet, continue to reset
 				leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, initalPos, speed * Time.deltaTime);
-
+				leftHand.GetComponent<Animator> ().SetInteger ("State", 0);
 				if (leftHand.transform.position == initalPos) {
 					reset = false;
 					setup = false;
