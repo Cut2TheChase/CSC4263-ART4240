@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class waterDrowning : MonoBehaviour {
 	GameObject player;
-	public float moveTo;
+	public Vector2 moveTo;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -16,6 +16,6 @@ public class waterDrowning : MonoBehaviour {
 	}
 
 	public void Move(){
-		player.transform.position = new Vector2(moveTo, player.transform.position.y);
+		player.transform.position = moveTo;
 	}
 }
