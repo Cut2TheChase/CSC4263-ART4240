@@ -533,6 +533,11 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1822065782}
+    - target: {fileID: 114494993496400088, guid: d0255d931dfe41140a364a0b74fe9f10,
+        type: 2}
+      propertyPath: Smoothing.x
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0255d931dfe41140a364a0b74fe9f10, type: 2}
   m_IsPrefabParent: 0
