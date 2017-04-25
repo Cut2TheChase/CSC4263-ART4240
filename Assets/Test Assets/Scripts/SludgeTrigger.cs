@@ -19,6 +19,8 @@ public class SludgeTrigger : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other)
 	{
-		sludge.GetComponent<SludgeSpawn> ().enabled = true;
+		if (other.tag == "Feet Collider") {
+			sludge.GetComponent<SludgeSpawn> ().enabled = true;
+		}
 	}
 }

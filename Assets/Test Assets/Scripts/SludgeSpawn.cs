@@ -34,15 +34,15 @@ public class SludgeSpawn : MonoBehaviour {
 	{
 		//yield return new WaitForSeconds (time);
 		//enemiesKilled = true;
-		e1 = Instantiate (enemy, new Vector3 (50, -2.32f, 0f), Quaternion.identity);
+		e1 = Instantiate (enemy, new Vector3 (189, -2.32f, 0f), Quaternion.identity);
 		e1.GetComponent<EnemyAttackState> ().range = 10;
-		e2 = Instantiate (enemy, new Vector3 (51, -2f, 0f), Quaternion.identity);
+		e2 = Instantiate (enemy, new Vector3 (188, -2f, 0f), Quaternion.identity);
 		e2.GetComponent<EnemyAttackState> ().range = 10;
-		e3 = Instantiate (enemy, new Vector3 (50.6f, -2f, 0f), Quaternion.identity);
+		e3 = Instantiate (enemy, new Vector3 (184.6f, -2f, 0f), Quaternion.identity);
 		e3.GetComponent<EnemyAttackState> ().range = 10;
-		e4 = Instantiate (enemy, new Vector3 (49, -3f, 0f), Quaternion.identity);
+		e4 = Instantiate (enemy, new Vector3 (186, -3f, 0f), Quaternion.identity);
 		e4.GetComponent<EnemyAttackState> ().range = 10;
-		e5 = Instantiate (enemy, new Vector3 (48.1f, -2.6f, 0f), Quaternion.identity);
+		e5 = Instantiate (enemy, new Vector3 (191.1f, -2.6f, 0f), Quaternion.identity);
 		e5.GetComponent<EnemyAttackState> ().range = 10;
 		yield return new WaitForSeconds (time);
 		enemiesKilled = false;
