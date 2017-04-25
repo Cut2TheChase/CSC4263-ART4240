@@ -148,8 +148,6 @@ public class playerMovement : MonoBehaviour
                 jumpState = true;
 
         }
-		if (jumpState == true)
-        {
             moveDirection.y -= gravity * Time.deltaTime;
             gravity += 0.5f;
 
@@ -157,11 +155,16 @@ public class playerMovement : MonoBehaviour
 			// and depending on that, puts the foot collider in the right place for landing
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 10f);
 			if (hit.collider != null) {
-				if (hit.collider.tag == "Platform")
-					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.3f, feetColl.transform.position.z);
-				else if (hit.collider.name == "Top Ground Collider") {
-					feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint(hit.point).y - 0.5f, feetColl.transform.position.z);
-				}
+			if (hit.collider.tag == "Platform" && jumpState == true) {
+				feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.3f, feetColl.transform.position.z);
+
+			}
+			else if (hit.collider.tag == "Top Ground Collider" && jumpState == true) {
+				feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint (hit.point).y - 0.5f, feetColl.transform.position.z);
+			} else if (hit.collider.tag == "Water Collider" && jumpState == false) {
+				hit.collider.GetComponent<waterDrowning> ().Move ();
+
+			}
 			}
 			if(transform.position.y < feetColl.transform.position.y){
 				moveDirection.y = 0;
@@ -171,7 +174,6 @@ public class playerMovement : MonoBehaviour
 				feetColl.transform.position = new Vector3 (transform.position.x, feetColl.transform.position.y, feetColl.transform.position.z);
 
 			}
-        }
 
         // Apply all movements based on collective key input
         controller.Move(moveDirection * Time.deltaTime);
