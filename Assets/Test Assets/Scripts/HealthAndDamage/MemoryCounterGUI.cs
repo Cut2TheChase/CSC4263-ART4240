@@ -48,12 +48,12 @@ public class MemoryCounterGUI : MonoBehaviour {
             {
                 memoryUI.gameObject.SetActive(true);
                 yield return null;
-                /*if (Input.GetKey(KeyCode.E) && memoryUI.GetComponent<nextText>().next != null)
+                if (Input.GetKey(KeyCode.E) && memoryUI.GetComponent<nextText>().next != null)
                 {
                     memoryUI.gameObject.SetActive(false);
                     memoryUI = memoryUI.GetComponent<nextText>().next;
-                }*/
-                if (Input.GetKey(KeyCode.E))
+                }
+                else if (Input.GetKey(KeyCode.E))
                     done = true;
             }
             if (done == true)
