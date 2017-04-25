@@ -41,6 +41,8 @@ public class drawLine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
+		//origin = player.transform;
 		//lineRenderer.SetPosition (0, origin.position);
 		//destination = 
 		dist = Vector3.Distance (origin.position, destination.position);
@@ -85,6 +87,7 @@ public class drawLine : MonoBehaviour {
 
 
 					lineRenderer.SetPosition (1, pointAlongLine);
+					lineRenderer.SetPosition (0, origin.position);
 
 			
 				}
