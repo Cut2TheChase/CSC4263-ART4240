@@ -53,6 +53,9 @@ public class SlamScript2 : MonoBehaviour {
 		GetComponent<Animator> ().SetBool ("isOpen", true);
 		GetComponent<Animator> ().SetBool ("angry", true);
 
+		leftHand.GetComponent<Animator> ().SetInteger ("State", 2);
+		rightHand.GetComponent<Animator> ().SetInteger ("State", 2);
+
 	}
 
 	void OnDisable(){
@@ -63,6 +66,9 @@ public class SlamScript2 : MonoBehaviour {
 		GetComponent<Animator> ().SetBool ("isOpen", true);
 		GetComponent<Animator> ().SetBool ("angry", false);
 		GetComponent<Animator> ().SetBool ("tired", true);
+
+		leftHand.GetComponent<Animator> ().SetInteger ("State", 0);
+		rightHand.GetComponent<Animator> ().SetInteger ("State", 0);
 	}
 
 

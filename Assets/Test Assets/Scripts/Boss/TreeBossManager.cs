@@ -46,6 +46,7 @@ public class TreeBossManager : MonoBehaviour {
 		
 		healthPercent = health / maxHealth * 100;
 		if (health <= 0) {
+			GetComponent<Animator> ().SetInteger ("State", 8);
 			Debug.Log ("IM DED X_X");
 
 			//Turn off every other script except this one

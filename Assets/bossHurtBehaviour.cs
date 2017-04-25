@@ -18,6 +18,10 @@ public class bossHurtBehaviour : StateMachineBehaviour {
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		animator.SetBool ("hurt", false);
 		animator.SetBool ("isOpen", false);
+		if (animator.gameObject.GetComponent<TreeBossManager> ().health <= 0)
+			animator.SetInteger ("State", 8);
+		else
+			animator.SetInteger ("State", 1);
 		animator.gameObject.GetComponent<CircleCollider2D> ().enabled = false;
 	}
 

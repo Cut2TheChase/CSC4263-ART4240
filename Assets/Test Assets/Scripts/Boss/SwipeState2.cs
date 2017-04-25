@@ -53,8 +53,10 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 startSwipe = new Vector3 (leftBound, playerCol.transform.position.y, leftHand.transform.position.z);
 					leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, startSwipe, speed * Time.deltaTime);
 
-					if (leftHand.transform.position == startSwipe)
+					if (leftHand.transform.position == startSwipe) {
 						setupL = true;
+						leftHand.GetComponent<Animator> ().SetInteger ("State", 1);
+					}
 
 				} else if (resetL == false) { //if the hand hasnt finished swiping yet, continue to swipe
 					Vector3 endSwipe = new Vector3 (rightBound, leftHand.transform.position.y, leftHand.transform.position.z);
@@ -69,7 +71,7 @@ public class SwipeState2 : MonoBehaviour {
 					}
 				} else if (resetL == true) { //if the hand hasn't reset after swiping yet, continue to reset
 					leftHand.transform.position = Vector3.MoveTowards (leftHand.transform.position, leftInitalPos, speed * Time.deltaTime);
-
+					leftHand.GetComponent<Animator> ().SetInteger ("State", 0);
 					if (leftHand.transform.position == leftInitalPos) {
 						resetL = false;
 						setupL = false;
@@ -85,8 +87,10 @@ public class SwipeState2 : MonoBehaviour {
 					Vector3 startSwipe = new Vector3 (rightBound, playerCol.transform.position.y, rightHand.transform.position.z);
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, startSwipe, speed * Time.deltaTime);
 
-					if (rightHand.transform.position == startSwipe)
+					if (rightHand.transform.position == startSwipe) {
 						setupR = true;
+						rightHand.GetComponent<Animator> ().SetInteger ("State", 1);
+					}
 
 				} else if (resetR == false) { //if the hand hasnt finished swiping yet, continue to swipe
 					Vector3 endSwipe = new Vector3 (leftBound, rightHand.transform.position.y, rightHand.transform.position.z);
@@ -100,7 +104,7 @@ public class SwipeState2 : MonoBehaviour {
 					}
 				} else if (resetR == true) { //if the hand hasn't reset after swiping yet, continue to reset
 					rightHand.transform.position = Vector3.MoveTowards (rightHand.transform.position, rightInitalPos, speed * Time.deltaTime);
-
+					rightHand.GetComponent<Animator> ().SetInteger ("State", 0);
 					if (rightHand.transform.position == rightInitalPos) {
 						resetR = false;
 						setupR = false;

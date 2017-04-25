@@ -14,6 +14,8 @@ public class BossDeathState : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
 		GetComponent<Animator> ().SetInteger ("State", 8);
+		Destroy(GameObject.FindGameObjectWithTag ("Left Hand"));
+		Destroy(GameObject.FindGameObjectWithTag ("Right Hand"));
 	}
 	
 	// Update is called once per frame
