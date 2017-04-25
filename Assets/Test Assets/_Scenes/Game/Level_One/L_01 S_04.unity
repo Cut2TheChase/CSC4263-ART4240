@@ -743,8 +743,27 @@ MonoBehaviour:
   duration: 1
   magnitude: 0.5
   Bounds: {fileID: 1972731156}
-  Ground: {fileID: 1881168634}
+  Ground: {fileID: 1543942752}
   player: {fileID: 2045355498}
+--- !u!114 &868166723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868166713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cce059d083e495aab4889bab052d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zoom1: 4.98941
+  Zoom2: 10
+  ypos1: 0
+  ypos2: 0
+  duration: 0.3
+  elapsed: 0
+  zoomOut: 0
+  zoomIn: 0
 --- !u!1001 &947255326
 Prefab:
   m_ObjectHideFlags: 0
@@ -1095,7 +1114,7 @@ Prefab:
         type: 2}
       propertyPath: Ground
       value: 
-      objectReference: {fileID: 1881168634}
+      objectReference: {fileID: 1543942752}
     - target: {fileID: 114494993496400088, guid: d0255d931dfe41140a364a0b74fe9f10,
         type: 2}
       propertyPath: Player
@@ -1418,6 +1437,50 @@ Transform:
   m_PrefabParentObject: {fileID: 4040752108824456, guid: abf3d0dbbde67144c8ce1f2dc76fdc0c,
     type: 2}
   m_PrefabInternal: {fileID: 833346844}
+--- !u!1 &1543942751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1543942753}
+  - component: {fileID: 1543942752}
+  m_Layer: 0
+  m_Name: Bottom Ground Collider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!68 &1543942752
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543942751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -16.797592, y: -6.84648}
+  - {x: 13.448772, y: -6.846476}
+--- !u!4 &1543942753
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543942751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.4210377, y: -13.18, z: -0.24609375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1544627383 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4040752108824456, guid: abf3d0dbbde67144c8ce1f2dc76fdc0c,
@@ -1822,9 +1885,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.5627842, y: 0.63255596}
+  m_Offset: {x: 4.2921753, y: -7.960385}
   serializedVersion: 2
-  m_Size: {x: 29.725449, y: 14.767378}
+  m_Size: {x: 76.144104, y: 31.95326}
 --- !u!4 &1972731157
 Transform:
   m_ObjectHideFlags: 0
