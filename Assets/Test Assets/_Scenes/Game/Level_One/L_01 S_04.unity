@@ -755,6 +755,7 @@ MonoBehaviour:
   Bounds: {fileID: 1972731156}
   Ground: {fileID: 1881168634}
   player: {fileID: 2045355498}
+  isShaking: 0
 --- !u!1 &869009316
 GameObject:
   m_ObjectHideFlags: 0
