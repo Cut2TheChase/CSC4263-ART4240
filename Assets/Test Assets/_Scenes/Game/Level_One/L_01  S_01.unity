@@ -935,19 +935,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 182584506}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99545756a5a3e844b4fe9e841971acc, type: 3}
+  m_Script: {fileID: 11500000, guid: ea6805749e5b04a4fbb990ffec2fd04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFallTarget: -22.14
+  playerFallTarget: -21.4
   enemy: {fileID: 1771238734256972, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
-  platform1: {fileID: 918856877}
-  platform2: {fileID: 770937571}
-  platform3: {fileID: 1389235554}
-  platform4: {fileID: 1974341254}
-  platform5: {fileID: 1725705554}
-  platform6: {fileID: 1468653536}
-  platform7: {fileID: 788764803}
-  platform8: {fileID: 1916389457}
+  platform1: {fileID: 770937571}
+  platform2: {fileID: 1389235554}
+  platform3: {fileID: 1974341254}
+  platform4: {fileID: 1725705554}
+  platform5: {fileID: 1468653536}
+  platform6: {fileID: 788764803}
+  platform7: {fileID: 1916389457}
+  platform8: {fileID: 918856877}
 --- !u!1001 &184780269
 Prefab:
   m_ObjectHideFlags: 0
@@ -4331,7 +4331,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072012191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6ebeacbb8df014fb2bbeebdfa2c3d8, type: 3}
+  m_Script: {fileID: 11500000, guid: cf9d0a53d8398a04099bf4c2ed18724f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 182584506}
