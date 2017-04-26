@@ -29,9 +29,10 @@ public class FadeIn : MonoBehaviour {
 		    //Used to smoothly transition into the scene using time
 			t = (Time.time - startTime) / durationIn;
 			fader.color = new Color(0f,0f,0f,Mathf.SmoothStep(maximum,minimum,t));
-		if (fader.color == new Color (0f, 0f, 0f, maximum) && canDeactivate == true) {
-			canDeactivate = false;
-			StartCoroutine ("Fading");
+		if (fader.color == new Color (0f, 0f, 0f, minimum) /*&& canDeactivate == true*/) {
+			//canDeactivate = false;
+			//StartCoroutine ("Fading");
+			this.enabled = false;
 		}
 	}
 

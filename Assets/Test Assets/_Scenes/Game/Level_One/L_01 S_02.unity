@@ -274,7 +274,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4557106616962838, guid: b2e5dc66c6d72794a959d19e05b410f4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.196456
+      value: -14.14
       objectReference: {fileID: 0}
     - target: {fileID: 4557106616962838, guid: b2e5dc66c6d72794a959d19e05b410f4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3203,7 +3203,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4376441666504642, guid: 60907fd3060d6a74a8dbdd215bfa5987, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.072376
+      value: -14.01
       objectReference: {fileID: 0}
     - target: {fileID: 4376441666504642, guid: 60907fd3060d6a74a8dbdd215bfa5987, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4334,6 +4334,11 @@ Prefab:
     - target: {fileID: 1771238734256972, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
       propertyPath: m_Name
       value: Enemy Test (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 58555778699122886, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
@@ -12375,6 +12380,11 @@ Prefab:
       propertyPath: m_Name
       value: Enemy Test (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 58555778699122886, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
   m_IsPrefabParent: 0
@@ -13882,6 +13892,11 @@ Prefab:
     - target: {fileID: 1771238734256972, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
       propertyPath: m_Name
       value: Enemy Test (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 58555778699122886, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
@@ -15637,7 +15652,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4474963470432912, guid: 5dd9f42d967c1e345b99ce47f956ff17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.134417
+      value: -14.07
       objectReference: {fileID: 0}
     - target: {fileID: 4474963470432912, guid: 5dd9f42d967c1e345b99ce47f956ff17, type: 2}
       propertyPath: m_LocalPosition.y
@@ -15919,6 +15934,11 @@ Prefab:
     - target: {fileID: 1771238734256972, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
       propertyPath: m_Name
       value: Enemy Test (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 58555778699122886, guid: 759aed66ab588514f81afb1b277db17e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 759aed66ab588514f81afb1b277db17e, type: 2}
