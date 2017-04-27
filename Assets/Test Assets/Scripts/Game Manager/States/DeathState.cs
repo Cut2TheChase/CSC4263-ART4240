@@ -22,16 +22,15 @@ public class DeathState : MonoBehaviour {
 		Debug.Log (prevScene);
 
 		player.GetComponent<zAxisPlayerManager> ().enabled = false;
-		player.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y,-99.5f);
+		player.transform.position = new Vector3 (player.transform.position.x, player.transform.position.y,-9.5f);
 		GetComponent<FadeOut> ().enabled = true;
-		GetComponent<FadeOut> ().setTransitionScene (1);
-		Destroy (GameObject.FindGameObjectWithTag ("Sound"));
+		GetComponent<FadeOut> ().setTransitionScene (3);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (SceneManager.GetActiveScene().buildIndex == 1 ) {
+		if (SceneManager.GetActiveScene().buildIndex == 3 ) {
 			//Once the death scene is finally loaded
 			if (Input.GetKey (KeyCode.R)) {
 				SceneLoader.instance.LoadScene (prevScene); //Go to previous scene
