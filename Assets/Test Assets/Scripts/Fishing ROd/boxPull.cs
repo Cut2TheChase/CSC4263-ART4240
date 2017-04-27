@@ -93,6 +93,8 @@ public class boxPull : MonoBehaviour {
 				isHooked = false;
 			player.GetComponent<playerMovement> ().notHooked = true;
 
+			player.GetComponent<Animator> ().SetBool ("hookDone", true);
+
 			pulled = false;
 			}
 
