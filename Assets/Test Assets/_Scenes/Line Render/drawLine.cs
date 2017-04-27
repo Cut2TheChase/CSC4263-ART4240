@@ -18,16 +18,15 @@ public class drawLine : MonoBehaviour {
 
 	void Start () 
 	{
-		lineRenderer = GetComponent<LineRenderer> ();
-		//lineRenderer.SetPosition (0, origin.position);
-		lineRenderer.SetWidth (.1f, .1f);
+		lineRenderer = GetComponent<LineRenderer> ();                       //cache line renderer
+		lineRenderer.SetWidth (.1f, .1f);                                   //set line width
 
-		dist = Vector3.Distance (origin.position, destination.position);
-		isCast = false;
+		dist = Vector3.Distance (origin.position, destination.position);    //calculate initial distance
+		isCast = false;                                                     //line should not be cast on start
 		
 	}
 
-
+	// waits for a given amount of time and then resets the line 
 	IEnumerator ExecuteAfterTime(float time)
 	{
 		yield return new WaitForSeconds (time);
@@ -42,20 +41,25 @@ public class drawLine : MonoBehaviour {
 	void Update () 
 	{
 
-		//origin = player.transform;
-		//lineRenderer.SetPosition (0, origin.position);
-		//destination = 
+		//sets distance in the direction from origin point to destination of line
 		dist = Vector3.Distance (origin.position, destination.position);
-		if (player.GetComponent<itemEquip> ().rod == true) {	
-				
-			
-			if (Input.GetMouseButtonDown (0)) {
-				lineRenderer.SetPosition (0, origin.position);
-				if (isCast == false) {
+
+		//if player has rod equiped then determine if the fishing rod will be cast or retracted
+		if (player.GetComponent<itemEquip> ().rod == true) 
+		{	
+			if (Input.GetMouseButtonDown (0)) // left mouse click
+			{
+				lineRenderer.SetPosition (0, origin.position); //the first element of the line = origin object position
+
+				//if line is not cast then it should be cast and vice versa
+				if (isCast == false) 
+				{
 					isCast = true;
-				} else {
+				} 
+				else
+				{
 					isCast = false;
-					destination = null;
+					destination = null; 
 					destination2.GetComponent<boxPull>().isHooked = false;
 					player.GetComponent<playerMovement> ().notHooked = true;
 
@@ -66,16 +70,17 @@ public class drawLine : MonoBehaviour {
 				}
 				
 			}
+
 			if (Input.GetKey(KeyCode.E))
 			{
 				StartCoroutine (ExecuteAfterTime (1));
 			}
 
-
+			//if line is to be cast then draw line from origin to destinatino over time
 			if (isCast == true) {
 				if (counter < dist) {
 
-					counter += .1f / lineDrawSpeed;
+					counter += .1f / lineDrawSpeed;   
 
 					float x = Mathf.Lerp (0, dist, counter);
 
@@ -83,24 +88,20 @@ public class drawLine : MonoBehaviour {
 					Vector3 pointB = destination.position;
 
 
-					Vector3 pointAlongLine = x * Vector3.Normalize (pointB - pointA) + pointA;
+					Vector3 pointAlongLine = x * Vector3.Normalize (pointB - pointA) + pointA; 
 
 
 					lineRenderer.SetPosition (1, pointAlongLine);
 					lineRenderer.SetPosition (0, origin.position);
-
-			
 				}
-
-
 			}
-			if (isCast == false) {
 
+			//if line should not be cast line is rendered from origin to origin (ie not rendered)
+			if (isCast == false) 
+			{
 				lineRenderer.SetPosition (0, origin.position);
 				lineRenderer.SetPosition (1, origin.position);
-				counter = 0;
-				//destination = null;
-
+				counter = 0;                                    // reset line draw timer
 			}
 		}
 	}
