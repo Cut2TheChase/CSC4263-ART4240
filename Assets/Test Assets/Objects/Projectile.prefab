@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4339067856588082}
   - component: {fileID: 212571155003491640}
-  - component: {fileID: 114695379076922536}
   - component: {fileID: 58169059208600812}
   - component: {fileID: 114869452911856718}
   - component: {fileID: 114336076336488472}
   - component: {fileID: 50508077554661452}
+  - component: {fileID: 114587486167116800}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
---- !u!114 &114695379076922536
+--- !u!114 &114587486167116800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

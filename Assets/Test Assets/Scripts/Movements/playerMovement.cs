@@ -142,7 +142,7 @@ public class playerMovement : MonoBehaviour
         vertPos = GetComponent<Transform>().position.y;
         if (Input.GetKey(KeyCode.Space) && jumpState == false)
         {
-			canMoveY = true;
+			    canMoveY = true;
                 landingPos = vertPos; // Holds value of ground position if jumping
                 moveDirection.y = jumpSpeed;
                 jumpState = true;
@@ -154,18 +154,21 @@ public class playerMovement : MonoBehaviour
 			//This detects if there is a platform under the character or not when jumping
 			// and depending on that, puts the foot collider in the right place for landing
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.down, 10f);
-			if (hit.collider != null) {
-			Debug.Log (hit.collider.tag + " " + jumpState);
+		if (hit.collider != null) {
 			if (hit.collider.tag == "Platform" && jumpState == true) {
 				feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.transform.position.y + 0.3f, feetColl.transform.position.z);
 
 			} else if (hit.collider.tag == "Top Ground Collider" && jumpState == true) {
 				feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint (hit.point).y - 0.5f, feetColl.transform.position.z);
-			} else if (hit.collider.tag == "Water Collider" && jumpState == false) {
+			} else if (hit.collider.tag == "Water Collider" && (jumpState == false || gravity > 30f)) {
 				hit.collider.GetComponent<waterDrowning> ().Move ();
 
 			}
-			}
+		} else {
+			feetColl.transform.position = new Vector3 (feetColl.transform.position.x, feetColl.transform.position.y - 0.3f, feetColl.transform.position.z);
+			jumpState = true;
+		}
+			
 			if(transform.position.y < feetColl.transform.position.y){
 				moveDirection.y = 0;
 				jumpState = false;
