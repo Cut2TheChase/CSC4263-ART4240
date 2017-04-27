@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 50417399148074290}
   - component: {fileID: 61129334283149060}
   - component: {fileID: 114197535628966832}
-  - component: {fileID: 95921090969293886}
   m_Layer: 0
   m_Name: HealthItemPrefab
   m_TagString: Untagged
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725839535302720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.63, y: -1.45, z: 0}
+  m_LocalPosition: {x: 22.6, y: -5.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,23 +78,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!95 &95921090969293886
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1725839535302720}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eceef12a3848fbf469008bd54cf50470, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114197535628966832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13f75b214718942a4b2302b2993f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1
 --- !u!212 &212398029783167664
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -30,13 +30,7 @@ public class SceneLoader : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.P)) {
-			if (SceneManager.GetActiveScene ().buildIndex != 5) {
-				Debug.Log ("GONNA BOSS IT UP");
-				GameManager.instance.changeState ("transitionIn");
-				SceneManager.LoadScene (5, LoadSceneMode.Single);
-			}
-		}
+
 	}
 
 	public void LoadScene(int scene){
