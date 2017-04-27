@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedEnemyHealth : MonoBehaviour {
-	public int maxHealth;
+	public int health;
 	private int hurtCounter = 0; 
 
 	[HideInInspector]
 	public bool hurt = false;
 
-	[HideInInspector]
-	public int health;
-
 	void Start () 
 	{
-		health = maxHealth;
+		health = 100;
 	}
 	void Update () 
 	{
