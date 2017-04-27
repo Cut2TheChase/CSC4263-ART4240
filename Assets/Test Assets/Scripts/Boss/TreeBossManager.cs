@@ -76,8 +76,10 @@ public class TreeBossManager : MonoBehaviour {
 	//Begins the next State
 	public void nextState(){
 		//If Fight hasnt started yet, take out of sleep state and begin fight
-		if (currentState == -1)
+		if (currentState == -1) {
+			GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().bossMusicPlay();
 			GetComponent<SleepState> ().enabled = false;
+		}
 		
 			//Change States only if the tree is alive 
 			//(Makes sure this function doesnt change states when boss transitions to death state)
