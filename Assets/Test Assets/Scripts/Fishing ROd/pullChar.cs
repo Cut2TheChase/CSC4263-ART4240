@@ -6,11 +6,12 @@ public class pullChar : MonoBehaviour {
 
 	public GameObject player;
 	public float pullForce = 1;
-
+	private GameObject footCollider;
 
 	[HideInInspector]
 	public Transform target;
 	public float dirNum;
+	public float fall = 2;
 
 	public int thrustSpeed;
 	SliderJoint2D slider;
@@ -29,6 +30,8 @@ public class pullChar : MonoBehaviour {
 		target= player.transform;
 		reached_destination = false;
 		grapple_click = false;
+
+		footCollider = GameObject.FindGameObjectWithTag ("Feet Collider");
 
 
 	}
@@ -79,7 +82,7 @@ public class pullChar : MonoBehaviour {
 
 	
 		if (isHooked == true) {
-			if (Input.GetKey (KeyCode.U)) {
+			if (Input.GetKey (KeyCode.E)) {
 				
 				grapple_click = true;
 			}
@@ -89,6 +92,7 @@ public class pullChar : MonoBehaviour {
 
 		}
 		if (reached_destination == true) {
+			footCollider.transform.position = new Vector3 (transform.position.x, transform.position.y - fall, footCollider.transform.position.z);
 			player.GetComponent<playerMovement> ().jumpState = true;
 			reached_destination = false;
 			player.GetComponent<Animator> ().SetBool ("hookDone", true);

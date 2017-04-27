@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
 	MonoBehaviour[] comps;
+	MonoBehaviour FadeIn;
+	MonoBehaviour FadeOut;
 
 	string state = "transitionIn";
 
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour {
 
 		//Grabs all the scripts associated with this object
 		comps = GetComponents<MonoBehaviour> ();
+		FadeIn = GetComponent<FadeIn>();
+		FadeOut = GetComponent<FadeOut>();
 	}
 
 	//Called in order to change the state
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour {
 			if (c != this)
 				c.enabled = false;
 		}
+			
 			
 		Camera.main.GetComponent<PauseMenu> ().enabled = false;
 		if (state == "transitionIn") {

@@ -24,7 +24,7 @@ public class BossInit : MonoBehaviour {
 
 	void OnTriggerEnter2D()
 	{
-		boss.GetComponent<TreeBossManager> ().nextState ();
+		boss.GetComponent<Animator> ().SetInteger ("State", 1);
 		Destroy (gameObject);
 	}
 }

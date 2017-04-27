@@ -18,6 +18,22 @@ public class Shake : MonoBehaviour {
 	_minY,
 	_maxY;
 
+	public bool isShaking;
+
+	//
+	//public float Zoom1;
+	//public float Zoom2;
+
+//	public float ypos1;
+//	public float ypos2;
+	//
+//	public float duration2 = 1.0f;
+//	private float elapsed2 = 0.0f;
+//	public bool zoomOut = false;
+//	public bool zoomIn = false;
+	//
+
+
 	public void Start()
 	{
 		_min = Bounds.bounds.min;
@@ -28,8 +44,21 @@ public class Shake : MonoBehaviour {
 
 	//Starts the shaking
 	public void Shaker(){
+		//StartCoroutine (zoomCam (4));
 		StartCoroutine (Shakey());
 	}
+
+	//
+	//public IEnumerator zoomCam(float time)
+	//{
+	//	zoomOut = true;
+	//	elapsed2 = 0.0f;
+	//	yield return new WaitForSeconds(time);
+	//	zoomIn = true;
+
+//	}
+	//
+
 
 	//Does the actual shaking
 	public IEnumerator Shakey(){
@@ -41,7 +70,7 @@ public class Shake : MonoBehaviour {
 			var x_pos = transform.position.x;
 			var y_pos = transform.position.y;
 
-			var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
+			var cameraHalfWidth = Camera.main.GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
 
 
 
@@ -62,26 +91,58 @@ public class Shake : MonoBehaviour {
 			y *= magnitude * damper;
 
 			x_pos = Mathf.Clamp (x, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
-			y_pos = Mathf.Clamp (y , _minY.y + GetComponent<Camera> ().orthographicSize, _max.y - GetComponent<Camera> ().orthographicSize);
+			y_pos = Mathf.Clamp (y , _minY.y + Camera.main.GetComponent<Camera> ().orthographicSize, _max.y - Camera.main.GetComponent<Camera> ().orthographicSize);
 
 			Camera.main.transform.position = new Vector3 (x_pos, y_pos, transform.position.z);//new Vector3 (x, y, originalCamPos.z);
 
 			yield return null;
 		}
-
+		isShaking = false;
 		//Camera.main.transform.position = originalCamPos;
 	}
 
 	public void Update()
 	{
+		if (isShaking == true) {
+			StartCoroutine (Shakey ());
+		}
+	
 
-		var x_pos = transform.position.x;
-		var y_pos = transform.position.y;
+		//
+	//	if (zoomOut) 
+	//	{
+	//		elapsed2 += Time.deltaTime / duration2;
+	//		Camera.main.orthographicSize = Mathf.Lerp (Zoom1, Zoom2, elapsed2);
+		//
 
-		var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
+		//	if (elapsed2 > 1.0f) {
+		//		zoomOut = false;
+		//	}
+		//
+		//}
+		//if (zoomIn == true) 
+		//{
+		//	elapsed2 += Time.deltaTime / duration2;
+		//	Camera.main.orthographicSize = Mathf.Lerp (Zoom2, Zoom1, elapsed2);
+		//
+		//
+		//	if (elapsed2 > 1.0f) {
+		//		zoomIn = false;
+		//	}
 
-		x_pos = Mathf.Clamp (x_pos, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
-		y_pos = Mathf.Clamp (y_pos, _minY.y + GetComponent<Camera> ().orthographicSize, _max.y - GetComponent<Camera> ().orthographicSize);
+		//}
+
+
+		//
+
+
+		//var x_pos = transform.position.x;
+		//var y_pos = transform.position.y;
+
+		//var cameraHalfWidth = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
+
+		//x_pos = Mathf.Clamp (x_pos, _min.x + cameraHalfWidth, _max.x - cameraHalfWidth);
+		//y_pos = Mathf.Clamp (y_pos, _minY.y + GetComponent<Camera> ().orthographicSize, _max.y - GetComponent<Camera> ().orthographicSize);
 
 	}
 }

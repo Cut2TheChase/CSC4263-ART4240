@@ -19,6 +19,9 @@ TagManager:
   - PauseUI
   - Platform
   - Ground Collider
+  - Water Collider
+  - Top Ground Collider
+  - Sound
   layers:
   - Default
   - TransparentFX

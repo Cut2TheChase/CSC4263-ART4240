@@ -36,6 +36,14 @@ public class camF : MonoBehaviour
 
 	public void Update()
 	{
+
+		_min = Bounds.bounds.min;
+		_max = Bounds.bounds.max;
+		_minY = Ground.bounds.min;
+		_maxY = Ground.bounds.max;
+
+
+
 		var x = transform.position.x;
 		var y = transform.position.y;
 

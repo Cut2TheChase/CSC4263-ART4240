@@ -28,11 +28,13 @@ public class PlayState : MonoBehaviour {
 		//Turn player-controlled movement on
 		player.GetComponent<playerMovement> ().enabled = true;
 
+		if (player.GetComponent<playerMovement> ().moveOnIn == false) {
+			Debug.Log ("UGHHHHH");
+			GameObject.Find ("GameManager(Clone)").GetComponent<FadeIn> ().enabled = true;
+		}
 		//Turn enemy AI on
 		foreach (GameObject go in enemies) {
 			go.GetComponent<EnemyAttackState> ().enabled = true;
-
-
 
 		
 		}

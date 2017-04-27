@@ -46,12 +46,12 @@ public class EnemySpawnState : MonoBehaviour {
 
 		//Sets up spawn areas
 		spawnsUsed = new bool[] { false, false, false, false, false, false };
-		spawn1 = new Vector3 (transform.position.x - 10.5f, transform.position.y - 3f, transform.position.z);
-		spawn2 = new Vector3 (transform.position.x - 12, transform.position.y - 6f, transform.position.z);
-		spawn3 = new Vector3 (transform.position.x - 10.5f, transform.position.y - 8f, transform.position.z);
-		spawn4 = new Vector3 (transform.position.x + 10.5f, transform.position.y - 3f, transform.position.z);
-		spawn5 = new Vector3 (transform.position.x + 12, transform.position.y - 6f, transform.position.z);
-		spawn6 = new Vector3 (transform.position.x + 10.5f, transform.position.y - 8f, transform.position.z);
+		spawn1 = new Vector3 (transform.position.x - 10.5f, transform.position.y + 1f, transform.position.z);
+		spawn2 = new Vector3 (transform.position.x - 12, transform.position.y + 2f, transform.position.z);
+		spawn3 = new Vector3 (transform.position.x - 10.5f, transform.position.y + 3f, transform.position.z);
+		spawn4 = new Vector3 (transform.position.x + 10.5f, transform.position.y + 1f, transform.position.z);
+		spawn5 = new Vector3 (transform.position.x + 12, transform.position.y + 2f, transform.position.z);
+		spawn6 = new Vector3 (transform.position.x + 10.5f, transform.position.y + 3f, transform.position.z);
 
 		//Instantiates the spawned enemies and enables them to attack
 		for (int i = 0; i < numbOfEnemies; i++) {

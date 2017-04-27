@@ -46,6 +46,7 @@ public class TreeBossManager : MonoBehaviour {
 		
 		healthPercent = health / maxHealth * 100;
 		if (health <= 0) {
+			GetComponent<Animator> ().SetInteger ("State", 8);
 			Debug.Log ("IM DED X_X");
 
 			//Turn off every other script except this one
@@ -75,8 +76,10 @@ public class TreeBossManager : MonoBehaviour {
 	//Begins the next State
 	public void nextState(){
 		//If Fight hasnt started yet, take out of sleep state and begin fight
-		if (currentState == -1)
+		if (currentState == -1) {
+			GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().bossMusicPlay();
 			GetComponent<SleepState> ().enabled = false;
+		}
 		
 			//Change States only if the tree is alive 
 			//(Makes sure this function doesnt change states when boss transitions to death state)

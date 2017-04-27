@@ -19,15 +19,21 @@ public class TauntState : MonoBehaviour {
     void OnEnable () {
 		GetComponent<CircleCollider2D> ().enabled = true;
 		startTime = Time.time;
+		GetComponent<Animator> ().SetInteger ("State", 2);
+		GetComponent<Animator> ().SetBool ("isOpen", true);
+		GetComponent<Animator> ().SetBool ("taunt", true);
 	}
 
 	void OnDisable(){
 		GetComponent<CircleCollider2D> ().enabled = false;
+		GetComponent<Animator> ().SetBool ("isOpen", false);
+		GetComponent<Animator> ().SetBool ("taunt", false);
+		GetComponent<Animator> ().SetInteger ("State", 1);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - startTime >= tauntDuration) {
+		if (Time.time - startTime >= tauntDuration || GetComponent<Animator>().GetBool("hurt") == true) {
 			this.enabled = false;
 			GetComponent<TreeBossManager>().nextState ();
 		}
@@ -37,7 +43,8 @@ public class TauntState : MonoBehaviour {
 	{
 	//Checks for an attack by the player
     //Sends data for damage to GUI slider
-        if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0) {
+		if (other.tag == "Sword" && GetComponent<TreeBossManager>().health > 0 && other.gameObject.GetComponentInParent<swing>().swung == true) {
+			GetComponent<Animator> ().SetBool ("hurt", true);
 	        GetComponent<TreeBossManager>().health -= other.GetComponentInParent<sword>().damage;
             healthSlider.value -= other.GetComponentInParent<sword>().damage;
         }

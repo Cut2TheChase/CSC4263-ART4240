@@ -34,7 +34,7 @@ public class MainMenuButtons : MonoBehaviour
     //the following three functions determine what happens when the buttons are pressed
     public void TaskOnClick()
     {
-        SceneManager.LoadScene("TestScene", LoadSceneMode.Single); //loads the first scene
+        SceneManager.LoadScene(2, LoadSceneMode.Single); //loads the first scene
 		SceneManager.sceneLoaded += OnSceneLoaded; //Once scene is loaded, do this function
     }
     public void TaskOnClick1()
