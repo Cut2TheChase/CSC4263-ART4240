@@ -10,6 +10,8 @@ using UnityEngine;
 public class SoundKeeper : MonoBehaviour
 {
     private static SoundKeeper instance = null;
+	public AudioClip bossMusic;
+
     public static SoundKeeper Instance
     {
         get { return instance; }
@@ -26,5 +28,11 @@ public class SoundKeeper : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+
     }
+
+	public void bossMusicPlay(){
+		GetComponent<AudioSource> ().clip = bossMusic;
+		GetComponent<AudioSource> ().Play ();
+	}
 }
