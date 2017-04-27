@@ -32,7 +32,6 @@ public class SceneLoader : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.P)) {
 			if (SceneManager.GetActiveScene ().buildIndex != 5) {
-				Debug.Log ("GONNA BOSS IT UP");
 				GameManager.instance.changeState ("transitionIn");
 				SceneManager.LoadScene (5, LoadSceneMode.Single);
 			}

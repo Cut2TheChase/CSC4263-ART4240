@@ -11,6 +11,7 @@ public class SoundKeeper : MonoBehaviour
 {
     private static SoundKeeper instance = null;
 	public AudioClip bossMusic;
+	public AudioClip walkMusic;
 
     public static SoundKeeper Instance
     {
@@ -31,8 +32,14 @@ public class SoundKeeper : MonoBehaviour
 
     }
 
-	public void bossMusicPlay(){
-		GetComponent<AudioSource> ().clip = bossMusic;
-		GetComponent<AudioSource> ().Play ();
+	public void musicPlay(int song){
+		if (song == 1) {
+			GetComponent<AudioSource> ().clip = bossMusic;
+			GetComponent<AudioSource> ().Play ();
+		}
+		else if (song == 2){
+			GetComponent<AudioSource> ().clip = walkMusic;
+			GetComponent<AudioSource> ().Play ();	
+		}
 	}
 }
