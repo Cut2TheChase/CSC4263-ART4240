@@ -1742,6 +1742,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4467409723388614, guid: e76d19c1ed2572742a9d7b273907e19c,
     type: 2}
   m_PrefabInternal: {fileID: 274395122}
+--- !u!114 &285467034 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114287373983181202, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+    type: 2}
+  m_PrefabInternal: {fileID: 535971225}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &293440745
 Prefab:
   m_ObjectHideFlags: 0
@@ -3052,13 +3058,19 @@ Prefab:
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224334609082701606, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114697750375719096, guid: 72f0ee7a7b4c8cd43aef462e319ca138,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65df3918458f4f3439e7ededdadfa98d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72f0ee7a7b4c8cd43aef462e319ca138, type: 2}
   m_IsPrefabParent: 0
@@ -7572,7 +7584,7 @@ Prefab:
         type: 2}
       propertyPath: memoryUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 285467034}
     - target: {fileID: 212688536981896912, guid: 95e4ba50cd2ee9249ba10f4faff4e407,
         type: 2}
       propertyPath: m_Enabled
