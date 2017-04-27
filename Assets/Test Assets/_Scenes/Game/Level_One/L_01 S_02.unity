@@ -350,6 +350,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4551090257016762, guid: 759aed66ab588514f81afb1b277db17e,
     type: 2}
   m_PrefabInternal: {fileID: 282993444}
+--- !u!1 &39591583 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1122516367007886, guid: d0255d931dfe41140a364a0b74fe9f10,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980061913}
 --- !u!1 &57786141
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +543,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0
@@ -3556,6 +3566,11 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.2250001
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0
@@ -7770,6 +7785,11 @@ Prefab:
       propertyPath: m_TagString
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0
@@ -10195,6 +10215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283ad5315f802f6498998f8dd732ade5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nightBackground: {fileID: 39591583}
   Zoom1: 4.98941
   Zoom2: 12
   ypos1: 0
@@ -10223,7 +10244,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282372897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38, y: 7.700001, z: 0}
+  m_LocalPosition: {x: -37.9, y: 7.7, z: 0}
   m_LocalScale: {x: 15.301308, y: 20.587156, z: 1}
   m_Children: []
   m_Father: {fileID: 898763884}
@@ -11721,7 +11742,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4093605201886112, guid: ef1fc869e32e2604fbdfc9e2e15023c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 52.906
+      value: 53.98
       objectReference: {fileID: 0}
     - target: {fileID: 4093605201886112, guid: ef1fc869e32e2604fbdfc9e2e15023c2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -13599,6 +13620,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0
@@ -14149,6 +14175,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0
@@ -15801,15 +15832,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 49.45
+      value: 45.33
       objectReference: {fileID: 0}
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 20.27
+      value: 6.01
       objectReference: {fileID: 0}
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalRotation.x
@@ -16247,6 +16278,11 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114441134105834378, guid: acf1e623c1658442d9994c99b363edfd,
+        type: 2}
+      propertyPath: cursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: ebb8cdfa101354b228fa1b6ec7073fcb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acf1e623c1658442d9994c99b363edfd, type: 2}
   m_IsPrefabParent: 0

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ZoomOut : MonoBehaviour {
 
+
+	public GameObject nightBackground;
+
+
+
 	public float Zoom1;
 	public float Zoom2;
 
@@ -20,7 +25,7 @@ public class ZoomOut : MonoBehaviour {
 
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (zoomOut) 
@@ -33,6 +38,8 @@ public class ZoomOut : MonoBehaviour {
 			if (elapsed > 1.0f) {
 				zoomOut = false;
 			}
+			nightBackground.transform.localScale += new Vector3(0.1f, 0.1f, 0);
+
 
 		}
 		if (zoomIn == true) 
@@ -45,7 +52,7 @@ public class ZoomOut : MonoBehaviour {
 			if (elapsed > 1.0f) {
 				zoomIn = false;
 			}
-
+			nightBackground.transform.localScale -= new Vector3(0.1f, 0.1f, 0);
 		}
 
 	
