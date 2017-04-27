@@ -35,6 +35,7 @@ public class drawLine : MonoBehaviour {
 		lineRenderer.SetPosition (0, origin.position);
 		lineRenderer.SetPosition (1, origin.position);
 		counter = 0;
+		player.GetComponent<Animator> ().SetBool ("hookDone", true);
 	}
 
 	// Update is called once per frame
