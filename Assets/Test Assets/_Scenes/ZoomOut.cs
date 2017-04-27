@@ -8,7 +8,10 @@ public class ZoomOut : MonoBehaviour {
 	public GameObject nightBackground;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> build-branch
 	public float Zoom1;
 	public float Zoom2;
 
