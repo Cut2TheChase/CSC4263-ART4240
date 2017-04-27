@@ -280,6 +280,56 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2e5dc66c6d72794a959d19e05b410f4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &215515796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 215515797}
+  - component: {fileID: 215515798}
+  m_Layer: 8
+  m_Name: Tree Collision
+  m_TagString: Ground Collider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215515797
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215515796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 234636766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &215515798
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215515796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.8906681, y: 2.9294996}
+      - {x: 0.3680096, y: 2.7440472}
+      - {x: 1.514365, y: 3.014459}
+      - {x: 2.3910944, y: 2.3570728}
+      - {x: 1.8838204, y: 1.7510518}
+      - {x: -1.1958017, y: 1.7510524}
+      - {x: -1.6390748, y: 2.117066}
 --- !u!1001 &215736695
 Prefab:
   m_ObjectHideFlags: 0
@@ -416,6 +466,11 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!4 &234636766 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4805377458010752, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 234636750}
 --- !u!4 &291404446 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4096208180674544, guid: f1a6d952ab3208a41825a4ee2452b9ec,
