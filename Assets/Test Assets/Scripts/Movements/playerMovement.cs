@@ -142,7 +142,7 @@ public class playerMovement : MonoBehaviour
         vertPos = GetComponent<Transform>().position.y;
         if (Input.GetKey(KeyCode.Space) && jumpState == false)
         {
-			canMoveY = true;
+			    canMoveY = true;
                 landingPos = vertPos; // Holds value of ground position if jumping
                 moveDirection.y = jumpSpeed;
                 jumpState = true;
@@ -160,7 +160,7 @@ public class playerMovement : MonoBehaviour
 
 			} else if (hit.collider.tag == "Top Ground Collider" && jumpState == true) {
 				feetColl.transform.position = new Vector3 (hit.collider.transform.position.x, hit.collider.bounds.ClosestPoint (hit.point).y - 0.5f, feetColl.transform.position.z);
-			} else if (hit.collider.tag == "Water Collider" && jumpState == false) {
+			} else if (hit.collider.tag == "Water Collider" && (jumpState == false || gravity > 30f)) {
 				hit.collider.GetComponent<waterDrowning> ().Move ();
 
 			}
