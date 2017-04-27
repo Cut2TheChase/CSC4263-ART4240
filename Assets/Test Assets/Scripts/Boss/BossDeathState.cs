@@ -16,6 +16,9 @@ public class BossDeathState : MonoBehaviour {
 		GetComponent<Animator> ().SetInteger ("State", 8);
 		Destroy(GameObject.FindGameObjectWithTag ("Left Hand"));
 		Destroy(GameObject.FindGameObjectWithTag ("Right Hand"));
+		Destroy(GameObject.FindGameObjectWithTag ("Right Hand"));
+		GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().musicPlay(2);
+
 	}
 	
 	// Update is called once per frame

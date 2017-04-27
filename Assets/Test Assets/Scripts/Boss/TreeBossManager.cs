@@ -77,7 +77,7 @@ public class TreeBossManager : MonoBehaviour {
 	public void nextState(){
 		//If Fight hasnt started yet, take out of sleep state and begin fight
 		if (currentState == -1) {
-			GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().bossMusicPlay();
+			GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().musicPlay(1);
 			GetComponent<SleepState> ().enabled = false;
 		}
 		
