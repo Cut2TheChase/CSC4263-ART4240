@@ -535,7 +535,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Controls
 --- !u!222 &784341607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -778,12 +778,12 @@ GameObject:
   - component: {fileID: 940118509}
   - component: {fileID: 940118508}
   m_Layer: 5
-  m_Name: MenuButton
+  m_Name: InstrButton
   m_TagString: GUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &940118507
 RectTransform:
   m_ObjectHideFlags: 0

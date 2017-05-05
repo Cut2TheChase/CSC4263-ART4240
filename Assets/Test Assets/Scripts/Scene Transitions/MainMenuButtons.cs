@@ -39,7 +39,7 @@ public class MainMenuButtons : MonoBehaviour
     }
     public void TaskOnClick1()
     {
-        SceneManager.LoadScene("cameraTester", LoadSceneMode.Single);
+        SceneManager.LoadScene("Controls", LoadSceneMode.Single);
     }
     public void TaskOnClick2()
     {

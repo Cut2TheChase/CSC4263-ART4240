@@ -492,6 +492,11 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1139606779}
+    - target: {fileID: 114247554411250088, guid: 19cb213a64e13de4b9a7c0f1360242bc,
+        type: 2}
+      propertyPath: memoryPrefab
+      value: 
+      objectReference: {fileID: 694313975}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19cb213a64e13de4b9a7c0f1360242bc, type: 2}
   m_IsPrefabParent: 0
@@ -1106,6 +1111,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1
   memoryUI: {fileID: 468186796}
+--- !u!114 &694313980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694313975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e1770867964fb429d06f48c7a5b614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695710836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,11 +2676,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.01
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.34
+      value: -14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4139211699825426, guid: 95e4ba50cd2ee9249ba10f4faff4e407, type: 2}
       propertyPath: m_LocalPosition.z
