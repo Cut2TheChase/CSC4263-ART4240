@@ -11,6 +11,7 @@ using UnityEngine;
 
 public class BossDeathState : MonoBehaviour {
 
+	public GameObject memoryPrefab;
 	// Use this for initialization
 	void OnEnable () {
 		GetComponent<Animator> ().SetInteger ("State", 8);
@@ -18,6 +19,8 @@ public class BossDeathState : MonoBehaviour {
 		Destroy(GameObject.FindGameObjectWithTag ("Right Hand"));
 		Destroy(GameObject.FindGameObjectWithTag ("Right Hand"));
 		GameObject.FindGameObjectWithTag ("Sound").GetComponent<SoundKeeper> ().musicPlay(2);
+
+		memoryPrefab.transform.position = new Vector3 (transform.position.x + 0.2f, transform.position.y - 0.2f, 5);
 
 	}
 	
